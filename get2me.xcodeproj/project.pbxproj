@@ -24,6 +24,7 @@
 		ADC33CBA16013F6900BF4935 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC33C9216013F6800BF4935 /* Foundation.framework */; };
 		ADC33CC216013F6900BF4935 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADC33CC016013F6900BF4935 /* InfoPlist.strings */; };
 		ADC33CC516013F6900BF4935 /* get2meTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC33CC416013F6900BF4935 /* get2meTests.m */; };
+		ADD147501602C36600C4A1AB /* connect-facebook-button.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		ADC33CC116013F6900BF4935 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ADC33CC316013F6900BF4935 /* get2meTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = get2meTests.h; sourceTree = "<group>"; };
 		ADC33CC416013F6900BF4935 /* get2meTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = get2meTests.m; sourceTree = "<group>"; };
+		ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "connect-facebook-button.png"; path = "Resources/Images/connect-facebook-button.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		ADC33C8116013F6800BF4935 = {
 			isa = PBXGroup;
 			children = (
+				ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */,
 				ADC33C9616013F6800BF4935 /* get2me */,
 				ADC33CBD16013F6900BF4935 /* get2meTests */,
 				ADC33C8F16013F6800BF4935 /* Frameworks */,
@@ -241,6 +244,7 @@
 				ADC33CA716013F6800BF4935 /* Default-568h@2x.png in Resources */,
 				ADC33CAA16013F6800BF4935 /* MainStoryboard_iPhone.storyboard in Resources */,
 				ADC33CAD16013F6800BF4935 /* MainStoryboard_iPad.storyboard in Resources */,
+				ADD147501602C36600C4A1AB /* connect-facebook-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +465,7 @@
 				ADC33CCA16013F6900BF4935 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ADC33CCB16013F6900BF4935 /* Build configuration list for PBXNativeTarget "get2meTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +474,7 @@
 				ADC33CCD16013F6900BF4935 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
