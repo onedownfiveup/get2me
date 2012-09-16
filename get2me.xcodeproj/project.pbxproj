@@ -24,10 +24,12 @@
 		ADC33CC216013F6900BF4935 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADC33CC016013F6900BF4935 /* InfoPlist.strings */; };
 		ADC33CC516013F6900BF4935 /* get2meTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC33CC416013F6900BF4935 /* get2meTests.m */; };
 		ADD147501602C36600C4A1AB /* connect-facebook-button.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */; };
-		ADD1477916061F3E00C4A1AB /* Directions.geojson in Resources */ = {isa = PBXBuildFile; fileRef = ADD1477816061F3E00C4A1AB /* Directions.geojson */; };
-		ADD1477A16061F3E00C4A1AB /* Directions.geojson in Resources */ = {isa = PBXBuildFile; fileRef = ADD1477816061F3E00C4A1AB /* Directions.geojson */; };
 		ADD1477C1606234800C4A1AB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD1477B1606234800C4A1AB /* MapKit.framework */; };
 		ADD147821606285C00C4A1AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD147811606285C00C4A1AB /* CoreLocation.framework */; };
+		ADD1478516062C7400C4A1AB /* MapViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478416062C7400C4A1AB /* MapViewViewController.m */; };
+		ADD1478616062C7400C4A1AB /* MapViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478416062C7400C4A1AB /* MapViewViewController.m */; };
+		ADD1478D16063D1900C4A1AB /* DirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */; };
+		ADD1478E16063D1900C4A1AB /* DirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */; };
 		CA632BF1160567B3007D71C3 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF0160567B3007D71C3 /* SignInViewController.m */; };
 		CA632BF2160567B3007D71C3 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF0160567B3007D71C3 /* SignInViewController.m */; };
 		CA632BF5160569FE007D71C3 /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF4160569FE007D71C3 /* CreateAccountViewController.m */; };
@@ -124,9 +126,12 @@
 		ADC33CC316013F6900BF4935 /* get2meTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = get2meTests.h; sourceTree = "<group>"; };
 		ADC33CC416013F6900BF4935 /* get2meTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = get2meTests.m; sourceTree = "<group>"; };
 		ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "connect-facebook-button.png"; path = "Resources/Images/connect-facebook-button.png"; sourceTree = "<group>"; };
-		ADD1477816061F3E00C4A1AB /* Directions.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Directions.geojson; sourceTree = "<group>"; };
 		ADD1477B1606234800C4A1AB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		ADD147811606285C00C4A1AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		ADD1478316062C7400C4A1AB /* MapViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewViewController.h; sourceTree = "<group>"; };
+		ADD1478416062C7400C4A1AB /* MapViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewViewController.m; sourceTree = "<group>"; };
+		ADD1478B16063D1900C4A1AB /* DirectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionsViewController.h; sourceTree = "<group>"; };
+		ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionsViewController.m; sourceTree = "<group>"; };
 		CA632BEF160567B3007D71C3 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		CA632BF0160567B3007D71C3 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		CA632BF3160569FE007D71C3 /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
@@ -257,7 +262,6 @@
 				ADC33CA216013F6800BF4935 /* Default.png */,
 				ADC33CA416013F6800BF4935 /* Default@2x.png */,
 				ADC33CA616013F6800BF4935 /* Default-568h@2x.png */,
-				ADD1477816061F3E00C4A1AB /* Directions.geojson */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -316,6 +320,8 @@
 		CACC226D16055C4C009BC042 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				ADD1478B16063D1900C4A1AB /* DirectionsViewController.h */,
+				ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */,
 				CACC226E16055CAE009BC042 /* NonLoggedInControllerViewController.h */,
 				CACC226F16055CAE009BC042 /* NonLoggedInControllerViewController.m */,
 				CACC227216055FC0009BC042 /* Get2meTabBarViewController.h */,
@@ -324,6 +330,8 @@
 				CA632BF0160567B3007D71C3 /* SignInViewController.m */,
 				CA632BF3160569FE007D71C3 /* CreateAccountViewController.h */,
 				CA632BF4160569FE007D71C3 /* CreateAccountViewController.m */,
+				ADD1478316062C7400C4A1AB /* MapViewViewController.h */,
+				ADD1478416062C7400C4A1AB /* MapViewViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -452,7 +460,6 @@
 				ADC33CAD16013F6800BF4935 /* MainStoryboard_iPad.storyboard in Resources */,
 				ADD147501602C36600C4A1AB /* connect-facebook-button.png in Resources */,
 				CACC21F616041709009BC042 /* FacebookSDKResources.bundle in Resources */,
-				ADD1477916061F3E00C4A1AB /* Directions.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +469,6 @@
 			files = (
 				ADC33CC216013F6900BF4935 /* InfoPlist.strings in Resources */,
 				CACC21F716041709009BC042 /* FacebookSDKResources.bundle in Resources */,
-				ADD1477A16061F3E00C4A1AB /* Directions.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +504,8 @@
 				CACC227416055FC0009BC042 /* Get2meTabBarViewController.m in Sources */,
 				CA632BF1160567B3007D71C3 /* SignInViewController.m in Sources */,
 				CA632BF5160569FE007D71C3 /* CreateAccountViewController.m in Sources */,
+				ADD1478516062C7400C4A1AB /* MapViewViewController.m in Sources */,
+				ADD1478D16063D1900C4A1AB /* DirectionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +521,8 @@
 				CACC227516055FC0009BC042 /* Get2meTabBarViewController.m in Sources */,
 				CA632BF2160567B3007D71C3 /* SignInViewController.m in Sources */,
 				CA632BF6160569FE007D71C3 /* CreateAccountViewController.m in Sources */,
+				ADD1478616062C7400C4A1AB /* MapViewViewController.m in Sources */,
+				ADD1478E16063D1900C4A1AB /* DirectionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

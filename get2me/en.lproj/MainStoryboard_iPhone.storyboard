@@ -275,6 +275,7 @@
                                 <items>
                                     <navigationItem title="Title" id="IMb-ng-h3p">
                                         <barButtonItem key="leftBarButtonItem" title="Item" id="Xvt-Qu-Wvo"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Directions" id="Cxe-xg-Odb"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
