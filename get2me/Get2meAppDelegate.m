@@ -6,14 +6,49 @@
 //  Copyright (c) 2012 Railzbiz. All rights reserved.
 //
 
-#import "RailzbizAppDelegate.h"
+#import "Get2meAppDelegate.h"
+#import "CurrentUser.h"
+#import "NonLoggedInControllerViewController.h"
+#import "Get2meTabBarViewController.h"
 
-@implementation RailzbizAppDelegate
+@implementation Get2meAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.objectManager = [RKObjectManager managerWithBaseURLString:@"http://get2me.local"];
+    [RKObjectManager setSharedManager: self.objectManager];
+    
+    NSString *viewIdentifier = @"nonLoggedInController";
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName: @"MainStoryboard_iPhone" bundle: nil];
+    NonLoggedInControllerViewController *nonLoggedInController = [storyBoard instantiateViewControllerWithIdentifier:viewIdentifier];
+    
+    if (![[CurrentUser sharedInstance] isLoggedIn]) {
+        self.window.rootViewController = nonLoggedInController;
+        [self.window makeKeyAndVisible];
+    }
+    
+    [self setupUserLoginNotification];
     return YES;
+}
+
+-(void)setupUserLoginNotification
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleUserStateChange)
+                                                 name:@"CurrentUserStateChange"
+                                               object:nil];
+}
+
+-(void)handleUserStateChange
+{
+    NSString *viewIdentifier = @"get2meTabBarController";
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName: @"MainStoryboard_iPhone" bundle: nil];
+    Get2meTabBarViewController *get2meTabBarViewController = [storyBoard instantiateViewControllerWithIdentifier:viewIdentifier];
+    
+    if ([[CurrentUser sharedInstance] isLoggedIn]) {
+        self.window.rootViewController = get2meTabBarViewController;
+        [self.window makeKeyAndVisible];
+    }    
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application

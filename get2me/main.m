@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "RailzbizAppDelegate.h"
+#import "Get2meAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([RailzbizAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([Get2meAppDelegate class]));
     }
 }

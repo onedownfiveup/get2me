@@ -12,19 +12,44 @@
 		ADC33C9516013F6800BF4935 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC33C9416013F6800BF4935 /* CoreGraphics.framework */; };
 		ADC33C9B16013F6800BF4935 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADC33C9916013F6800BF4935 /* InfoPlist.strings */; };
 		ADC33C9D16013F6800BF4935 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC33C9C16013F6800BF4935 /* main.m */; };
-		ADC33CA116013F6800BF4935 /* RailzbizAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC33CA016013F6800BF4935 /* RailzbizAppDelegate.m */; };
+		ADC33CA116013F6800BF4935 /* Get2meAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC33CA016013F6800BF4935 /* Get2meAppDelegate.m */; };
 		ADC33CA316013F6800BF4935 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC33CA216013F6800BF4935 /* Default.png */; };
 		ADC33CA516013F6800BF4935 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC33CA416013F6800BF4935 /* Default@2x.png */; };
 		ADC33CA716013F6800BF4935 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC33CA616013F6800BF4935 /* Default-568h@2x.png */; };
 		ADC33CAA16013F6800BF4935 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC33CA816013F6800BF4935 /* MainStoryboard_iPhone.storyboard */; };
 		ADC33CAD16013F6800BF4935 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADC33CAB16013F6800BF4935 /* MainStoryboard_iPad.storyboard */; };
-		ADC33CB016013F6800BF4935 /* RailzbizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC33CAF16013F6800BF4935 /* RailzbizViewController.m */; };
 		ADC33CB816013F6900BF4935 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC33CB716013F6900BF4935 /* SenTestingKit.framework */; };
 		ADC33CB916013F6900BF4935 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC33C9016013F6800BF4935 /* UIKit.framework */; };
 		ADC33CBA16013F6900BF4935 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC33C9216013F6800BF4935 /* Foundation.framework */; };
 		ADC33CC216013F6900BF4935 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADC33CC016013F6900BF4935 /* InfoPlist.strings */; };
 		ADC33CC516013F6900BF4935 /* get2meTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC33CC416013F6900BF4935 /* get2meTests.m */; };
 		ADD147501602C36600C4A1AB /* connect-facebook-button.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */; };
+		CA632BF1160567B3007D71C3 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF0160567B3007D71C3 /* SignInViewController.m */; };
+		CA632BF2160567B3007D71C3 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF0160567B3007D71C3 /* SignInViewController.m */; };
+		CA632BF5160569FE007D71C3 /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF4160569FE007D71C3 /* CreateAccountViewController.m */; };
+		CA632BF6160569FE007D71C3 /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF4160569FE007D71C3 /* CreateAccountViewController.m */; };
+		CACC21F616041709009BC042 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CACC21F516041709009BC042 /* FacebookSDKResources.bundle */; };
+		CACC21F716041709009BC042 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CACC21F516041709009BC042 /* FacebookSDKResources.bundle */; };
+		CACC21FC16041915009BC042 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC21FB16041915009BC042 /* FacebookSDK.framework */; };
+		CACC21FD16041915009BC042 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC21FB16041915009BC042 /* FacebookSDK.framework */; };
+		CACC220C160547F8009BC042 /* CurentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC220B160547F8009BC042 /* CurentUser.m */; };
+		CACC220D160547F8009BC042 /* CurentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC220B160547F8009BC042 /* CurentUser.m */; };
+		CACC22101605487A009BC042 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC220F1605487A009BC042 /* KeychainItemWrapper.m */; };
+		CACC22111605487A009BC042 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC220F1605487A009BC042 /* KeychainItemWrapper.m */; };
+		CACC225616054BCD009BC042 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC225516054BCD009BC042 /* CFNetwork.framework */; };
+		CACC225816054C0C009BC042 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC225716054C0C009BC042 /* CoreData.framework */; };
+		CACC225A16054C13009BC042 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC225916054C13009BC042 /* Security.framework */; };
+		CACC225C16054C1E009BC042 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC225B16054C1E009BC042 /* MobileCoreServices.framework */; };
+		CACC225E16054C27009BC042 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC225D16054C27009BC042 /* SystemConfiguration.framework */; };
+		CACC226016054C30009BC042 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC225F16054C30009BC042 /* libxml2.dylib */; };
+		CACC226216054C3A009BC042 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC226116054C3A009BC042 /* QuartzCore.framework */; };
+		CACC22651605511B009BC042 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC224C16054AFD009BC042 /* libRestKit.a */; };
+		CACC226B160559A6009BC042 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC226A160559A6009BC042 /* User.m */; };
+		CACC226C160559A6009BC042 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC226A160559A6009BC042 /* User.m */; };
+		CACC227016055CAE009BC042 /* NonLoggedInControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC226F16055CAE009BC042 /* NonLoggedInControllerViewController.m */; };
+		CACC227116055CAE009BC042 /* NonLoggedInControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC226F16055CAE009BC042 /* NonLoggedInControllerViewController.m */; };
+		CACC227416055FC0009BC042 /* Get2meTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC227316055FC0009BC042 /* Get2meTabBarViewController.m */; };
+		CACC227516055FC0009BC042 /* Get2meTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC227316055FC0009BC042 /* Get2meTabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +59,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = ADC33C8B16013F6800BF4935;
 			remoteInfo = get2me;
+		};
+		CACC224B16054AFD009BC042 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CACC224016054AFC009BC042 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		CACC224D16054AFD009BC042 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CACC224016054AFC009BC042 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		CACC224F16054AFD009BC042 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CACC224016054AFC009BC042 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		CACC225116054AFD009BC042 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CACC224016054AFC009BC042 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		CACC225316054AFD009BC042 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CACC224016054AFC009BC042 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 259C301615128079003066A2;
+			remoteInfo = RestKitResources;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -46,15 +106,13 @@
 		ADC33C9A16013F6800BF4935 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ADC33C9C16013F6800BF4935 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ADC33C9E16013F6800BF4935 /* get2me-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "get2me-Prefix.pch"; sourceTree = "<group>"; };
-		ADC33C9F16013F6800BF4935 /* RailzbizAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RailzbizAppDelegate.h; sourceTree = "<group>"; };
-		ADC33CA016013F6800BF4935 /* RailzbizAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RailzbizAppDelegate.m; sourceTree = "<group>"; };
+		ADC33C9F16013F6800BF4935 /* Get2meAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Get2meAppDelegate.h; sourceTree = "<group>"; };
+		ADC33CA016013F6800BF4935 /* Get2meAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Get2meAppDelegate.m; sourceTree = "<group>"; };
 		ADC33CA216013F6800BF4935 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		ADC33CA416013F6800BF4935 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		ADC33CA616013F6800BF4935 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		ADC33CA916013F6800BF4935 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		ADC33CAC16013F6800BF4935 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		ADC33CAE16013F6800BF4935 /* RailzbizViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RailzbizViewController.h; sourceTree = "<group>"; };
-		ADC33CAF16013F6800BF4935 /* RailzbizViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RailzbizViewController.m; sourceTree = "<group>"; };
 		ADC33CB616013F6900BF4935 /* get2meTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = get2meTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC33CB716013F6900BF4935 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		ADC33CBF16013F6900BF4935 /* get2meTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "get2meTests-Info.plist"; sourceTree = "<group>"; };
@@ -62,6 +120,30 @@
 		ADC33CC316013F6900BF4935 /* get2meTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = get2meTests.h; sourceTree = "<group>"; };
 		ADC33CC416013F6900BF4935 /* get2meTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = get2meTests.m; sourceTree = "<group>"; };
 		ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "connect-facebook-button.png"; path = "Resources/Images/connect-facebook-button.png"; sourceTree = "<group>"; };
+		CA632BEF160567B3007D71C3 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		CA632BF0160567B3007D71C3 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		CA632BF3160569FE007D71C3 /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
+		CA632BF4160569FE007D71C3 /* CreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
+		CACC21F516041709009BC042 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		CACC21FB16041915009BC042 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		CACC220A160547F8009BC042 /* CurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUser.h; sourceTree = "<group>"; };
+		CACC220B160547F8009BC042 /* CurentUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurentUser.m; sourceTree = "<group>"; };
+		CACC220E1605487A009BC042 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		CACC220F1605487A009BC042 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		CACC224016054AFC009BC042 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = "../../Downloads/RestKit-RestKit-d3cad8d/RestKit.xcodeproj"; sourceTree = "<group>"; };
+		CACC225516054BCD009BC042 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		CACC225716054C0C009BC042 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CACC225916054C13009BC042 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		CACC225B16054C1E009BC042 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		CACC225D16054C27009BC042 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CACC225F16054C30009BC042 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		CACC226116054C3A009BC042 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CACC2269160559A6009BC042 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		CACC226A160559A6009BC042 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		CACC226E16055CAE009BC042 /* NonLoggedInControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonLoggedInControllerViewController.h; sourceTree = "<group>"; };
+		CACC226F16055CAE009BC042 /* NonLoggedInControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonLoggedInControllerViewController.m; sourceTree = "<group>"; };
+		CACC227216055FC0009BC042 /* Get2meTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Get2meTabBarViewController.h; sourceTree = "<group>"; };
+		CACC227316055FC0009BC042 /* Get2meTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Get2meTabBarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +151,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CACC22651605511B009BC042 /* libRestKit.a in Frameworks */,
+				CACC226216054C3A009BC042 /* QuartzCore.framework in Frameworks */,
+				CACC226016054C30009BC042 /* libxml2.dylib in Frameworks */,
+				CACC225E16054C27009BC042 /* SystemConfiguration.framework in Frameworks */,
+				CACC225C16054C1E009BC042 /* MobileCoreServices.framework in Frameworks */,
+				CACC225A16054C13009BC042 /* Security.framework in Frameworks */,
+				CACC225816054C0C009BC042 /* CoreData.framework in Frameworks */,
+				CACC225616054BCD009BC042 /* CFNetwork.framework in Frameworks */,
 				ADC33C9116013F6800BF4935 /* UIKit.framework in Frameworks */,
 				ADC33C9316013F6800BF4935 /* Foundation.framework in Frameworks */,
 				ADC33C9516013F6800BF4935 /* CoreGraphics.framework in Frameworks */,
+				CACC21FC16041915009BC042 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +173,7 @@
 				ADC33CB816013F6900BF4935 /* SenTestingKit.framework in Frameworks */,
 				ADC33CB916013F6900BF4935 /* UIKit.framework in Frameworks */,
 				ADC33CBA16013F6900BF4935 /* Foundation.framework in Frameworks */,
+				CACC21FD16041915009BC042 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +183,13 @@
 		ADC33C8116013F6800BF4935 = {
 			isa = PBXGroup;
 			children = (
+				CACC226116054C3A009BC042 /* QuartzCore.framework */,
+				CACC225F16054C30009BC042 /* libxml2.dylib */,
+				CACC225D16054C27009BC042 /* SystemConfiguration.framework */,
+				CACC225B16054C1E009BC042 /* MobileCoreServices.framework */,
+				CACC225916054C13009BC042 /* Security.framework */,
+				CACC225716054C0C009BC042 /* CoreData.framework */,
+				CACC225516054BCD009BC042 /* CFNetwork.framework */,
 				ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */,
 				ADC33C9616013F6800BF4935 /* get2me */,
 				ADC33CBD16013F6900BF4935 /* get2meTests */,
@@ -111,6 +210,9 @@
 		ADC33C8F16013F6800BF4935 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CACC224016054AFC009BC042 /* RestKit.xcodeproj */,
+				CACC21FB16041915009BC042 /* FacebookSDK.framework */,
+				CACC21F516041709009BC042 /* FacebookSDKResources.bundle */,
 				ADC33C9016013F6800BF4935 /* UIKit.framework */,
 				ADC33C9216013F6800BF4935 /* Foundation.framework */,
 				ADC33C9416013F6800BF4935 /* CoreGraphics.framework */,
@@ -122,12 +224,13 @@
 		ADC33C9616013F6800BF4935 /* get2me */ = {
 			isa = PBXGroup;
 			children = (
-				ADC33C9F16013F6800BF4935 /* RailzbizAppDelegate.h */,
-				ADC33CA016013F6800BF4935 /* RailzbizAppDelegate.m */,
+				CACC226D16055C4C009BC042 /* ViewControllers */,
+				CACC2268160555C1009BC042 /* Models */,
+				CACC226716055567009BC042 /* Lib */,
+				ADC33C9F16013F6800BF4935 /* Get2meAppDelegate.h */,
+				ADC33CA016013F6800BF4935 /* Get2meAppDelegate.m */,
 				ADC33CA816013F6800BF4935 /* MainStoryboard_iPhone.storyboard */,
 				ADC33CAB16013F6800BF4935 /* MainStoryboard_iPad.storyboard */,
-				ADC33CAE16013F6800BF4935 /* RailzbizViewController.h */,
-				ADC33CAF16013F6800BF4935 /* RailzbizViewController.m */,
 				ADC33C9716013F6800BF4935 /* Supporting Files */,
 			);
 			path = get2me;
@@ -164,6 +267,53 @@
 				ADC33CC016013F6900BF4935 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CACC224116054AFC009BC042 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CACC224C16054AFD009BC042 /* libRestKit.a */,
+				CACC224E16054AFD009BC042 /* RestKitTests.octest */,
+				CACC225016054AFD009BC042 /* RestKit.framework */,
+				CACC225216054AFD009BC042 /* RestKitFrameworkTests.octest */,
+				CACC225416054AFD009BC042 /* RestKitResources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CACC226716055567009BC042 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				CACC220E1605487A009BC042 /* KeychainItemWrapper.h */,
+				CACC220F1605487A009BC042 /* KeychainItemWrapper.m */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		CACC2268160555C1009BC042 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CACC220A160547F8009BC042 /* CurrentUser.h */,
+				CACC220B160547F8009BC042 /* CurentUser.m */,
+				CACC2269160559A6009BC042 /* User.h */,
+				CACC226A160559A6009BC042 /* User.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CACC226D16055C4C009BC042 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CACC226E16055CAE009BC042 /* NonLoggedInControllerViewController.h */,
+				CACC226F16055CAE009BC042 /* NonLoggedInControllerViewController.m */,
+				CACC227216055FC0009BC042 /* Get2meTabBarViewController.h */,
+				CACC227316055FC0009BC042 /* Get2meTabBarViewController.m */,
+				CA632BEF160567B3007D71C3 /* SignInViewController.h */,
+				CA632BF0160567B3007D71C3 /* SignInViewController.m */,
+				CA632BF3160569FE007D71C3 /* CreateAccountViewController.h */,
+				CA632BF4160569FE007D71C3 /* CreateAccountViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +375,12 @@
 			mainGroup = ADC33C8116013F6800BF4935;
 			productRefGroup = ADC33C8D16013F6800BF4935 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CACC224116054AFC009BC042 /* Products */;
+					ProjectRef = CACC224016054AFC009BC042 /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				ADC33C8B16013F6800BF4935 /* get2me */,
@@ -232,6 +388,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CACC224C16054AFD009BC042 /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = CACC224B16054AFD009BC042 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CACC224E16054AFD009BC042 /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = CACC224D16054AFD009BC042 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CACC225016054AFD009BC042 /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = CACC224F16054AFD009BC042 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CACC225216054AFD009BC042 /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = CACC225116054AFD009BC042 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CACC225416054AFD009BC042 /* RestKitResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitResources.bundle;
+			remoteRef = CACC225316054AFD009BC042 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		ADC33C8A16013F6800BF4935 /* Resources */ = {
@@ -245,6 +439,7 @@
 				ADC33CAA16013F6800BF4935 /* MainStoryboard_iPhone.storyboard in Resources */,
 				ADC33CAD16013F6800BF4935 /* MainStoryboard_iPad.storyboard in Resources */,
 				ADD147501602C36600C4A1AB /* connect-facebook-button.png in Resources */,
+				CACC21F616041709009BC042 /* FacebookSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADC33CC216013F6900BF4935 /* InfoPlist.strings in Resources */,
+				CACC21F716041709009BC042 /* FacebookSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +476,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADC33C9D16013F6800BF4935 /* main.m in Sources */,
-				ADC33CA116013F6800BF4935 /* RailzbizAppDelegate.m in Sources */,
-				ADC33CB016013F6800BF4935 /* RailzbizViewController.m in Sources */,
+				ADC33CA116013F6800BF4935 /* Get2meAppDelegate.m in Sources */,
+				CACC220C160547F8009BC042 /* CurentUser.m in Sources */,
+				CACC22101605487A009BC042 /* KeychainItemWrapper.m in Sources */,
+				CACC226B160559A6009BC042 /* User.m in Sources */,
+				CACC227016055CAE009BC042 /* NonLoggedInControllerViewController.m in Sources */,
+				CACC227416055FC0009BC042 /* Get2meTabBarViewController.m in Sources */,
+				CA632BF1160567B3007D71C3 /* SignInViewController.m in Sources */,
+				CA632BF5160569FE007D71C3 /* CreateAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +492,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADC33CC516013F6900BF4935 /* get2meTests.m in Sources */,
+				CACC220D160547F8009BC042 /* CurentUser.m in Sources */,
+				CACC22111605487A009BC042 /* KeychainItemWrapper.m in Sources */,
+				CACC226C160559A6009BC042 /* User.m in Sources */,
+				CACC227116055CAE009BC042 /* NonLoggedInControllerViewController.m in Sources */,
+				CACC227516055FC0009BC042 /* Get2meTabBarViewController.m in Sources */,
+				CA632BF2160567B3007D71C3 /* SignInViewController.m in Sources */,
+				CA632BF6160569FE007D71C3 /* CreateAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +570,13 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lsqlite3.0",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -382,8 +597,14 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/../../Headers\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+					"-lsqlite3.0",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -393,9 +614,17 @@
 		ADC33CC916013F6900BF4935 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "get2me/get2me-Prefix.pch";
 				INFOPLIST_FILE = "get2me/get2me-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK/FacebookSDK.framework\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -404,9 +633,17 @@
 		ADC33CCA16013F6900BF4935 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "get2me/get2me-Prefix.pch";
 				INFOPLIST_FILE = "get2me/get2me-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK/FacebookSDK.framework\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -419,10 +656,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "get2me/get2me-Prefix.pch";
 				INFOPLIST_FILE = "get2meTests/get2meTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK/FacebookSDK.framework\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -436,10 +678,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "get2me/get2me-Prefix.pch";
 				INFOPLIST_FILE = "get2meTests/get2meTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Documents/FacebookSDK/FacebookSDK.framework\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;

@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RestKit/RestKit.h>
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface RailzbizAppDelegate : UIResponder <UIApplicationDelegate>
+@interface Get2meAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (retain, nonatomic) RKObjectManager *objectManager;
 
 @end
