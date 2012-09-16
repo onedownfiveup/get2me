@@ -260,80 +260,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zF0-W5-zRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-544" y="1764"/>
+            <point key="canvasLocation" x="-539" y="1771"/>
         </scene>
-        <!--View Controller - Current Trip-->
-        <scene sceneID="xzI-V8-rAG">
-            <objects>
-                <viewController id="dbz-E2-pBZ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Buc-GU-vQA">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5AA-cc-1oN">
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BUk-hB-TkB">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="userMapPreviewCell" id="WWS-rr-otW">
-                                        <rect key="frame" x="0.0" y="0.0" width="151" height="162"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="151" height="162"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="GDs-Hh-r8j">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="121" id="zjj-wH-xR5"/>
-                                                    </constraints>
-                                                </mapView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="John Fitzgerald" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xe8-jJ-Hpx">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="pIy-On-6Tf"/>
-                                                        <constraint firstAttribute="width" constant="117" id="t6u-i7-v6Q"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="GDs-Hh-r8j" firstAttribute="leading" secondItem="WWS-rr-otW" secondAttribute="leading" type="default" id="A95-M8-SVs"/>
-                                            <constraint firstItem="GDs-Hh-r8j" firstAttribute="top" secondItem="WWS-rr-otW" secondAttribute="top" type="default" id="GGw-ts-MqL"/>
-                                            <constraint firstItem="GDs-Hh-r8j" firstAttribute="trailing" secondItem="WWS-rr-otW" secondAttribute="trailing" type="default" id="HTJ-9h-OmT"/>
-                                            <constraint firstItem="xe8-jJ-Hpx" firstAttribute="centerX" secondItem="GDs-Hh-r8j" secondAttribute="centerX" type="default" id="WgQ-Cm-ely"/>
-                                            <constraint firstItem="xe8-jJ-Hpx" firstAttribute="top" secondItem="GDs-Hh-r8j" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hyq-pC-yYW"/>
-                                        </constraints>
-                                        <size key="customSize" width="151" height="162"/>
-                                        <connections>
-                                            <segue destination="JtR-Tl-tTN" kind="push" id="hyz-1F-eSX"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="5AA-cc-1oN" firstAttribute="top" secondItem="Buc-GU-vQA" secondAttribute="top" type="default" id="Quz-TB-2bX"/>
-                            <constraint firstItem="5AA-cc-1oN" firstAttribute="trailing" secondItem="Buc-GU-vQA" secondAttribute="trailing" type="default" id="VrD-vr-3X3"/>
-                            <constraint firstItem="5AA-cc-1oN" firstAttribute="bottom" secondItem="Buc-GU-vQA" secondAttribute="bottom" type="default" id="dfU-DH-tfj"/>
-                            <constraint firstItem="5AA-cc-1oN" firstAttribute="leading" secondItem="Buc-GU-vQA" secondAttribute="leading" type="default" id="vfC-Ea-WJU"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Current Trip" image="Default-568h@2x.png" id="HJ8-aN-ncX">
-                        <inset key="imageInsets" minX="4" minY="-8" maxX="4" maxY="9"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Yb-Yi-Qs8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-544" y="1082"/>
-        </scene>
-        <!--View Controller-->
+        <!--View Controller - Map-->
         <scene sceneID="649-vb-JfP">
             <objects>
                 <viewController id="JtR-Tl-tTN" sceneMemberID="viewController">
@@ -361,25 +290,26 @@
                             <constraint firstItem="NnW-yc-L7J" firstAttribute="trailing" secondItem="u42-PW-CXO" secondAttribute="trailing" type="default" id="lVD-qH-faa"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="WCW-DA-XB5"/>
                     <navigationItem key="navigationItem" id="Jan-L6-9Vz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdo-XF-Jcu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-113" y="1082"/>
+            <point key="canvasLocation" x="-544" y="1081"/>
         </scene>
         <!--Get 2me Tab Bar View Controller-->
         <scene sceneID="fKy-jZ-MCg">
             <objects>
                 <tabBarController storyboardIdentifier="get2meTabBarController" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RGJ-4H-itl" customClass="Get2meTabBarViewController" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="top" id="D5a-OH-uBa">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="dbz-E2-pBZ" kind="relationship" relationship="viewControllers" id="wf3-XZ-B51"/>
-                        <segue destination="pRz-3t-nco" kind="relationship" relationship="viewControllers" id="wKo-Z4-V23"/>
+                        <segue destination="JtR-Tl-tTN" kind="relationship" relationship="viewControllers" id="aje-l2-T0M"/>
+                        <segue destination="pRz-3t-nco" kind="relationship" relationship="viewControllers" id="Tnn-i4-ETG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="52x-iT-iC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -387,9 +317,6 @@
             <point key="canvasLocation" x="-1081" y="1478"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Default-568h@2x.png" width="640" height="1136"/>
-    </resources>
     <classes>
         <class className="CreateAccountViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateAccountViewController.h"/>
@@ -414,15 +341,6 @@
                 <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
             </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
