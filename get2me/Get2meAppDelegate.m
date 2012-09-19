@@ -8,27 +8,35 @@
 
 #import "Get2meAppDelegate.h"
 #import "CurrentUser.h"
-#import "NonLoggedInControllerViewController.h"
+#import "User.h"
+#import "SignInViewController.h"
 #import "Get2meTabBarViewController.h"
 
 @implementation Get2meAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.objectManager = [RKObjectManager managerWithBaseURLString:@"http://get2me.local"];
-    [RKObjectManager setSharedManager: self.objectManager];
-    
-    NSString *viewIdentifier = @"nonLoggedInController";
+    [self loadRestkitDefaults];
+    NSString *viewIdentifier = @"signInController";
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName: @"MainStoryboard_iPhone" bundle: nil];
-    NonLoggedInControllerViewController *nonLoggedInController = [storyBoard instantiateViewControllerWithIdentifier:viewIdentifier];
+    SignInViewController *signInViewController = [storyBoard instantiateViewControllerWithIdentifier:viewIdentifier];
     
     if (![[CurrentUser sharedInstance] isLoggedIn]) {
-        self.window.rootViewController = nonLoggedInController;
+        self.window.rootViewController = signInViewController;
         [self.window makeKeyAndVisible];
     }
     
     [self setupUserLoginNotification];
     return YES;
+}
+
+-(void) loadRestkitDefaults
+{
+    self.objectManager = [RKObjectManager managerWithBaseURLString:@"http://get2me.local"];
+    [RKObjectManager setSharedManager: self.objectManager];
+    [User loadRestkitMappings];
+    
+
 }
 
 -(void)setupUserLoginNotification
@@ -41,16 +49,17 @@
 
 -(void)handleUserStateChange
 {
-    NSString *viewIdentifier = @"get2meTabBarController";
+ 
+    NSString *viewIdentifier = @"tabBarController";
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName: @"MainStoryboard_iPhone" bundle: nil];
     Get2meTabBarViewController *get2meTabBarViewController = [storyBoard instantiateViewControllerWithIdentifier:viewIdentifier];
     
     if ([[CurrentUser sharedInstance] isLoggedIn]) {
         self.window.rootViewController = get2meTabBarViewController;
         [self.window makeKeyAndVisible];
-    }    
+    }
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

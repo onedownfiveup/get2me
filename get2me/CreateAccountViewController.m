@@ -50,9 +50,16 @@
     [sharedManager loadObjectsAtResourcePath: usersPath
                                   usingBlock: ^(RKObjectLoader *loader) {
                                       RKParams *params= [RKParams params];
-                                      [params setValue: self.usernameField.text forParam: @"user[email]"];
-                                      [params setValue: self.passwordField.text forParam: @"user[password]"];
-                                      [params setValue: self.passwordConfirmationField.text forParam: @"user[password_confirmation]"];
+                                      [params setValue: self.usernameField.text
+                                              forParam: @"user[email]"];
+                                      [params setValue: self.passwordField.text
+                                              forParam: @"user[password]"];
+                                      [params setValue: self.firstNameField.text
+                                              forParam: @"user[first_name]"];
+                                      [params setValue: self.lastNameField.text
+                                              forParam: @"user[last_name]"];
+                                      [params setValue: self.passwordConfirmationField.text
+                                              forParam: @"user[password_confirmation]"];
                                       loader.params = params;
                                       loader.method= RKRequestMethodPOST;
                                       loader.delegate = self;

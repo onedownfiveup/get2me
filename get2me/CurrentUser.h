@@ -14,7 +14,7 @@
 extern NSString *const CRUserAuthUrl;
 extern NSString *const CRUserAuthAPIKey;
 
-@interface CurrentUser : NSObject <RKObjectLoaderDelegate>
+@interface CurrentUser : NSObject
 {
     KeychainItemWrapper *keychain;
     NSString *resultsJSON;
@@ -27,7 +27,6 @@ extern NSString *const CRUserAuthAPIKey;
                    withPassword: (NSString *) password;
 -(BOOL) isLoggedIn;
 -(void) signoutUser;
--(void) signInUserWithUsername: (NSString *) userName andPassword: (NSString *)password;
 
 -(NSString *)    userName;
 +(CurrentUser *) sharedInstance;

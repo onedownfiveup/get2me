@@ -41,14 +41,7 @@
  }
 
 - (IBAction)signUserIn {
-    RKObjectManager *sharedManager = [RKObjectManager sharedManager];
-    RKObjectMapping *userMapping = [RKObjectMapping mappingForClass: [User class]];
-
-    [userMapping mapKeyPath:@"_id" toAttribute:@"userId"];
-    [userMapping mapKeyPath:@"token" toAttribute:@"token"];
-
-    [sharedManager.mappingProvider setObjectMapping:userMapping forKeyPath: @"user"];
-    
+    RKObjectManager *sharedManager = [RKObjectManager sharedManager];    
     NSString *userSessionPath = [NSString stringWithFormat: @"/api/v1/user_sessions.json"];
     
     [sharedManager loadObjectsAtResourcePath: userSessionPath

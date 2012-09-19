@@ -12,7 +12,9 @@
 
 @property (nonatomic, retain) NSString *userId;
 @property (nonatomic, retain) NSString *email;
-@property (nonatomic, retain) NSString *state;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, retain) NSString *token;
 
++(void) loadRestkitMappings;
 @end
