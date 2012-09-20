@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <RestKit/RestKit.h>
 
 @interface Route : NSObject
+
++(void) loadRestkitMappingsWithDirectionMapping: (RKObjectMapping *) directionMapping;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "UserSearchContainerViewController.h"
 #import "CurrentUser.h"
+#import "Direction.h"
 
 @interface UserSearchContainerViewController ()
 
@@ -84,6 +85,11 @@
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
 	[[NSUserDefaults standardUserDefaults] synchronize];
     
+    Direction *direction = [objects objectAtIndex: 0];
+    
+    User *user = direction.user;
+    
+    NSLog(@"User email is %@", user.email);
 }
 
 @end

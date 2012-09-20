@@ -7,6 +7,7 @@
 //
 
 #import "User.h"
+#import "Direction.h"
 #import <RestKit/RestKit.h>
 
 @implementation User
@@ -25,5 +26,7 @@
     
     [sharedManager.mappingProvider setObjectMapping:userMapping forKeyPath: @"user"];
     [sharedManager.mappingProvider setObjectMapping:userMapping forKeyPath: @"friends"];
+
+    [Direction loadRestkitMappingsWithUserMapping: userMapping];
 }
 @end

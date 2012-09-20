@@ -9,6 +9,7 @@
 #import "Get2meAppDelegate.h"
 #import "CurrentUser.h"
 #import "User.h"
+#import "Direction.h"
 #import "SignInViewController.h"
 #import "Get2meTabBarViewController.h"
 
@@ -35,8 +36,6 @@
     self.objectManager = [RKObjectManager managerWithBaseURLString:@"http://get2me.local"];
     [RKObjectManager setSharedManager: self.objectManager];
     [User loadRestkitMappings];
-    
-
 }
 
 -(void)setupUserLoginNotification
