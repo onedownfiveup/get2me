@@ -30,6 +30,10 @@
 		ADD1478616062C7400C4A1AB /* MapViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478416062C7400C4A1AB /* MapViewViewController.m */; };
 		ADD1478D16063D1900C4A1AB /* DirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */; };
 		ADD1478E16063D1900C4A1AB /* DirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */; };
+		ADD1479F160BBD2D00C4A1AB /* UserInviteContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1479E160BBD2D00C4A1AB /* UserInviteContainerViewController.m */; };
+		ADD147A0160BBD2D00C4A1AB /* UserInviteContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1479E160BBD2D00C4A1AB /* UserInviteContainerViewController.m */; };
+		ADD147A3160BBDF200C4A1AB /* UserInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD147A2160BBDF200C4A1AB /* UserInviteViewController.m */; };
+		ADD147A4160BBDF200C4A1AB /* UserInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD147A2160BBDF200C4A1AB /* UserInviteViewController.m */; };
 		CA632BF1160567B3007D71C3 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF0160567B3007D71C3 /* SignInViewController.m */; };
 		CA632BF2160567B3007D71C3 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF0160567B3007D71C3 /* SignInViewController.m */; };
 		CA632BF5160569FE007D71C3 /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF4160569FE007D71C3 /* CreateAccountViewController.m */; };
@@ -140,6 +144,10 @@
 		ADD1478416062C7400C4A1AB /* MapViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewViewController.m; sourceTree = "<group>"; };
 		ADD1478B16063D1900C4A1AB /* DirectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionsViewController.h; sourceTree = "<group>"; };
 		ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionsViewController.m; sourceTree = "<group>"; };
+		ADD1479D160BBD2D00C4A1AB /* UserInviteContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInviteContainerViewController.h; sourceTree = "<group>"; };
+		ADD1479E160BBD2D00C4A1AB /* UserInviteContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInviteContainerViewController.m; sourceTree = "<group>"; };
+		ADD147A1160BBDF200C4A1AB /* UserInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInviteViewController.h; sourceTree = "<group>"; };
+		ADD147A2160BBDF200C4A1AB /* UserInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInviteViewController.m; sourceTree = "<group>"; };
 		CA632BEF160567B3007D71C3 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		CA632BF0160567B3007D71C3 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		CA632BF3160569FE007D71C3 /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
@@ -362,6 +370,10 @@
 				CA632C2116078482007D71C3 /* FriendsViewController.m */,
 				CA79DDB61607EA8E00BAD33F /* UserSearchContainerViewController.h */,
 				CA79DDB71607EA8E00BAD33F /* UserSearchContainerViewController.m */,
+				ADD1479D160BBD2D00C4A1AB /* UserInviteContainerViewController.h */,
+				ADD1479E160BBD2D00C4A1AB /* UserInviteContainerViewController.m */,
+				ADD147A1160BBDF200C4A1AB /* UserInviteViewController.h */,
+				ADD147A2160BBDF200C4A1AB /* UserInviteViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -541,6 +553,8 @@
 				CA79DDB81607EA8E00BAD33F /* UserSearchContainerViewController.m in Sources */,
 				CA79DDCC160A8EC500BAD33F /* Direction.m in Sources */,
 				CA79DDD0160A8ED600BAD33F /* Route.m in Sources */,
+				ADD1479F160BBD2D00C4A1AB /* UserInviteContainerViewController.m in Sources */,
+				ADD147A3160BBDF200C4A1AB /* UserInviteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +575,8 @@
 				CA79DDB91607EA8E00BAD33F /* UserSearchContainerViewController.m in Sources */,
 				CA79DDCD160A8EC500BAD33F /* Direction.m in Sources */,
 				CA79DDD1160A8ED600BAD33F /* Route.m in Sources */,
+				ADD147A0160BBD2D00C4A1AB /* UserInviteContainerViewController.m in Sources */,
+				ADD147A4160BBDF200C4A1AB /* UserInviteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

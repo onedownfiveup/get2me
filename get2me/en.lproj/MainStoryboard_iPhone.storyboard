@@ -174,62 +174,6 @@
             </objects>
             <point key="canvasLocation" x="-549" y="-423"/>
         </scene>
-        <!--View Controller - Add friends-->
-        <scene sceneID="Hvu-mP-v1z">
-            <objects>
-                <viewController id="pRz-3t-nco" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" id="vXi-pX-IBZ">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="bYV-Gs-gqw">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Friends" id="XLM-sx-4qn"/>
-                            </items>
-                        </navigationBar>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="userCell" rowHeight="50" id="HRk-8h-Wxa">
-                                <rect key="frame" x="0.0" y="66" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="cmavromoustakos@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhs-rM-20m">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="232" id="8AU-DO-rUZ"/>
-                                                <constraint firstAttribute="height" constant="21" id="KKH-P4-4nw"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d98-04-Nlw">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="L1a-ea-UUz"/>
-                                                <constraint firstAttribute="height" constant="40" id="twO-i4-JTZ"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="jhs-rM-20m" firstAttribute="leading" secondItem="HRk-8h-Wxa" secondAttribute="leading" type="default" id="5Hq-90-dFY"/>
-                                    <constraint firstItem="d98-04-Nlw" firstAttribute="centerY" secondItem="HRk-8h-Wxa" secondAttribute="centerY" type="default" id="GXQ-NQ-0Nj"/>
-                                    <constraint firstItem="d98-04-Nlw" firstAttribute="leading" secondItem="HRk-8h-Wxa" secondAttribute="leading" constant="20" type="default" id="QD8-Dx-dgH"/>
-                                    <constraint firstItem="jhs-rM-20m" firstAttribute="top" secondItem="HRk-8h-Wxa" secondAttribute="top" constant="72" id="oHr-tY-9uV"/>
-                                </constraints>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Add friends" id="dIo-rL-hiZ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zF0-W5-zRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1286" y="916"/>
-        </scene>
         <!--Map View View Controller - Map-->
         <scene sceneID="649-vb-JfP">
             <objects>
@@ -343,7 +287,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-855" y="233"/>
+            <point key="canvasLocation" x="-865" y="233"/>
         </scene>
         <!--Friends View Controller-->
         <scene sceneID="211-FK-KwW">
@@ -411,6 +355,27 @@
             </objects>
             <point key="canvasLocation" x="-487" y="287"/>
         </scene>
+        <!--User Invite View Controller-->
+        <scene sceneID="Ie2-fd-lRG">
+            <objects>
+                <tableViewController id="rlT-jj-baL" customClass="UserInviteViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" id="vO5-F7-sm8">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="rlT-jj-baL" id="fJP-fX-wfk"/>
+                            <outlet property="delegate" destination="rlT-jj-baL" id="d0P-6Z-CeB"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="Ytu-B2-GlD" id="kOr-RB-tTn"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zjw-h8-Zzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-865" y="893"/>
+        </scene>
         <!--Get 2me Tab Bar View Controller-->
         <scene sceneID="lfN-pq-Ba1">
             <objects>
@@ -423,12 +388,78 @@
                     </tabBar>
                     <connections>
                         <segue destination="JtR-Tl-tTN" kind="relationship" relationship="viewControllers" id="Uqb-3S-ujB"/>
-                        <segue destination="pRz-3t-nco" kind="relationship" relationship="viewControllers" id="5cl-68-Ph1"/>
+                        <segue destination="IcO-Wh-jtH" kind="relationship" relationship="viewControllers" id="iwb-pG-4Tk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43O-zA-lHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1725" y="233"/>
+        </scene>
+        <!--User Invite Container View Controller - Add friends-->
+        <scene sceneID="h6J-gI-4o5">
+            <objects>
+                <viewController id="IcO-Wh-jtH" customClass="UserInviteContainerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ozg-tV-jGj">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzQ-qP-LKE">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem title="Find Friends" id="4oI-1a-5U2">
+                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="SKy-kA-CoX">
+                                            <color key="tintColor" red="0.56871826690000005" green="0.77494541240000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Invite" id="MXo-kS-lgs">
+                                            <color key="tintColor" red="0.56871826690000005" green="0.77494541240000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="rlT-jj-baL" kind="modal" id="sDc-ir-jPX"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNs-ui-HUR">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </containerView>
+                            <searchBar contentMode="redraw" text="" placeholder="Type name or email" translatesAutoresizingMaskIntoConstraints="NO" id="rcS-eK-W7P">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="M3z-ej-nI6"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rcS-eK-W7P" firstAttribute="top" secondItem="tzQ-qP-LKE" secondAttribute="bottom" type="default" id="2tP-fQ-Ye8"/>
+                            <constraint firstItem="tNs-ui-HUR" firstAttribute="bottom" secondItem="ozg-tV-jGj" secondAttribute="bottom" type="default" id="9Uz-Zm-lla"/>
+                            <constraint firstItem="tzQ-qP-LKE" firstAttribute="leading" secondItem="ozg-tV-jGj" secondAttribute="leading" type="default" id="CyI-bC-C4b"/>
+                            <constraint firstItem="tzQ-qP-LKE" firstAttribute="top" secondItem="ozg-tV-jGj" secondAttribute="top" type="default" id="WcZ-e6-PD2"/>
+                            <constraint firstItem="rcS-eK-W7P" firstAttribute="bottom" secondItem="tNs-ui-HUR" secondAttribute="top" type="default" id="Y21-xT-Xyu"/>
+                            <constraint firstItem="tNs-ui-HUR" firstAttribute="leading" secondItem="ozg-tV-jGj" secondAttribute="leading" type="default" id="YZn-Fi-N9n"/>
+                            <constraint firstItem="rcS-eK-W7P" firstAttribute="leading" secondItem="ozg-tV-jGj" secondAttribute="leading" constant="1" id="on6-YS-ETa"/>
+                            <constraint firstItem="tNs-ui-HUR" firstAttribute="trailing" secondItem="ozg-tV-jGj" secondAttribute="trailing" type="default" id="rdv-4I-pxl"/>
+                            <constraint firstItem="tzQ-qP-LKE" firstAttribute="trailing" secondItem="ozg-tV-jGj" secondAttribute="trailing" type="default" id="ufz-ew-IVl"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Add friends" id="qdt-xR-ntX"/>
+                    <connections>
+                        <outlet property="containerView" destination="tNs-ui-HUR" id="nvp-Nw-VRX"/>
+                        <outlet property="searchBar" destination="rcS-eK-W7P" id="S09-ln-PcI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2qE-vr-r30" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="uYw-na-mcG">
+                    <connections>
+                        <outlet property="delegate" destination="XMo-wP-ML3" id="Usj-r2-2ci"/>
+                        <outlet property="searchBar" destination="rcS-eK-W7P" id="dEd-9N-ons"/>
+                        <outlet property="searchContentsController" destination="XMo-wP-ML3" id="2mu-NO-vhb"/>
+                        <outlet property="searchResultsDataSource" destination="XMo-wP-ML3" id="7Ed-aM-PaS"/>
+                        <outlet property="searchResultsDelegate" destination="XMo-wP-ML3" id="Q33-Bk-euo"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-1286" y="893"/>
         </scene>
     </scenes>
     <resources>
@@ -447,9 +478,6 @@
         </class>
         <class className="FriendsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelAddingFriends:"/>
-            </relationships>
         </class>
         <class className="Get2meTabBarViewController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/Get2meTabBarViewController.h"/>
@@ -470,10 +498,19 @@
                 <relationship kind="outlet" name="usernameField" candidateClass="UITextField"/>
             </relationships>
         </class>
+        <class className="UserInviteContainerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserInviteContainerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="containerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="UserInviteViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserInviteViewController.h"/>
+        </class>
         <class className="UserSearchContainerViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UserSearchContainerViewController.h"/>
             <relationships>
-                <relationship kind="action" name="sendDirections:"/>
                 <relationship kind="outlet" name="containerView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
             </relationships>

@@ -86,10 +86,7 @@
 	[[NSUserDefaults standardUserDefaults] synchronize];
     
     Direction *direction = [objects objectAtIndex: 0];
-    
     User *user = direction.user;
-    
-    NSLog(@"User email is %@", user.email);
 }
 
 @end
