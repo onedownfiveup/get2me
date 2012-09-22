@@ -423,7 +423,7 @@
 		ADC33C8316013F6800BF4935 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = Railzbiz;
+				CLASSPREFIX = Get2me;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = Railzbiz;
 			};

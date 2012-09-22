@@ -7,6 +7,7 @@
 //
 
 #import "UserInviteViewController.h"
+#import "CurrentUser.h"
 
 @interface UserInviteViewController ()
 
@@ -14,24 +15,13 @@
 
 @implementation UserInviteViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if (!self.selectedUsers) {
+        self.selectedUsers = [[NSMutableArray alloc] init];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,82 +30,90 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    User *currentUser = [CurrentUser sharedInstance].user;
+    RKObjectManager *sharedManager = [RKObjectManager sharedManager];
+    
+    NSString *userSessionPath = [NSString stringWithFormat: @"/api/v1/users.json?auth_token=%@&search_term=%@",
+                                 currentUser.token,
+                                 searchBar.text];
+    
+    [sharedManager loadObjectsAtResourcePath: userSessionPath
+                                  usingBlock: ^(RKObjectLoader *loader) {
+                                      loader.method = RKRequestMethodGET;
+                                      loader.delegate = self;
+                                  }];
+}
+
 #pragma mark - Table view data source
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    User *user = [[self users] objectAtIndex: indexPath.row];
+    
+    if([self.selectedUsers containsObject: user]) {
+        return 111.0;
+    } else {
+        return 59.0;        
+    }
+    
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [self.users count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    NSString *CellIdentifier;
+    User *user = [[self users] objectAtIndex: indexPath.row];
+
+    if([self.selectedUsers containsObject: user]) {
+        [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+        CellIdentifier = @"inviteUserCell";
+    } else {
+        CellIdentifier = @"friendCell";
+    }
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UILabel *userNameLabel = (UILabel* )[cell viewWithTag: 1];
+    userNameLabel.text = [NSString stringWithFormat:@"%@ %@", user.firstName, user.lastName];
     
-    // Configure the cell...
+    UILabel *emailLabel = (UILabel* )[cell viewWithTag: 2];
+    emailLabel.text = [NSString stringWithFormat:@"%@", user.email];
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    User *friend = [[self users] objectAtIndex: indexPath.row];
+    
+    if (![self.selectedUsers containsObject: friend]) {
+        [self.selectedUsers addObject: friend];
+    }
+    [self.tableView reloadData];
 }
+
+#pragma mark - Restkit delegate
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
+}
+
+- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
+	[[NSUserDefaults standardUserDefaults] synchronize];
+    self.users = objects;
+    [self.tableView reloadData];
+}
+
 
 @end

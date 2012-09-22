@@ -25,6 +25,7 @@
     [userMapping mapKeyPath:@"last_name" toAttribute:@"lastName"];
     
     [sharedManager.mappingProvider setObjectMapping:userMapping forKeyPath: @"user"];
+    [sharedManager.mappingProvider setObjectMapping:userMapping forKeyPath: @"users"];
     [sharedManager.mappingProvider setObjectMapping:userMapping forKeyPath: @"friends"];
 
     [Direction loadRestkitMappingsWithUserMapping: userMapping];

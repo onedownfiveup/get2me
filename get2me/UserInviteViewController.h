@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RestKit/RestKit.h>
 
-@interface UserInviteViewController : UITableViewController
+@interface UserInviteViewController :  UITableViewController  <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UISearchDisplayDelegate, RKObjectLoaderDelegate>
+
+@property (nonatomic, retain) NSArray *users;
+@property  (nonatomic, retain) NSMutableArray *selectedUsers;
 
 @end

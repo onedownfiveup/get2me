@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserInviteViewController.h"
 
 @interface UserInviteContainerViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIView *containerView;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property (strong, nonatomic) UserInviteViewController *userInviteViewController;
 
 @end

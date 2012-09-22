@@ -230,7 +230,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem title="Friends" id="stA-bu-ttr">
-                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="Qdf-0a-O66">
+                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="Qdf-0a-O66">
                                             <color key="tintColor" red="0.56871826690000005" green="0.77494541240000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="dismissFriendSearch:" destination="15s-lg-fmX" id="6z0-qU-VCO"/>
@@ -360,9 +360,114 @@
             <objects>
                 <tableViewController id="rlT-jj-baL" customClass="UserInviteViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" id="vO5-F7-sm8">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="friendCell" rowHeight="59" id="7fh-cD-whd">
+                                <rect key="frame" x="0.0" y="22" width="320" height="59"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="user-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="gck-DF-ATJ">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="1iN-aH-r9D"/>
+                                                <constraint firstAttribute="width" constant="50" id="Cx5-Dj-ixC"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="cmavromoustakos@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXo-x6-01Y">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="GVq-J2-qjp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="Constantinos Mavromoustakos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIx-Gk-59h">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Wi9-Jl-RBa"/>
+                                                <constraint firstAttribute="width" constant="234" id="eyf-HU-s1x"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="FIx-Gk-59h" firstAttribute="top" secondItem="gck-DF-ATJ" secondAttribute="top" type="default" id="4IF-2t-Uni"/>
+                                    <constraint firstAttribute="bottom" secondItem="gXo-x6-01Y" secondAttribute="bottom" constant="8" id="Iv6-Le-Abe"/>
+                                    <constraint firstItem="gck-DF-ATJ" firstAttribute="centerY" secondItem="7fh-cD-whd" secondAttribute="centerY" type="default" id="PXi-Qc-6j7"/>
+                                    <constraint firstItem="FIx-Gk-59h" firstAttribute="leading" secondItem="gck-DF-ATJ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="TpT-Fj-5FG"/>
+                                    <constraint firstAttribute="trailing" secondItem="FIx-Gk-59h" secondAttribute="trailing" constant="20" type="default" id="ZdX-D6-7Bi"/>
+                                    <constraint firstAttribute="trailing" secondItem="gXo-x6-01Y" secondAttribute="trailing" constant="20" type="default" id="cRJ-Od-Gm7"/>
+                                    <constraint firstItem="gXo-x6-01Y" firstAttribute="leading" secondItem="gck-DF-ATJ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="tlf-KN-hdL"/>
+                                </constraints>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="inviteUserCell" rowHeight="111" id="501-X4-5Au">
+                                <rect key="frame" x="0.0" y="81" width="320" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="user-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="YqQ-BA-uvy">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="2l3-Yb-Nfb"/>
+                                                <constraint firstAttribute="height" constant="50" id="UFz-CH-Zr8"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="cmavromoustakos@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFD-9K-FY4">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="pf2-zi-GWH"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="Constantinos Mavromoustakos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLg-6a-1jP">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="kAH-Zs-tbj"/>
+                                                <constraint firstAttribute="width" constant="234" id="vNF-w8-eo0"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9F-BQ-thg">
+                                            <color key="backgroundColor" red="0.56871826690000005" green="0.77494541240000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="Fir-OR-7rt"/>
+                                                <constraint firstAttribute="width" constant="135" id="XrC-gR-1Yr"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <inset key="contentEdgeInsets" minX="8" minY="9" maxX="8" maxY="8"/>
+                                            <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                            <state key="normal" title="Invite">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="d9F-BQ-thg" firstAttribute="top" secondItem="UFD-9K-FY4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2Jb-Mm-KAR"/>
+                                    <constraint firstItem="d9F-BQ-thg" firstAttribute="centerX" secondItem="501-X4-5Au" secondAttribute="centerX" type="default" id="4pT-HQ-xCm"/>
+                                    <constraint firstItem="dLg-6a-1jP" firstAttribute="trailing" secondItem="UFD-9K-FY4" secondAttribute="trailing" type="default" id="HMN-MV-45z"/>
+                                    <constraint firstItem="YqQ-BA-uvy" firstAttribute="top" secondItem="501-X4-5Au" secondAttribute="top" constant="5" id="Iyv-Zy-5kj"/>
+                                    <constraint firstItem="UFD-9K-FY4" firstAttribute="leading" secondItem="YqQ-BA-uvy" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="OQR-zZ-a5h"/>
+                                    <constraint firstItem="UFD-9K-FY4" firstAttribute="top" secondItem="501-X4-5Au" secondAttribute="top" constant="30" id="UQQ-Ig-fTN"/>
+                                    <constraint firstItem="YqQ-BA-uvy" firstAttribute="leading" secondItem="501-X4-5Au" secondAttribute="leading" constant="14" id="qnK-ct-qeb"/>
+                                    <constraint firstItem="dLg-6a-1jP" firstAttribute="leading" secondItem="YqQ-BA-uvy" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="tg2-eO-piv"/>
+                                    <constraint firstItem="YqQ-BA-uvy" firstAttribute="top" secondItem="dLg-6a-1jP" secondAttribute="top" type="default" id="xs6-ff-AFW"/>
+                                </constraints>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="rlT-jj-baL" id="fJP-fX-wfk"/>
                             <outlet property="delegate" destination="rlT-jj-baL" id="d0P-6Z-CeB"/>
@@ -374,7 +479,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zjw-h8-Zzf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-865" y="893"/>
+            <point key="canvasLocation" x="-865" y="971"/>
         </scene>
         <!--Get 2me Tab Bar View Controller-->
         <scene sceneID="lfN-pq-Ba1">
@@ -406,23 +511,16 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzQ-qP-LKE">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <navigationItem title="Find Friends" id="4oI-1a-5U2">
-                                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="SKy-kA-CoX">
-                                            <color key="tintColor" red="0.56871826690000005" green="0.77494541240000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Invite" id="MXo-kS-lgs">
-                                            <color key="tintColor" red="0.56871826690000005" green="0.77494541240000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <segue destination="rlT-jj-baL" kind="modal" id="sDc-ir-jPX"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Find Friends" id="4oI-1a-5U2"/>
                                 </items>
                             </navigationBar>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNs-ui-HUR">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="rlT-jj-baL" kind="embed" id="Psr-XW-onN"/>
+                                </connections>
                             </containerView>
-                            <searchBar contentMode="redraw" text="" placeholder="Type name or email" translatesAutoresizingMaskIntoConstraints="NO" id="rcS-eK-W7P">
+                            <searchBar contentMode="redraw" text="" placeholder="Type full email" translatesAutoresizingMaskIntoConstraints="NO" id="rcS-eK-W7P">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="M3z-ej-nI6"/>
                                 </constraints>
@@ -444,7 +542,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Add friends" id="qdt-xR-ntX"/>
                     <connections>
-                        <outlet property="containerView" destination="tNs-ui-HUR" id="nvp-Nw-VRX"/>
                         <outlet property="searchBar" destination="rcS-eK-W7P" id="S09-ln-PcI"/>
                     </connections>
                 </viewController>

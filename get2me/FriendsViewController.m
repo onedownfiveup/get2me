@@ -21,13 +21,13 @@
     RKObjectManager *sharedManager = [RKObjectManager sharedManager];
     User *currentUser =  [CurrentUser sharedInstance].user;
     
-    NSString *userSessionPath = [NSString stringWithFormat: @"/api/v1/users/%@/friends.json?auth_token=%@", currentUser.userId, currentUser.token];
-
     if (!self.filteredFriends)
         self.filteredFriends = [[NSMutableArray alloc] init];
 
     if(!self.selectedFriends)
         self.selectedFriends = [[NSMutableArray alloc] init];
+ 
+    NSString *userSessionPath = [NSString stringWithFormat: @"/api/v1/users/%@/friends.json?auth_token=%@", currentUser.userId, currentUser.token];
     
     [sharedManager loadObjectsAtResourcePath: userSessionPath
                                   usingBlock: ^(RKObjectLoader *loader) {
@@ -97,10 +97,11 @@
     }
 }
 
-- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
-}
 
 #pragma mark - Restkit delegate
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
+}
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
 	[[NSUserDefaults standardUserDefaults] synchronize];
