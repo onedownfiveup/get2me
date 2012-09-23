@@ -48,10 +48,6 @@
 		CA79DDCD160A8EC500BAD33F /* Direction.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DDCB160A8EC500BAD33F /* Direction.m */; };
 		CA79DDD0160A8ED600BAD33F /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DDCF160A8ED600BAD33F /* Route.m */; };
 		CA79DDD1160A8ED600BAD33F /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DDCF160A8ED600BAD33F /* Route.m */; };
-		CACC21F616041709009BC042 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CACC21F516041709009BC042 /* FacebookSDKResources.bundle */; };
-		CACC21F716041709009BC042 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CACC21F516041709009BC042 /* FacebookSDKResources.bundle */; };
-		CACC21FC16041915009BC042 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC21FB16041915009BC042 /* FacebookSDK.framework */; };
-		CACC21FD16041915009BC042 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC21FB16041915009BC042 /* FacebookSDK.framework */; };
 		CACC220C160547F8009BC042 /* CurentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC220B160547F8009BC042 /* CurentUser.m */; };
 		CACC220D160547F8009BC042 /* CurentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC220B160547F8009BC042 /* CurentUser.m */; };
 		CACC22101605487A009BC042 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC220F1605487A009BC042 /* KeychainItemWrapper.m */; };
@@ -161,8 +157,6 @@
 		CA79DDCB160A8EC500BAD33F /* Direction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Direction.m; sourceTree = "<group>"; };
 		CA79DDCE160A8ED600BAD33F /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
 		CA79DDCF160A8ED600BAD33F /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
-		CACC21F516041709009BC042 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
-		CACC21FB16041915009BC042 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		CACC220A160547F8009BC042 /* CurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUser.h; sourceTree = "<group>"; };
 		CACC220B160547F8009BC042 /* CurentUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurentUser.m; sourceTree = "<group>"; };
 		CACC220E1605487A009BC042 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
@@ -199,7 +193,6 @@
 				ADC33C9116013F6800BF4935 /* UIKit.framework in Frameworks */,
 				ADC33C9316013F6800BF4935 /* Foundation.framework in Frameworks */,
 				ADC33C9516013F6800BF4935 /* CoreGraphics.framework in Frameworks */,
-				CACC21FC16041915009BC042 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +203,6 @@
 				ADC33CB816013F6900BF4935 /* SenTestingKit.framework in Frameworks */,
 				ADC33CB916013F6900BF4935 /* UIKit.framework in Frameworks */,
 				ADC33CBA16013F6900BF4935 /* Foundation.framework in Frameworks */,
-				CACC21FD16041915009BC042 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +241,6 @@
 				CACC225716054C0C009BC042 /* CoreData.framework */,
 				CACC225516054BCD009BC042 /* CFNetwork.framework */,
 				CACC224016054AFC009BC042 /* RestKit.xcodeproj */,
-				CACC21FB16041915009BC042 /* FacebookSDK.framework */,
-				CACC21F516041709009BC042 /* FacebookSDKResources.bundle */,
 				ADC33C9016013F6800BF4935 /* UIKit.framework */,
 				ADC33C9216013F6800BF4935 /* Foundation.framework */,
 				ADC33C9416013F6800BF4935 /* CoreGraphics.framework */,
@@ -501,7 +491,6 @@
 				ADC33CAA16013F6800BF4935 /* MainStoryboard_iPhone.storyboard in Resources */,
 				ADC33CAD16013F6800BF4935 /* MainStoryboard_iPad.storyboard in Resources */,
 				ADD147501602C36600C4A1AB /* connect-facebook-button.png in Resources */,
-				CACC21F616041709009BC042 /* FacebookSDKResources.bundle in Resources */,
 				CA79DDBF1608F36700BAD33F /* user-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,7 +500,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADC33CC216013F6900BF4935 /* InfoPlist.strings in Resources */,
-				CACC21F716041709009BC042 /* FacebookSDKResources.bundle in Resources */,
 				CA79DDC01608F36700BAD33F /* user-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
