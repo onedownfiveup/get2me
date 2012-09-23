@@ -52,15 +52,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5nN-oP-TBn" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="21U-JD-7nG"/>
-                            <constraint firstItem="5nN-oP-TBn" firstAttribute="top" secondItem="XcS-Ba-Umw" secondAttribute="top" constant="74" id="3Sd-jb-Dbg"/>
                             <constraint firstItem="pGk-36-6H7" firstAttribute="top" secondItem="5nN-oP-TBn" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5u1-11-9uJ"/>
+                            <constraint firstItem="omU-4q-YnX" firstAttribute="top" secondItem="XcS-Ba-Umw" secondAttribute="top" constant="137" id="UsE-Kc-ePw"/>
                             <constraint firstItem="awB-3y-pVF" firstAttribute="top" secondItem="XcS-Ba-Umw" secondAttribute="top" type="default" id="Wnc-Fk-U5y"/>
                             <constraint firstAttribute="trailing" secondItem="pGk-36-6H7" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Y6i-rU-S4X"/>
-                            <constraint firstItem="omU-4q-YnX" firstAttribute="top" secondItem="XcS-Ba-Umw" secondAttribute="top" constant="159" id="Zmu-J8-Ckj"/>
                             <constraint firstItem="omU-4q-YnX" firstAttribute="leading" secondItem="XcS-Ba-Umw" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ar5-f3-Ne5"/>
                             <constraint firstItem="5nN-oP-TBn" firstAttribute="leading" secondItem="XcS-Ba-Umw" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dsM-zq-N9U"/>
                             <constraint firstItem="awB-3y-pVF" firstAttribute="leading" secondItem="XcS-Ba-Umw" secondAttribute="leading" type="default" id="dzr-RF-sih"/>
                             <constraint firstItem="JNs-Eb-hO6" firstAttribute="centerX" secondItem="omU-4q-YnX" secondAttribute="centerX" type="default" id="ezc-56-RI7"/>
+                            <constraint firstItem="5nN-oP-TBn" firstAttribute="top" secondItem="XcS-Ba-Umw" secondAttribute="top" constant="52" id="gaC-jJ-xbQ"/>
                             <constraint firstItem="awB-3y-pVF" firstAttribute="trailing" secondItem="XcS-Ba-Umw" secondAttribute="trailing" type="default" id="kHw-uD-6gC"/>
                             <constraint firstAttribute="bottom" secondItem="JNs-Eb-hO6" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="mI9-OB-5VX"/>
                             <constraint firstAttribute="trailing" secondItem="omU-4q-YnX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="tPh-ib-FKC"/>
@@ -119,7 +119,7 @@
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iko-iT-Pgb">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b82-4L-sVe">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -158,7 +158,7 @@
                             <constraint firstItem="DJP-7B-nlg" firstAttribute="centerX" secondItem="Eqh-OX-XZR" secondAttribute="centerX" type="default" id="shu-dN-ubl"/>
                             <constraint firstAttribute="trailing" secondItem="8nD-Qv-aSd" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="t0M-ao-jh2"/>
                             <constraint firstItem="46e-MD-nbf" firstAttribute="top" secondItem="fUU-oL-Shb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="u8x-kd-yLf"/>
-                            <constraint firstItem="b82-4L-sVe" firstAttribute="top" secondItem="ma1-Aj-Nme" secondAttribute="top" constant="75" id="udO-LL-XZg"/>
+                            <constraint firstItem="b82-4L-sVe" firstAttribute="top" secondItem="ma1-Aj-Nme" secondAttribute="top" constant="53" id="wO1-CZ-xux"/>
                             <constraint firstItem="fUU-oL-Shb" firstAttribute="top" secondItem="iko-iT-Pgb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="xWa-lI-kuV"/>
                         </constraints>
                     </view>
