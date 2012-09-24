@@ -1223,9 +1223,6 @@
 		ADC33C8116013F6800BF4935 = {
 			isa = PBXGroup;
 			children = (
-				AD8C81A3160F79BB000B1EFE /* AudioToolbox.framework */,
-				AD8C81A1160F79AF000B1EFE /* MessageUI.framework */,
-				AD8C819F160F798F000B1EFE /* CoreTelephony.framework */,
 				ADC33C9616013F6800BF4935 /* get2me */,
 				ADC33CBD16013F6900BF4935 /* get2meTests */,
 				ADC33C8F16013F6800BF4935 /* Frameworks */,
@@ -1245,6 +1242,9 @@
 		ADC33C8F16013F6800BF4935 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD8C81A3160F79BB000B1EFE /* AudioToolbox.framework */,
+				AD8C81A1160F79AF000B1EFE /* MessageUI.framework */,
+				AD8C819F160F798F000B1EFE /* CoreTelephony.framework */,
 				AD8C81B0160F9251000B1EFE /* UrbanAirship */,
 				CACC225516054BCD009BC042 /* CFNetwork.framework */,
 				CACC225716054C0C009BC042 /* CoreData.framework */,
