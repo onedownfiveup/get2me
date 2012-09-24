@@ -12,6 +12,8 @@
 #import "Direction.h"
 #import "SignInViewController.h"
 #import "Get2meTabBarViewController.h"
+#import "UAirship.h"
+#import "UAPush.h"
 
 @implementation Get2meAppDelegate
 
@@ -28,7 +30,24 @@
     }
     
     [self setupUserLoginNotification];
+
+    //Init Airship launch options
+    NSMutableDictionary *takeOffOptions = [[NSMutableDictionary alloc] init];
+    [takeOffOptions setValue:launchOptions forKey: UAirshipTakeOffOptionsLaunchOptionsKey];
+    
+    // Create Airship singleton that's used to talk to Urban Airship servers.
+    // Please populate AirshipConfig.plist with your info from http://go.urbanairship.com
+    [UAirship takeOff:takeOffOptions];
+
+    [[UAPush shared] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     return YES;
+}
+
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    UALOG(@"APN device token: %@", deviceToken);
+    // Updates the device token and registers the token with UA
+    [[UAPush shared] registerDeviceToken:deviceToken];
 }
 
 -(void) loadRestkitDefaults

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Jg-uG-oyS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Jg-uG-oyS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
@@ -193,6 +193,7 @@
                                                 <segue destination="15s-lg-fmX" kind="modal" id="CC4-lI-r6W"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="f6C-6b-O8l"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -492,15 +493,46 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="JtR-Tl-tTN" kind="relationship" relationship="viewControllers" id="Uqb-3S-ujB"/>
-                        <segue destination="IcO-Wh-jtH" kind="relationship" relationship="viewControllers" id="iwb-pG-4Tk"/>
+                        <segue destination="JtR-Tl-tTN" kind="relationship" relationship="viewControllers" id="8zm-ki-mzP"/>
+                        <segue destination="Ere-Cv-qn0" kind="relationship" relationship="viewControllers" id="wtz-iy-bqB"/>
+                        <segue destination="IcO-Wh-jtH" kind="relationship" relationship="viewControllers" id="Hbd-zL-44h"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43O-zA-lHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1725" y="233"/>
+            <point key="canvasLocation" x="-1730" y="233"/>
         </scene>
-        <!--User Invite Container View Controller - Add friends-->
+        <!--Table View Controller - Direction invites-->
+        <scene sceneID="yaz-je-Lcl">
+            <objects>
+                <tableViewController id="Ere-Cv-qn0" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="c85-vW-lSN">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="0ec-1S-NEA">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ere-Cv-qn0" id="ikc-P8-5B1"/>
+                            <outlet property="delegate" destination="Ere-Cv-qn0" id="KEo-7c-yy9"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Direction invites" id="wIJ-Hj-2Fr"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5r3-ua-2yU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1730" y="939"/>
+        </scene>
+        <!--User Invite Container View Controller - Find friends-->
         <scene sceneID="h6J-gI-4o5">
             <objects>
                 <viewController id="IcO-Wh-jtH" customClass="UserInviteContainerViewController" sceneMemberID="viewController">
@@ -540,7 +572,7 @@
                             <constraint firstItem="tzQ-qP-LKE" firstAttribute="trailing" secondItem="ozg-tV-jGj" secondAttribute="trailing" type="default" id="ufz-ew-IVl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add friends" id="qdt-xR-ntX"/>
+                    <tabBarItem key="tabBarItem" title="Find friends" id="qdt-xR-ntX"/>
                     <connections>
                         <outlet property="searchBar" destination="rcS-eK-W7P" id="S09-ln-PcI"/>
                     </connections>
