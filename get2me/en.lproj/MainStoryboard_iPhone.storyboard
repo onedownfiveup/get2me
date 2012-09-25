@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Jg-uG-oyS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12B19" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Jg-uG-oyS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
@@ -187,13 +187,15 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem id="IMb-ng-h3p">
-                                        <barButtonItem key="leftBarButtonItem" title="Send location to friends" style="plain" id="Xvt-Qu-Wvo">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="K19-zs-LCS">
+                                            <color key="tintColor" red="0.56871826690000005" green="0.77494541240000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="Xvt-Qu-Wvo">
                                             <color key="tintColor" red="0.56871826690000005" green="0.77494541240000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <segue destination="15s-lg-fmX" kind="modal" id="CC4-lI-r6W"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="f6C-6b-O8l"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -340,6 +342,93 @@
                                     <constraint firstItem="mUR-OU-xwz" firstAttribute="leading" secondItem="FFy-Ei-CNW" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="N6y-sh-CQZ"/>
                                     <constraint firstItem="67d-hB-fBo" firstAttribute="leading" secondItem="FFy-Ei-CNW" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="UKF-V6-Rzo"/>
                                     <constraint firstItem="67d-hB-fBo" firstAttribute="top" secondItem="FFy-Ei-CNW" secondAttribute="top" type="default" id="iPL-Vg-7CJ"/>
+                                </constraints>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="84" id="vpl-k7-z22">
+                                <rect key="frame" x="0.0" y="81" width="320" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="user-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="iGB-6n-ugB">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="EDp-z0-ivM"/>
+                                                <constraint firstAttribute="height" constant="50" id="P0s-iv-asu"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" text="cmavromoustakos@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFU-Z3-7xi">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="S1j-38-WJl"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="Constantinos Mavromoustakos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUo-Gw-4gm">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="fuq-hC-ZFp"/>
+                                                <constraint firstAttribute="width" constant="234" id="qKs-Sz-Arh"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="State:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjw-42-rke">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="9Zn-Gv-epY"/>
+                                                <constraint firstAttribute="width" constant="45" id="LdB-Xt-vG3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="pending" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qu-F4-4NI">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="61" id="aF8-Du-Q4p"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="E.T.A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zP6-c0-wft">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="43" id="Cyf-0d-NQI"/>
+                                                <constraint firstAttribute="height" constant="21" id="icF-7Y-jhf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="20 minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMo-Wz-Dk4">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="84" id="CeB-SJ-EDP"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="mMo-Wz-Dk4" firstAttribute="top" secondItem="zP6-c0-wft" secondAttribute="top" type="default" id="2cK-Bw-TWC"/>
+                                    <constraint firstItem="iGB-6n-ugB" firstAttribute="top" secondItem="vpl-k7-z22" secondAttribute="top" constant="8" id="2vQ-mK-6UF"/>
+                                    <constraint firstItem="MFU-Z3-7xi" firstAttribute="trailing" secondItem="QUo-Gw-4gm" secondAttribute="trailing" type="default" id="4HN-C5-8gE"/>
+                                    <constraint firstItem="Mjw-42-rke" firstAttribute="top" secondItem="vpl-k7-z22" secondAttribute="top" constant="42" id="8Uz-91-xoD"/>
+                                    <constraint firstItem="0Qu-F4-4NI" firstAttribute="leading" secondItem="vpl-k7-z22" secondAttribute="leading" constant="113" id="9qE-pZ-PYn"/>
+                                    <constraint firstItem="iGB-6n-ugB" firstAttribute="top" secondItem="QUo-Gw-4gm" secondAttribute="top" type="default" id="CuO-pa-P5O"/>
+                                    <constraint firstItem="zP6-c0-wft" firstAttribute="top" secondItem="vpl-k7-z22" secondAttribute="top" constant="59" id="DiF-qD-cF1"/>
+                                    <constraint firstItem="MFU-Z3-7xi" firstAttribute="leading" secondItem="iGB-6n-ugB" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Kxi-CV-9XX"/>
+                                    <constraint firstItem="QUo-Gw-4gm" firstAttribute="leading" secondItem="iGB-6n-ugB" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="LwR-Ac-0og"/>
+                                    <constraint firstItem="MFU-Z3-7xi" firstAttribute="top" secondItem="vpl-k7-z22" secondAttribute="top" constant="25" id="PoJ-14-6g3"/>
+                                    <constraint firstItem="0Qu-F4-4NI" firstAttribute="baseline" secondItem="Mjw-42-rke" secondAttribute="baseline" type="default" id="TZt-lP-6ca"/>
+                                    <constraint firstItem="Mjw-42-rke" firstAttribute="top" secondItem="0Qu-F4-4NI" secondAttribute="top" type="default" id="Urj-Hq-D0n"/>
+                                    <constraint firstItem="Mjw-42-rke" firstAttribute="leading" secondItem="iGB-6n-ugB" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Vz8-fQ-jqC"/>
+                                    <constraint firstItem="zP6-c0-wft" firstAttribute="leading" secondItem="Mjw-42-rke" secondAttribute="leading" type="default" id="XU6-iS-bhR"/>
+                                    <constraint firstItem="iGB-6n-ugB" firstAttribute="leading" secondItem="vpl-k7-z22" secondAttribute="leading" constant="14" id="dEH-R8-oHZ"/>
+                                    <constraint firstItem="mMo-Wz-Dk4" firstAttribute="baseline" secondItem="zP6-c0-wft" secondAttribute="baseline" type="default" id="l5c-rU-PSs"/>
+                                    <constraint firstItem="mMo-Wz-Dk4" firstAttribute="leading" secondItem="0Qu-F4-4NI" secondAttribute="leading" type="default" id="zCh-mL-C2s"/>
                                 </constraints>
                             </tableViewCell>
                         </prototypes>
@@ -607,6 +696,9 @@
         </class>
         <class className="FriendsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelAddingFriends:"/>
+            </relationships>
         </class>
         <class className="Get2meTabBarViewController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/Get2meTabBarViewController.h"/>

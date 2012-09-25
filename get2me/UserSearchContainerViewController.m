@@ -58,7 +58,7 @@
                                       [params setValue: currentUser.token
                                               forParam: @"auth_token"];
                                       [params setValue: [[selectedFriendIds valueForKey:@"description"] componentsJoinedByString:@","]
-                                              forParam: @"directions[friend_ids]"];
+                                              forParam: @"direction[friend_ids]"];
                                       loader.method = RKRequestMethodPOST;
                                       loader.delegate = self;
                                   }];

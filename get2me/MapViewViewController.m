@@ -7,6 +7,7 @@
 //
 
 #import "MapViewViewController.h"
+#import "CurrentUser.h"
 
 typedef void (^PerformAfterAcquiringLocationSuccess)(CLLocationCoordinate2D);
 typedef void (^PerformAfterAcquiringLocationError)(NSError *);
@@ -26,8 +27,34 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
     [super viewDidLoad];
     self.mapView.showsUserLocation = YES;
     [self.mapView setUserTrackingMode: MKUserTrackingModeFollow animated: YES];
+    
+    [self loadDirections];
+    
 	// Do any additional setup after loading the view.
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self loadDirections];
+}
+
+-(void)loadDirections
+{
+    // send push notification to users along with storing it on server.
+    User *currentUser =  [CurrentUser sharedInstance].user;
+    RKObjectManager *sharedManager = [RKObjectManager sharedManager];
+    NSString *directionsPath = [NSString stringWithFormat: @"/api/v1/users/%@/directions.json?auth_token=%@",
+                                currentUser.userId,
+                                currentUser.token];
+        
+    [sharedManager loadObjectsAtResourcePath: directionsPath
+                                  usingBlock: ^(RKObjectLoader *loader) {
+                                      loader.method = RKRequestMethodGET;
+                                      loader.delegate = self;
+                                  }];    
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -76,4 +103,16 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
         callback(error);
 }
 
+- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
+	[[NSUserDefaults standardUserDefaults] synchronize];
+    
+    if ([objects count] > 0) {
+        // Draw map annotations that we get from routes
+        self.navigationItem.rightBarButtonItem = nil;
+    }
+}
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
+    NSLog(@"Value of error is %@", objectLoader.response.bodyAsString);
+}
 @end

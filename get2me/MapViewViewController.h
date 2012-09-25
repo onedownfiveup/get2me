@@ -10,8 +10,9 @@
 #import <MapKit/MapKit.h>
 #import "DirectionsViewController.h"
 #import <CoreLocation/CLLocationManagerDelegate.h>
+#import <RestKit/RestKit.h>
 
-@interface MapViewViewController : UIViewController  <MKMapViewDelegate, DirectionsViewControllerDelegate>
+@interface MapViewViewController : UIViewController  <MKMapViewDelegate, CLLocationManagerDelegate, RKObjectLoaderDelegate>
 
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
