@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD58F960161371D30092446B /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58F95A161371D30092446B /* add.png */; };
+		AD58F961161371D30092446B /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58F95A161371D30092446B /* add.png */; };
+		AD58F962161371D30092446B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58F95B161371D30092446B /* Icon.png */; };
+		AD58F963161371D30092446B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58F95B161371D30092446B /* Icon.png */; };
+		AD58F964161371D30092446B /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58F95C161371D30092446B /* list.png */; };
+		AD58F965161371D30092446B /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58F95C161371D30092446B /* list.png */; };
+		AD58F966161371D30092446B /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58F95D161371D30092446B /* map_pin.png */; };
+		AD58F967161371D30092446B /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58F95D161371D30092446B /* map_pin.png */; };
+		AD58F968161371D30092446B /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58F95E161371D30092446B /* remove.png */; };
+		AD58F969161371D30092446B /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58F95E161371D30092446B /* remove.png */; };
+		AD58F96A161371D30092446B /* reticle.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58F95F161371D30092446B /* reticle.png */; };
+		AD58F96B161371D30092446B /* reticle.png in Resources */ = {isa = PBXBuildFile; fileRef = AD58F95F161371D30092446B /* reticle.png */; };
+		AD58F970161374ED0092446B /* json2.js in Sources */ = {isa = PBXBuildFile; fileRef = AD58F96F161374ED0092446B /* json2.js */; };
+		AD58F971161374ED0092446B /* json2.js in Sources */ = {isa = PBXBuildFile; fileRef = AD58F96F161374ED0092446B /* json2.js */; };
+		AD58F973161375130092446B /* api.html in Resources */ = {isa = PBXBuildFile; fileRef = AD58F972161375130092446B /* api.html */; };
+		AD58F974161375130092446B /* api.html in Resources */ = {isa = PBXBuildFile; fileRef = AD58F972161375130092446B /* api.html */; };
 		AD8C819C160F795E000B1EFE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8C819B160F795E000B1EFE /* libz.dylib */; };
 		AD8C819E160F7967000B1EFE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8C819D160F7967000B1EFE /* libsqlite3.dylib */; };
 		AD8C81A0160F798F000B1EFE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8C819F160F798F000B1EFE /* CoreTelephony.framework */; };
@@ -224,6 +240,40 @@
 		AD8C838A160F9251000B1EFE /* UASubscriptionUserProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8C82B9160F9251000B1EFE /* UASubscriptionUserProductsViewController.xib */; };
 		AD8C838B160F9251000B1EFE /* UASubscriptionUserProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD8C82B9160F9251000B1EFE /* UASubscriptionUserProductsViewController.xib */; };
 		AD8C838C160F92B4000B1EFE /* libUAirship-1.3.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8C8210160F9251000B1EFE /* libUAirship-1.3.2.a */; };
+		AD8C83D716135ADE000B1EFE /* MapDirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83B216135ADE000B1EFE /* MapDirectionsViewController.m */; };
+		AD8C83D816135ADE000B1EFE /* MapDirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83B216135ADE000B1EFE /* MapDirectionsViewController.m */; };
+		AD8C83D916135ADE000B1EFE /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83B416135ADE000B1EFE /* NSObject+SBJSON.m */; };
+		AD8C83DA16135ADE000B1EFE /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83B416135ADE000B1EFE /* NSObject+SBJSON.m */; };
+		AD8C83DB16135ADE000B1EFE /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83B616135ADE000B1EFE /* NSString+SBJSON.m */; };
+		AD8C83DC16135ADE000B1EFE /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83B616135ADE000B1EFE /* NSString+SBJSON.m */; };
+		AD8C83DF16135ADE000B1EFE /* RouteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83BA16135ADE000B1EFE /* RouteListViewController.m */; };
+		AD8C83E016135ADE000B1EFE /* RouteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83BA16135ADE000B1EFE /* RouteListViewController.m */; };
+		AD8C83E116135ADE000B1EFE /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83BC16135ADE000B1EFE /* SBJSON.m */; };
+		AD8C83E216135ADE000B1EFE /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83BC16135ADE000B1EFE /* SBJSON.m */; };
+		AD8C83E316135ADE000B1EFE /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83BE16135ADE000B1EFE /* SBJsonBase.m */; };
+		AD8C83E416135ADE000B1EFE /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83BE16135ADE000B1EFE /* SBJsonBase.m */; };
+		AD8C83E516135ADE000B1EFE /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83C016135ADE000B1EFE /* SBJsonParser.m */; };
+		AD8C83E616135ADE000B1EFE /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83C016135ADE000B1EFE /* SBJsonParser.m */; };
+		AD8C83E716135ADE000B1EFE /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83C216135ADE000B1EFE /* SBJsonWriter.m */; };
+		AD8C83E816135ADE000B1EFE /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83C216135ADE000B1EFE /* SBJsonWriter.m */; };
+		AD8C83E916135ADE000B1EFE /* UICGClientGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83C416135ADE000B1EFE /* UICGClientGeocoder.m */; };
+		AD8C83EA16135ADE000B1EFE /* UICGClientGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83C416135ADE000B1EFE /* UICGClientGeocoder.m */; };
+		AD8C83EB16135ADE000B1EFE /* UICGDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83C616135ADE000B1EFE /* UICGDirections.m */; };
+		AD8C83EC16135ADE000B1EFE /* UICGDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83C616135ADE000B1EFE /* UICGDirections.m */; };
+		AD8C83ED16135ADE000B1EFE /* UICGDirectionsOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83C816135ADE000B1EFE /* UICGDirectionsOptions.m */; };
+		AD8C83EE16135ADE000B1EFE /* UICGDirectionsOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83C816135ADE000B1EFE /* UICGDirectionsOptions.m */; };
+		AD8C83EF16135ADE000B1EFE /* UICGoogleMapsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83CA16135ADE000B1EFE /* UICGoogleMapsAPI.m */; };
+		AD8C83F016135ADE000B1EFE /* UICGoogleMapsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83CA16135ADE000B1EFE /* UICGoogleMapsAPI.m */; };
+		AD8C83F116135ADE000B1EFE /* UICGPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83CC16135ADE000B1EFE /* UICGPolyline.m */; };
+		AD8C83F216135ADE000B1EFE /* UICGPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83CC16135ADE000B1EFE /* UICGPolyline.m */; };
+		AD8C83F316135ADE000B1EFE /* UICGRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83CE16135ADE000B1EFE /* UICGRoute.m */; };
+		AD8C83F416135ADE000B1EFE /* UICGRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83CE16135ADE000B1EFE /* UICGRoute.m */; };
+		AD8C83F516135ADE000B1EFE /* UICGStep.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83D016135ADE000B1EFE /* UICGStep.m */; };
+		AD8C83F616135ADE000B1EFE /* UICGStep.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83D016135ADE000B1EFE /* UICGStep.m */; };
+		AD8C83F716135ADE000B1EFE /* UICRouteAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83D216135ADE000B1EFE /* UICRouteAnnotation.m */; };
+		AD8C83F816135ADE000B1EFE /* UICRouteAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83D216135ADE000B1EFE /* UICRouteAnnotation.m */; };
+		AD8C83F916135ADE000B1EFE /* UICRouteOverlayMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83D416135ADE000B1EFE /* UICRouteOverlayMapView.m */; };
+		AD8C83FA16135ADE000B1EFE /* UICRouteOverlayMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8C83D416135ADE000B1EFE /* UICRouteOverlayMapView.m */; };
 		ADC33C9116013F6800BF4935 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC33C9016013F6800BF4935 /* UIKit.framework */; };
 		ADC33C9316013F6800BF4935 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC33C9216013F6800BF4935 /* Foundation.framework */; };
 		ADC33C9516013F6800BF4935 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC33C9416013F6800BF4935 /* CoreGraphics.framework */; };
@@ -243,10 +293,8 @@
 		ADD147501602C36600C4A1AB /* connect-facebook-button.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */; };
 		ADD1477C1606234800C4A1AB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD1477B1606234800C4A1AB /* MapKit.framework */; };
 		ADD147821606285C00C4A1AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD147811606285C00C4A1AB /* CoreLocation.framework */; };
-		ADD1478516062C7400C4A1AB /* MapViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478416062C7400C4A1AB /* MapViewViewController.m */; };
-		ADD1478616062C7400C4A1AB /* MapViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478416062C7400C4A1AB /* MapViewViewController.m */; };
-		ADD1478D16063D1900C4A1AB /* DirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */; };
-		ADD1478E16063D1900C4A1AB /* DirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */; };
+		ADD1478516062C7400C4A1AB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478416062C7400C4A1AB /* MapViewController.m */; };
+		ADD1478616062C7400C4A1AB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478416062C7400C4A1AB /* MapViewController.m */; };
 		ADD1479F160BBD2D00C4A1AB /* UserInviteContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1479E160BBD2D00C4A1AB /* UserInviteContainerViewController.m */; };
 		ADD147A0160BBD2D00C4A1AB /* UserInviteContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1479E160BBD2D00C4A1AB /* UserInviteContainerViewController.m */; };
 		ADD147A3160BBDF200C4A1AB /* UserInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD147A2160BBDF200C4A1AB /* UserInviteViewController.m */; };
@@ -343,6 +391,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AD58F95A161371D30092446B /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = "../../MapKit-Route-Directions/add.png"; sourceTree = "<group>"; };
+		AD58F95B161371D30092446B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = "../../MapKit-Route-Directions/Icon.png"; sourceTree = "<group>"; };
+		AD58F95C161371D30092446B /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = "../../MapKit-Route-Directions/list.png"; sourceTree = "<group>"; };
+		AD58F95D161371D30092446B /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map_pin.png; path = "../../MapKit-Route-Directions/map_pin.png"; sourceTree = "<group>"; };
+		AD58F95E161371D30092446B /* remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = remove.png; path = "../../MapKit-Route-Directions/remove.png"; sourceTree = "<group>"; };
+		AD58F95F161371D30092446B /* reticle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reticle.png; path = "../../MapKit-Route-Directions/reticle.png"; sourceTree = "<group>"; };
+		AD58F96F161374ED0092446B /* json2.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = json2.js; sourceTree = "<group>"; };
+		AD58F972161375130092446B /* api.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = api.html; sourceTree = "<group>"; };
 		AD8C8199160F7928000B1EFE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AD8C819B160F795E000B1EFE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AD8C819D160F7967000B1EFE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -577,6 +633,41 @@
 		AD8C82B7160F9251000B1EFE /* UASubscriptionRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UASubscriptionRootViewController.xib; sourceTree = "<group>"; };
 		AD8C82B8160F9251000B1EFE /* UASubscriptionSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UASubscriptionSettingsViewController.xib; sourceTree = "<group>"; };
 		AD8C82B9160F9251000B1EFE /* UASubscriptionUserProductsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UASubscriptionUserProductsViewController.xib; sourceTree = "<group>"; };
+		AD8C83AE16135ADE000B1EFE /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		AD8C83B116135ADE000B1EFE /* MapDirectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapDirectionsViewController.h; path = MapDirections/MapDirectionsViewController.h; sourceTree = "<group>"; };
+		AD8C83B216135ADE000B1EFE /* MapDirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapDirectionsViewController.m; path = MapDirections/MapDirectionsViewController.m; sourceTree = "<group>"; };
+		AD8C83B316135ADE000B1EFE /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		AD8C83B416135ADE000B1EFE /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		AD8C83B516135ADE000B1EFE /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		AD8C83B616135ADE000B1EFE /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		AD8C83B916135ADE000B1EFE /* RouteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RouteListViewController.h; path = MapDirections/RouteListViewController.h; sourceTree = "<group>"; };
+		AD8C83BA16135ADE000B1EFE /* RouteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RouteListViewController.m; path = MapDirections/RouteListViewController.m; sourceTree = "<group>"; };
+		AD8C83BB16135ADE000B1EFE /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		AD8C83BC16135ADE000B1EFE /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		AD8C83BD16135ADE000B1EFE /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		AD8C83BE16135ADE000B1EFE /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		AD8C83BF16135ADE000B1EFE /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		AD8C83C016135ADE000B1EFE /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		AD8C83C116135ADE000B1EFE /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		AD8C83C216135ADE000B1EFE /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		AD8C83C316135ADE000B1EFE /* UICGClientGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICGClientGeocoder.h; sourceTree = "<group>"; };
+		AD8C83C416135ADE000B1EFE /* UICGClientGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICGClientGeocoder.m; sourceTree = "<group>"; };
+		AD8C83C516135ADE000B1EFE /* UICGDirections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICGDirections.h; sourceTree = "<group>"; };
+		AD8C83C616135ADE000B1EFE /* UICGDirections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICGDirections.m; sourceTree = "<group>"; };
+		AD8C83C716135ADE000B1EFE /* UICGDirectionsOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICGDirectionsOptions.h; sourceTree = "<group>"; };
+		AD8C83C816135ADE000B1EFE /* UICGDirectionsOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICGDirectionsOptions.m; sourceTree = "<group>"; };
+		AD8C83C916135ADE000B1EFE /* UICGoogleMapsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICGoogleMapsAPI.h; sourceTree = "<group>"; };
+		AD8C83CA16135ADE000B1EFE /* UICGoogleMapsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICGoogleMapsAPI.m; sourceTree = "<group>"; };
+		AD8C83CB16135ADE000B1EFE /* UICGPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICGPolyline.h; sourceTree = "<group>"; };
+		AD8C83CC16135ADE000B1EFE /* UICGPolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICGPolyline.m; sourceTree = "<group>"; };
+		AD8C83CD16135ADE000B1EFE /* UICGRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICGRoute.h; sourceTree = "<group>"; };
+		AD8C83CE16135ADE000B1EFE /* UICGRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICGRoute.m; sourceTree = "<group>"; };
+		AD8C83CF16135ADE000B1EFE /* UICGStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICGStep.h; sourceTree = "<group>"; };
+		AD8C83D016135ADE000B1EFE /* UICGStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICGStep.m; sourceTree = "<group>"; };
+		AD8C83D116135ADE000B1EFE /* UICRouteAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICRouteAnnotation.h; sourceTree = "<group>"; };
+		AD8C83D216135ADE000B1EFE /* UICRouteAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICRouteAnnotation.m; sourceTree = "<group>"; };
+		AD8C83D316135ADE000B1EFE /* UICRouteOverlayMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICRouteOverlayMapView.h; sourceTree = "<group>"; };
+		AD8C83D416135ADE000B1EFE /* UICRouteOverlayMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICRouteOverlayMapView.m; sourceTree = "<group>"; };
 		ADC33C8C16013F6800BF4935 /* get2me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = get2me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADC33C9016013F6800BF4935 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		ADC33C9216013F6800BF4935 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -601,10 +692,8 @@
 		ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "connect-facebook-button.png"; path = "../Resources/Images/connect-facebook-button.png"; sourceTree = "<group>"; };
 		ADD1477B1606234800C4A1AB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		ADD147811606285C00C4A1AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		ADD1478316062C7400C4A1AB /* MapViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewViewController.h; sourceTree = "<group>"; };
-		ADD1478416062C7400C4A1AB /* MapViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewViewController.m; sourceTree = "<group>"; };
-		ADD1478B16063D1900C4A1AB /* DirectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionsViewController.h; sourceTree = "<group>"; };
-		ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionsViewController.m; sourceTree = "<group>"; };
+		ADD1478316062C7400C4A1AB /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		ADD1478416062C7400C4A1AB /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		ADD1479D160BBD2D00C4A1AB /* UserInviteContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInviteContainerViewController.h; sourceTree = "<group>"; };
 		ADD1479E160BBD2D00C4A1AB /* UserInviteContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInviteContainerViewController.m; sourceTree = "<group>"; };
 		ADD147A1160BBDF200C4A1AB /* UserInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInviteViewController.h; sourceTree = "<group>"; };
@@ -1224,6 +1313,44 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		AD8C83AD16135ADE000B1EFE /* MapDirections */ = {
+			isa = PBXGroup;
+			children = (
+				AD8C83AE16135ADE000B1EFE /* JSON.h */,
+				AD8C83B316135ADE000B1EFE /* NSObject+SBJSON.h */,
+				AD8C83B416135ADE000B1EFE /* NSObject+SBJSON.m */,
+				AD8C83B516135ADE000B1EFE /* NSString+SBJSON.h */,
+				AD8C83B616135ADE000B1EFE /* NSString+SBJSON.m */,
+				AD8C83BB16135ADE000B1EFE /* SBJSON.h */,
+				AD8C83BC16135ADE000B1EFE /* SBJSON.m */,
+				AD8C83BD16135ADE000B1EFE /* SBJsonBase.h */,
+				AD8C83BE16135ADE000B1EFE /* SBJsonBase.m */,
+				AD8C83BF16135ADE000B1EFE /* SBJsonParser.h */,
+				AD8C83C016135ADE000B1EFE /* SBJsonParser.m */,
+				AD8C83C116135ADE000B1EFE /* SBJsonWriter.h */,
+				AD8C83C216135ADE000B1EFE /* SBJsonWriter.m */,
+				AD8C83C316135ADE000B1EFE /* UICGClientGeocoder.h */,
+				AD8C83C416135ADE000B1EFE /* UICGClientGeocoder.m */,
+				AD8C83C516135ADE000B1EFE /* UICGDirections.h */,
+				AD8C83C616135ADE000B1EFE /* UICGDirections.m */,
+				AD8C83C716135ADE000B1EFE /* UICGDirectionsOptions.h */,
+				AD8C83C816135ADE000B1EFE /* UICGDirectionsOptions.m */,
+				AD8C83C916135ADE000B1EFE /* UICGoogleMapsAPI.h */,
+				AD8C83CA16135ADE000B1EFE /* UICGoogleMapsAPI.m */,
+				AD8C83CB16135ADE000B1EFE /* UICGPolyline.h */,
+				AD8C83CC16135ADE000B1EFE /* UICGPolyline.m */,
+				AD8C83CD16135ADE000B1EFE /* UICGRoute.h */,
+				AD8C83CE16135ADE000B1EFE /* UICGRoute.m */,
+				AD8C83CF16135ADE000B1EFE /* UICGStep.h */,
+				AD8C83D016135ADE000B1EFE /* UICGStep.m */,
+				AD8C83D116135ADE000B1EFE /* UICRouteAnnotation.h */,
+				AD8C83D216135ADE000B1EFE /* UICRouteAnnotation.m */,
+				AD8C83D316135ADE000B1EFE /* UICRouteOverlayMapView.h */,
+				AD8C83D416135ADE000B1EFE /* UICRouteOverlayMapView.m */,
+			);
+			path = MapDirections;
+			sourceTree = "<group>";
+		};
 		ADC33C8116013F6800BF4935 = {
 			isa = PBXGroup;
 			children = (
@@ -1276,7 +1403,7 @@
 			children = (
 				CACC226D16055C4C009BC042 /* ViewControllers */,
 				CACC2268160555C1009BC042 /* Models */,
-				CACC226716055567009BC042 /* Lib */,
+				CACC226716055567009BC042 /* Library */,
 				ADC33C9F16013F6800BF4935 /* Get2meAppDelegate.h */,
 				ADC33CA016013F6800BF4935 /* Get2meAppDelegate.m */,
 				ADC33CA816013F6800BF4935 /* MainStoryboard_iPhone.storyboard */,
@@ -1289,12 +1416,14 @@
 		ADC33C9716013F6800BF4935 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CA632C02160640B3007D71C3 /* Images */,
+				AD58F972161375130092446B /* api.html */,
+				AD58F96F161374ED0092446B /* json2.js */,
+				AD8C81A5160F8655000B1EFE /* AirshipConfig.plist */,
 				ADC33C9816013F6800BF4935 /* get2me-Info.plist */,
+				ADC33C9E16013F6800BF4935 /* get2me-Prefix.pch */,
+				CA632C02160640B3007D71C3 /* Images */,
 				ADC33C9916013F6800BF4935 /* InfoPlist.strings */,
 				ADC33C9C16013F6800BF4935 /* main.m */,
-				ADC33C9E16013F6800BF4935 /* get2me-Prefix.pch */,
-				AD8C81A5160F8655000B1EFE /* AirshipConfig.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1321,6 +1450,12 @@
 		CA632C02160640B3007D71C3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AD58F95A161371D30092446B /* add.png */,
+				AD58F95B161371D30092446B /* Icon.png */,
+				AD58F95C161371D30092446B /* list.png */,
+				AD58F95D161371D30092446B /* map_pin.png */,
+				AD58F95E161371D30092446B /* remove.png */,
+				AD58F95F161371D30092446B /* reticle.png */,
 				CA79DDBE1608F36700BAD33F /* user-icon.png */,
 				ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */,
 				ADC33CA216013F6800BF4935 /* Default.png */,
@@ -1342,13 +1477,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CACC226716055567009BC042 /* Lib */ = {
+		CACC226716055567009BC042 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				AD8C83AD16135ADE000B1EFE /* MapDirections */,
 				CACC220E1605487A009BC042 /* KeychainItemWrapper.h */,
 				CACC220F1605487A009BC042 /* KeychainItemWrapper.m */,
 			);
-			name = Lib;
+			name = Library;
 			sourceTree = "<group>";
 		};
 		CACC2268160555C1009BC042 /* Models */ = {
@@ -1371,24 +1507,26 @@
 		CACC226D16055C4C009BC042 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				ADD1478B16063D1900C4A1AB /* DirectionsViewController.h */,
-				ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */,
-				CACC227216055FC0009BC042 /* Get2meTabBarViewController.h */,
-				CACC227316055FC0009BC042 /* Get2meTabBarViewController.m */,
-				CA632BEF160567B3007D71C3 /* SignInViewController.h */,
-				CA632BF0160567B3007D71C3 /* SignInViewController.m */,
 				CA632BF3160569FE007D71C3 /* CreateAccountViewController.h */,
 				CA632BF4160569FE007D71C3 /* CreateAccountViewController.m */,
-				ADD1478316062C7400C4A1AB /* MapViewViewController.h */,
-				ADD1478416062C7400C4A1AB /* MapViewViewController.m */,
 				CA632C2016078482007D71C3 /* FriendsViewController.h */,
 				CA632C2116078482007D71C3 /* FriendsViewController.m */,
-				CA79DDB61607EA8E00BAD33F /* UserSearchContainerViewController.h */,
-				CA79DDB71607EA8E00BAD33F /* UserSearchContainerViewController.m */,
+				CACC227216055FC0009BC042 /* Get2meTabBarViewController.h */,
+				CACC227316055FC0009BC042 /* Get2meTabBarViewController.m */,
+				AD8C83B116135ADE000B1EFE /* MapDirectionsViewController.h */,
+				AD8C83B216135ADE000B1EFE /* MapDirectionsViewController.m */,
+				ADD1478316062C7400C4A1AB /* MapViewController.h */,
+				ADD1478416062C7400C4A1AB /* MapViewController.m */,
+				AD8C83B916135ADE000B1EFE /* RouteListViewController.h */,
+				AD8C83BA16135ADE000B1EFE /* RouteListViewController.m */,
+				CA632BEF160567B3007D71C3 /* SignInViewController.h */,
+				CA632BF0160567B3007D71C3 /* SignInViewController.m */,
 				ADD1479D160BBD2D00C4A1AB /* UserInviteContainerViewController.h */,
 				ADD1479E160BBD2D00C4A1AB /* UserInviteContainerViewController.m */,
 				ADD147A1160BBDF200C4A1AB /* UserInviteViewController.h */,
 				ADD147A2160BBDF200C4A1AB /* UserInviteViewController.m */,
+				CA79DDB61607EA8E00BAD33F /* UserSearchContainerViewController.h */,
+				CA79DDB71607EA8E00BAD33F /* UserSearchContainerViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1581,6 +1719,13 @@
 				AD8C8386160F9251000B1EFE /* UASubscriptionRootViewController.xib in Resources */,
 				AD8C8388160F9251000B1EFE /* UASubscriptionSettingsViewController.xib in Resources */,
 				AD8C838A160F9251000B1EFE /* UASubscriptionUserProductsViewController.xib in Resources */,
+				AD58F960161371D30092446B /* add.png in Resources */,
+				AD58F962161371D30092446B /* Icon.png in Resources */,
+				AD58F964161371D30092446B /* list.png in Resources */,
+				AD58F966161371D30092446B /* map_pin.png in Resources */,
+				AD58F968161371D30092446B /* remove.png in Resources */,
+				AD58F96A161371D30092446B /* reticle.png in Resources */,
+				AD58F973161375130092446B /* api.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1653,6 +1798,13 @@
 				AD8C8387160F9251000B1EFE /* UASubscriptionRootViewController.xib in Resources */,
 				AD8C8389160F9251000B1EFE /* UASubscriptionSettingsViewController.xib in Resources */,
 				AD8C838B160F9251000B1EFE /* UASubscriptionUserProductsViewController.xib in Resources */,
+				AD58F961161371D30092446B /* add.png in Resources */,
+				AD58F963161371D30092446B /* Icon.png in Resources */,
+				AD58F965161371D30092446B /* list.png in Resources */,
+				AD58F967161371D30092446B /* map_pin.png in Resources */,
+				AD58F969161371D30092446B /* remove.png in Resources */,
+				AD58F96B161371D30092446B /* reticle.png in Resources */,
+				AD58F974161375130092446B /* api.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1687,8 +1839,7 @@
 				CACC227416055FC0009BC042 /* Get2meTabBarViewController.m in Sources */,
 				CA632BF1160567B3007D71C3 /* SignInViewController.m in Sources */,
 				CA632BF5160569FE007D71C3 /* CreateAccountViewController.m in Sources */,
-				ADD1478516062C7400C4A1AB /* MapViewViewController.m in Sources */,
-				ADD1478D16063D1900C4A1AB /* DirectionsViewController.m in Sources */,
+				ADD1478516062C7400C4A1AB /* MapViewController.m in Sources */,
 				CA632C2216078482007D71C3 /* FriendsViewController.m in Sources */,
 				CA79DDB81607EA8E00BAD33F /* UserSearchContainerViewController.m in Sources */,
 				CA79DDCC160A8EC500BAD33F /* Direction.m in Sources */,
@@ -1737,6 +1888,24 @@
 				AD8C8368160F9251000B1EFE /* UASubscriptionUI.m in Sources */,
 				AD8C836A160F9251000B1EFE /* UASubscriptionUIUtil.m in Sources */,
 				CA7762891611F0320092C884 /* TransitShape.m in Sources */,
+				AD8C83D716135ADE000B1EFE /* MapDirectionsViewController.m in Sources */,
+				AD8C83D916135ADE000B1EFE /* NSObject+SBJSON.m in Sources */,
+				AD8C83DB16135ADE000B1EFE /* NSString+SBJSON.m in Sources */,
+				AD8C83DF16135ADE000B1EFE /* RouteListViewController.m in Sources */,
+				AD8C83E116135ADE000B1EFE /* SBJSON.m in Sources */,
+				AD8C83E316135ADE000B1EFE /* SBJsonBase.m in Sources */,
+				AD8C83E516135ADE000B1EFE /* SBJsonParser.m in Sources */,
+				AD8C83E716135ADE000B1EFE /* SBJsonWriter.m in Sources */,
+				AD8C83E916135ADE000B1EFE /* UICGClientGeocoder.m in Sources */,
+				AD8C83EB16135ADE000B1EFE /* UICGDirections.m in Sources */,
+				AD8C83ED16135ADE000B1EFE /* UICGDirectionsOptions.m in Sources */,
+				AD8C83EF16135ADE000B1EFE /* UICGoogleMapsAPI.m in Sources */,
+				AD8C83F116135ADE000B1EFE /* UICGPolyline.m in Sources */,
+				AD8C83F316135ADE000B1EFE /* UICGRoute.m in Sources */,
+				AD8C83F516135ADE000B1EFE /* UICGStep.m in Sources */,
+				AD8C83F716135ADE000B1EFE /* UICRouteAnnotation.m in Sources */,
+				AD8C83F916135ADE000B1EFE /* UICRouteOverlayMapView.m in Sources */,
+				AD58F970161374ED0092446B /* json2.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1751,8 +1920,7 @@
 				CACC227516055FC0009BC042 /* Get2meTabBarViewController.m in Sources */,
 				CA632BF2160567B3007D71C3 /* SignInViewController.m in Sources */,
 				CA632BF6160569FE007D71C3 /* CreateAccountViewController.m in Sources */,
-				ADD1478616062C7400C4A1AB /* MapViewViewController.m in Sources */,
-				ADD1478E16063D1900C4A1AB /* DirectionsViewController.m in Sources */,
+				ADD1478616062C7400C4A1AB /* MapViewController.m in Sources */,
 				CA632C2316078482007D71C3 /* FriendsViewController.m in Sources */,
 				CA79DDB91607EA8E00BAD33F /* UserSearchContainerViewController.m in Sources */,
 				CA79DDCD160A8EC500BAD33F /* Direction.m in Sources */,
@@ -1801,6 +1969,24 @@
 				AD8C8369160F9251000B1EFE /* UASubscriptionUI.m in Sources */,
 				AD8C836B160F9251000B1EFE /* UASubscriptionUIUtil.m in Sources */,
 				CA77628A1611F0320092C884 /* TransitShape.m in Sources */,
+				AD8C83D816135ADE000B1EFE /* MapDirectionsViewController.m in Sources */,
+				AD8C83DA16135ADE000B1EFE /* NSObject+SBJSON.m in Sources */,
+				AD8C83DC16135ADE000B1EFE /* NSString+SBJSON.m in Sources */,
+				AD8C83E016135ADE000B1EFE /* RouteListViewController.m in Sources */,
+				AD8C83E216135ADE000B1EFE /* SBJSON.m in Sources */,
+				AD8C83E416135ADE000B1EFE /* SBJsonBase.m in Sources */,
+				AD8C83E616135ADE000B1EFE /* SBJsonParser.m in Sources */,
+				AD8C83E816135ADE000B1EFE /* SBJsonWriter.m in Sources */,
+				AD8C83EA16135ADE000B1EFE /* UICGClientGeocoder.m in Sources */,
+				AD8C83EC16135ADE000B1EFE /* UICGDirections.m in Sources */,
+				AD8C83EE16135ADE000B1EFE /* UICGDirectionsOptions.m in Sources */,
+				AD8C83F016135ADE000B1EFE /* UICGoogleMapsAPI.m in Sources */,
+				AD8C83F216135ADE000B1EFE /* UICGPolyline.m in Sources */,
+				AD8C83F416135ADE000B1EFE /* UICGRoute.m in Sources */,
+				AD8C83F616135ADE000B1EFE /* UICGStep.m in Sources */,
+				AD8C83F816135ADE000B1EFE /* UICRouteAnnotation.m in Sources */,
+				AD8C83FA16135ADE000B1EFE /* UICRouteOverlayMapView.m in Sources */,
+				AD58F971161374ED0092446B /* json2.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

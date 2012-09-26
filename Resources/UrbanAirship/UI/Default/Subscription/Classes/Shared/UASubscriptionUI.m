@@ -69,30 +69,18 @@ SINGLETON_IMPLEMENTATION(UASubscriptionUI)
 	
     self.localizationBundle = [NSBundle bundleWithPath:path];
     
-	UIViewController *controller = [[[UASubscriptionRootViewController alloc]
+	UIViewController *controller = [[UASubscriptionRootViewController alloc]
                                      initWithNibName:@"UASubscriptionRootViewController"
-                                     bundle:nil] autorelease];
+                                     bundle:nil];
     
 	UASubscriptionAlertHandler *alertHandler = [[UASubscriptionAlertHandler alloc] init];
     self.subscriptionAlert = alertHandler;
-	[alertHandler release];
     
     [UASubscriptionManager shared].transactionObserver.alertDelegate = subscriptionAlert;
     
 	rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
     
 	return self;
-}
-
-
-- (void)dealloc {
-	
-	RELEASE_SAFELY(rootViewController);
-    RELEASE_SAFELY(invokingViewController);
-    RELEASE_SAFELY(subscriptionAlert);
-    RELEASE_SAFELY(localizationBundle);
-
-    [super dealloc];
 }
 
 @end

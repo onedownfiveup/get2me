@@ -32,8 +32,6 @@
 
 
 @implementation UAStoreFrontCellView
-@synthesize title, description, price, progress, product, priceColor, priceBgColor, priceBorderColor;
-@synthesize descriptionHidden, progressHidden;
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
@@ -52,20 +50,6 @@
     }
 
     return self;
-}
-
-
-- (void)dealloc {
-    product = nil;
-    RELEASE_SAFELY(title);
-    RELEASE_SAFELY(description);
-    RELEASE_SAFELY(price);
-    RELEASE_SAFELY(progress);
-    RELEASE_SAFELY(priceColor);
-    RELEASE_SAFELY(priceBgColor);
-    RELEASE_SAFELY(priceBorderColor);
-
-    [super dealloc];
 }
 
 - (void)setHighlighted:(BOOL)h {
