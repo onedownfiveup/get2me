@@ -52,7 +52,7 @@
 
 -(void) loadRestkitDefaults
 {
-    self.objectManager = [RKObjectManager managerWithBaseURLString:@"http://get2me.local"];
+    self.objectManager = [RKObjectManager managerWithBaseURLString:@"http://gettome.herokuapp.com/"];
     [RKObjectManager setSharedManager: self.objectManager];
     [User loadRestkitMappings];
 }

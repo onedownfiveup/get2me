@@ -8,6 +8,7 @@
 
 #import "MapViewViewController.h"
 #import "CurrentUser.h"
+#import "TransitShape.h"
 
 typedef void (^PerformAfterAcquiringLocationSuccess)(CLLocationCoordinate2D);
 typedef void (^PerformAfterAcquiringLocationError)(NSError *);
@@ -25,12 +26,75 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.mapView.showsUserLocation = YES;
-    [self.mapView setUserTrackingMode: MKUserTrackingModeFollow animated: YES];
+    self.mapView.delegate = self;
     
     [self loadDirections];
+    CLLocationCoordinate2D startCoordinate = CLLocationCoordinate2DMake(40.746040, -73.982190);
+    CLLocationCoordinate2D endCoordinate = CLLocationCoordinate2DMake(40.68922000000001, -73.98467000000001);
     
-	// Do any additional setup after loading the view.
+    MKMapPoint startMapPoint = MKMapPointForCoordinate(startCoordinate);
+    MKMapPoint endMapPoint = MKMapPointForCoordinate(endCoordinate);
+    
+    NSUInteger closestStartPointOffset = 0;
+    CLLocationDistance closestStartDistance = INFINITY;
+    
+    NSUInteger closestEndPointOffset = 0;
+    CLLocationDistance closestEndDistance = INFINITY;
+
+    TransitShape *transitShape = [[TransitShape alloc] init];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.746040, -73.982190)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.736560, -73.98907000000001)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.736560, -73.98907000000001)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.73652000000001, -73.98896000000002)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.73652000000001, -73.98896000000002)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.734420, -73.98990000000001)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.734420, -73.98990000000001)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.72985000000001, -73.990690)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.72985000000001, -73.990690)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.72712000000001, -73.99162000000001 )];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.72712000000001, -73.99162000000001)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.716050, -73.99626000000001)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.716050, -73.99626000000001)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.715890, -73.99610000000001)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.715890, -73.99610000000001)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.699640, -73.986580)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.699640, -73.986580)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.699870, -73.98683000000001)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.699870, -73.98683000000001)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.69146000000001, -73.98736000000001)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.690480, -73.987870)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.690480, -73.987870)];
+    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.68922000000001, -73.98467000000001)];
+
+    for (NSUInteger i = 0; i < transitShape.coordinatesCount; i++) {
+        CLLocationCoordinate2D coordinate = transitShape.coordinates[i];
+        MKMapPoint mapPoint = MKMapPointForCoordinate(coordinate);
+        CLLocationDistance distanceToStart = MKMetersBetweenMapPoints(mapPoint, startMapPoint);
+        if (distanceToStart < closestStartDistance) {
+            closestStartDistance = distanceToStart;
+            closestStartPointOffset = i;
+        }
+        
+        CLLocationDistance distanceToEnd = MKMetersBetweenMapPoints(mapPoint, endMapPoint);
+        if (distanceToEnd < closestEndDistance) {
+            closestEndDistance = distanceToEnd;
+            closestEndPointOffset = i;
+        }
+    }
+    
+    NSMutableArray *path = [self decodePolyLine];
+    NSInteger numberOfSteps = path.count;
+
+    CLLocationCoordinate2D coordinates[numberOfSteps];
+    for (NSInteger index = 0; index < numberOfSteps; index++) {
+        CLLocation *location = [path objectAtIndex:index];
+        CLLocationCoordinate2D coordinate = location.coordinate;
+        
+        coordinates[index] = coordinate;
+    }
+    
+    MKPolyline *polyLine = [MKPolyline polylineWithCoordinates:coordinates count:numberOfSteps];
+    [self.mapView addOverlay:polyLine];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -54,6 +118,51 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
                                       loader.delegate = self;
                                   }];    
 }
+
+-(NSMutableArray *)decodePolyLine
+{
+    NSString *encString = [[NSString alloc] initWithFormat: @"weuwFtspbM~KjHnNfJ~NvJvMrIFU~@p@pD`CRLVFdCMvBM`@@^FvC\\tCd@tFt@f@@tBZj@Xl@NhDj@PPTJtCn@tB^hHhBxHnBtI|BrCp@hCv@~Bt@~@FpH`ClFxBrCvA\\^TLVPLJLOPORLVFD?BA?K@UHMnCcDLKhB{@^QpAm@lGwCVKjB{@`EgB~DgBTMnPyHrRkJvJsEfCiA`DyAf@Wh@U\\QTKBLBDP@?Hi@C[@AR~BFpBLbELfDF|BNlB@tNTtDHzCJVF`Aj@\\Lt@VTJ|@wCzDaN@E"];
+    
+    NSMutableString *encoded = [[NSMutableString alloc] initWithCapacity:[encString length]];
+
+        [encoded appendString:encString];
+        [encoded replaceOccurrencesOfString:@"\\\\" withString:@"\\"
+                                    options:NSLiteralSearch
+                                      range:NSMakeRange(0, [encoded length])];
+        NSInteger len = [encoded length];
+        NSInteger index = 0;
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        NSInteger lat=0;
+        NSInteger lng=0;
+        while (index < len) {
+            NSInteger b;
+            NSInteger shift = 0;
+            NSInteger result = 0;
+            do {
+                b = [encoded characterAtIndex:index++] - 63;
+                result |= (b & 0x1f) << shift;
+                shift += 5;
+            } while (b >= 0x20);
+            NSInteger dlat = ((result & 1) ? ~(result >> 1) : (result >> 1));
+            lat += dlat;
+            shift = 0;
+            result = 0;
+            do {
+                b = [encoded characterAtIndex:index++] - 63;
+                result |= (b & 0x1f) << shift;
+                shift += 5;
+            } while (b >= 0x20);
+            NSInteger dlng = ((result & 1) ? ~(result >> 1) : (result >> 1));
+            lng += dlng;
+            NSNumber *latitude = [[NSNumber alloc] initWithFloat:lat * 1e-5];
+            NSNumber *longitude = [[NSNumber alloc] initWithFloat:lng * 1e-5];
+            
+            CLLocation *location = [[CLLocation alloc] initWithLatitude:[latitude floatValue] longitude:[longitude floatValue]];
+            [array addObject:location];
+        }
+        
+        return array;
+    }
 
 
 - (void)didReceiveMemoryWarning
@@ -102,6 +211,15 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
     if (callback)
         callback(error);
 }
+
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
+{
+        MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:(MKPolyline *)overlay];
+        polylineView.lineWidth = 0;
+        polylineView.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
+        return polylineView;
+}
+
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
 	[[NSUserDefaults standardUserDefaults] synchronize];
