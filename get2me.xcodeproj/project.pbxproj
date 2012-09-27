@@ -285,8 +285,6 @@
 		CACC227516055FC0009BC042 /* Get2meTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC227316055FC0009BC042 /* Get2meTabBarViewController.m */; };
 		CAFF79E61613A8E90085FF92 /* DirectionInvitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFF79E51613A8E90085FF92 /* DirectionInvitesViewController.m */; };
 		CAFF79E71613A8E90085FF92 /* DirectionInvitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFF79E51613A8E90085FF92 /* DirectionInvitesViewController.m */; };
-		CAFF79EF1613AF1A0085FF92 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = CAFF79EE1613AF1A0085FF92 /* globe.png */; };
-		CAFF79F01613AF1A0085FF92 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = CAFF79EE1613AF1A0085FF92 /* globe.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -646,7 +644,6 @@
 		CACC227316055FC0009BC042 /* Get2meTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Get2meTabBarViewController.m; sourceTree = "<group>"; };
 		CAFF79E41613A8E90085FF92 /* DirectionInvitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionInvitesViewController.h; sourceTree = "<group>"; };
 		CAFF79E51613A8E90085FF92 /* DirectionInvitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionInvitesViewController.m; sourceTree = "<group>"; };
-		CAFF79EE1613AF1A0085FF92 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = globe.png; path = Resources/Images/globe.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1328,7 +1325,6 @@
 		CA632C02160640B3007D71C3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				CAFF79EE1613AF1A0085FF92 /* globe.png */,
 				CA79DDBE1608F36700BAD33F /* user-icon.png */,
 				ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */,
 				ADC33CA216013F6800BF4935 /* Default.png */,
@@ -1591,7 +1587,6 @@
 				AD8C8386160F9251000B1EFE /* UASubscriptionRootViewController.xib in Resources */,
 				AD8C8388160F9251000B1EFE /* UASubscriptionSettingsViewController.xib in Resources */,
 				AD8C838A160F9251000B1EFE /* UASubscriptionUserProductsViewController.xib in Resources */,
-				CAFF79EF1613AF1A0085FF92 /* globe.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1664,7 +1659,6 @@
 				AD8C8387160F9251000B1EFE /* UASubscriptionRootViewController.xib in Resources */,
 				AD8C8389160F9251000B1EFE /* UASubscriptionSettingsViewController.xib in Resources */,
 				AD8C838B160F9251000B1EFE /* UASubscriptionUserProductsViewController.xib in Resources */,
-				CAFF79F01613AF1A0085FF92 /* globe.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,6 +29,8 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 {
     [super viewDidLoad];
     self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
+    [self.mapView setUserTrackingMode: MKUserTrackingModeFollow animated: YES];
     
     [self loadDirections];
     CLLocationCoordinate2D startCoordinate = CLLocationCoordinate2DMake(40.746040, -73.982190);
@@ -174,12 +176,6 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
     // Dispose of any resources that can be recreated.
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
-{
-    MKPinAnnotationView *pinAnnotationView = [[MKPinAnnotationView alloc] init];
-
-    return pinAnnotationView;
-}
 
 - (void)performAfterAcquiringLocation:(PerformAfterAcquiringLocationSuccess)success error:(PerformAfterAcquiringLocationError)error
 {
@@ -241,10 +237,7 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
     
     if ([objects count] > 0) {
         Direction *direction = [objects objectAtIndex: 0];
-        // Draw map annotations that we get from routes
-        
-        NSLog(@"Object coordinates are %@ %@", direction.endCoordinateLatitude, direction.endCoordinateLongitude);
-        self.navigationItem.rightBarButtonItem = nil;
+        NSArray *routes = direction.routes;
     }
 }
 

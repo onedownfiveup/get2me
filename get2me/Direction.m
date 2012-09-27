@@ -7,6 +7,7 @@
 //
 
 #import "Direction.h"
+#import "Route.h"
 
 @implementation Direction
 
@@ -21,5 +22,8 @@
     [directionMapping mapKeyPath:@"end_coordinates.y" toAttribute:@"endCoordinateLongitude"];
     
     [sharedManager.mappingProvider setObjectMapping:directionMapping forKeyPath: @"direction"];
+    
+    [Route loadRestkitMappingsWithDirectionMapping: directionMapping
+                                    andUserMapping: userMapping];
 }
 @end

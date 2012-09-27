@@ -14,9 +14,10 @@
 @interface Direction : NSObject
 
 @property (nonatomic, retain) NSString *directionId;
-@property (nonatomic, retain) User *user;
+@property (nonatomic, retain) User     *user;
 @property (nonatomic, retain) NSString *endCoordinateLatitude;
 @property (nonatomic, retain) NSString *endCoordinateLongitude;
+@property (nonatomic, retain) NSArray  *routes;
 
 +(void) loadRestkitMappingsWithUserMapping: (RKObjectMapping *) userMapping;
 @end

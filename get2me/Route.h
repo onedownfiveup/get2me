@@ -8,9 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import <RestKit/RestKit.h>
+#import "User.h"
 
 @interface Route : NSObject
 
-+(void) loadRestkitMappingsWithDirectionMapping: (RKObjectMapping *) directionMapping;
+@property (nonatomic, retain) NSString *routeId;
+@property (nonatomic, retain) User     *user;
+@property (nonatomic, retain) NSString *endCoordinateLatitude;
+@property (nonatomic, retain) NSString *endCoordinateLongitude;
+@property (nonatomic, retain) NSString *startCoordinateLatitude;
+@property (nonatomic, retain) NSString *startCoordinateLongitude;
+@property (nonatomic, retain) NSString *state;
+@property (nonatomic, assign) BOOL     allowTracking;
+
++(void) loadRestkitMappingsWithDirectionMapping: (RKObjectMapping *) directionMapping
+                                 andUserMapping: (RKObjectMapping *) userMapping;
 
 @end

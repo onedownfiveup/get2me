@@ -11,15 +11,23 @@
 @implementation Route
 
 +(void) loadRestkitMappingsWithDirectionMapping: (RKObjectMapping *) directionMapping
+                                 andUserMapping: (RKObjectMapping *) userMapping
 {
     RKObjectManager *sharedManager = [RKObjectManager sharedManager];
     RKObjectMapping *routeMapping = [RKObjectMapping mappingForClass: [Route class]];
     
     [routeMapping mapKeyPath:@"_id" toAttribute:@"routeId"];
-    [directionMapping mapKeyPath:@"routes" toRelationship:@"route" withMapping: routeMapping];
-    
-    
-    [sharedManager.mappingProvider setObjectMapping:directionMapping forKeyPath: @"direction"];
+    [routeMapping mapKeyPath:@"start_coordinates.latitude" toAttribute:@"startCoordinateLatitude"];
+    [routeMapping mapKeyPath:@"start_coordinates.longitude" toAttribute:@"startCoordinateLongitude"];
+    [routeMapping mapKeyPath:@"end_coordinates.latitude" toAttribute:@"endCoordinateLatitude"];
+    [routeMapping mapKeyPath:@"end_coordinates.longitude" toAttribute:@"endCoordinateLongitude"];
+    [routeMapping mapKeyPath:@"allow_tracking" toAttribute:@"allowTracking"];
+    [routeMapping mapKeyPath:@"state" toAttribute:@"state"];
+
+    [routeMapping mapKeyPath:@"user" toRelationship:@"user" withMapping:userMapping];
+
+    [directionMapping mapKeyPath:@"routes" toRelationship:@"routes" withMapping: routeMapping];
+    [sharedManager.mappingProvider setObjectMapping:routeMapping forKeyPath: @"routes"];
 }
 @end
 
