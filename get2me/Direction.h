@@ -15,6 +15,8 @@
 
 @property (nonatomic, retain) NSString *directionId;
 @property (nonatomic, retain) User *user;
+@property (nonatomic, retain) NSString *endCoordinateLatitude;
+@property (nonatomic, retain) NSString *endCoordinateLongitude;
 
 +(void) loadRestkitMappingsWithUserMapping: (RKObjectMapping *) userMapping;
 @end

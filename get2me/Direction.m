@@ -17,7 +17,8 @@
     
     [directionMapping mapKeyPath:@"_id" toAttribute:@"directionId"];    
     [directionMapping mapKeyPath:@"user" toRelationship:@"user" withMapping:userMapping];
-
+    [directionMapping mapKeyPath:@"end_coordinates.x" toAttribute:@"endCoordinateLatitude"];
+    [directionMapping mapKeyPath:@"end_coordinates.y" toAttribute:@"endCoordinateLongitude"];
     
     [sharedManager.mappingProvider setObjectMapping:directionMapping forKeyPath: @"direction"];
 }

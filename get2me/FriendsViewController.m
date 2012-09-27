@@ -77,6 +77,7 @@
     return cell;
 }
 
+
 -(NSArray *) friendList
 {
     if (self.searchTerm) {
@@ -87,6 +88,11 @@
 }
 
 #pragma mark - Table view delegate
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    User *friend = [[self friendList] objectAtIndex: indexPath.row];
+    [self.selectedFriends removeObject: friend];
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

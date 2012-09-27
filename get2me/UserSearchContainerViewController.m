@@ -43,6 +43,15 @@
 }
 
 - (IBAction)sendDirections:(id)sender {
+    if ([self.friendsController.selectedFriends count] <= 0) {
+        UIAlertView* alert =  [[UIAlertView alloc] initWithTitle:@"Error!"
+                                                         message: @"You must select at least one friend to send directions to!"
+                                                        delegate: self
+                                               cancelButtonTitle: @"Cancel"
+                                               otherButtonTitles: nil, nil];
+        [alert show];
+        return;
+    }
     // send push notification to users along with storing it on server.
     User *currentUser =  [CurrentUser sharedInstance].user;
     RKObjectManager *sharedManager = [RKObjectManager sharedManager];
@@ -50,6 +59,8 @@
 
     NSArray *selectedFriends = self.friendsController.selectedFriends;
     NSArray *selectedFriendIds = [selectedFriends valueForKeyPath:@"userId"];
+    NSString *latitude = [[NSString alloc] initWithFormat:@"%f", self.destinationLocation.coordinate.latitude];
+    NSString *longitude = [[NSString alloc] initWithFormat:@"%f", self.destinationLocation.coordinate.longitude];
     
     [sharedManager loadObjectsAtResourcePath: directionsPath
                                   usingBlock: ^(RKObjectLoader *loader) {
@@ -59,11 +70,14 @@
                                               forParam: @"auth_token"];
                                       [params setValue: [[selectedFriendIds valueForKey:@"description"] componentsJoinedByString:@","]
                                               forParam: @"direction[friend_ids]"];
+                                      [params setValue: latitude
+                                              forParam: @"direction[end_coordinates][latitude]"];
+                                      [params setValue: longitude
+                                              forParam: @"direction[end_coordinates][longitude]"];
+                                      
                                       loader.method = RKRequestMethodPOST;
                                       loader.delegate = self;
                                   }];
-
-    [self dismissViewControllerAnimated:YES completion: nil];
 }
 
 -(FriendsViewController *) friendsController
@@ -87,6 +101,8 @@
     
     Direction *direction = [objects objectAtIndex: 0];
     User *user = direction.user;
+    
+    [self dismissViewControllerAnimated:YES completion: nil];
 }
 
 @end

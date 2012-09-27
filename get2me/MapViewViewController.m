@@ -9,6 +9,8 @@
 #import "MapViewViewController.h"
 #import "CurrentUser.h"
 #import "TransitShape.h"
+#import "Direction.h"
+#import "UserSearchContainerViewController.h"
 
 typedef void (^PerformAfterAcquiringLocationSuccess)(CLLocationCoordinate2D);
 typedef void (^PerformAfterAcquiringLocationError)(NSError *);
@@ -85,15 +87,16 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
     NSMutableArray *path = [self decodePolyLine];
     NSInteger numberOfSteps = path.count;
 
-    CLLocationCoordinate2D coordinates[numberOfSteps];
+    MKMapPoint coordinates[numberOfSteps];
+    
     for (NSInteger index = 0; index < numberOfSteps; index++) {
         CLLocation *location = [path objectAtIndex:index];
-        CLLocationCoordinate2D coordinate = location.coordinate;
+        MKMapPoint coordinate = MKMapPointForCoordinate(location.coordinate);
         
         coordinates[index] = coordinate;
     }
     
-    MKPolyline *polyLine = [MKPolyline polylineWithCoordinates:coordinates count:numberOfSteps];
+    MKPolyline *polyLine = [MKPolyline polylineWithPoints:coordinates count:[path count]];
     [self.mapView addOverlay:polyLine];
 }
 
@@ -121,7 +124,7 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 
 -(NSMutableArray *)decodePolyLine
 {
-    NSString *encString = [[NSString alloc] initWithFormat: @"weuwFtspbM~KjHnNfJ~NvJvMrIFU~@p@pD`CRLVFdCMvBM`@@^FvC\\tCd@tFt@f@@tBZj@Xl@NhDj@PPTJtCn@tB^hHhBxHnBtI|BrCp@hCv@~Bt@~@FpH`ClFxBrCvA\\^TLVPLJLOPORLVFD?BA?K@UHMnCcDLKhB{@^QpAm@lGwCVKjB{@`EgB~DgBTMnPyHrRkJvJsEfCiA`DyAf@Wh@U\\QTKBLBDP@?Hi@C[@AR~BFpBLbELfDF|BNlB@tNTtDHzCJVF`Aj@\\Lt@VTJ|@wCzDaN@E"];
+    NSString *encString = [[NSString alloc] initWithFormat: @"sbjwFdcqbMqAtEiDhLiBq@aAk@WGeHQwKSuEILuKJsJDeD@_@Gq@KeA_@iBQ{@Ee@CgABcCGQHaEVsMh@ec@\\aXDmFI}A_@wBY}@o@wA}@gAaAw@k@WoA_@gAUo@IWCsDw@oCo@}@YaEwA{DkB_EoBQGaHiDsLuFkAo@oE_CeA[u@_@gBcAsDyBcEaCyC_BwCeBiBsAg@c@eBgBKIm@m@kDgE}DyFmCyEuCiFeAkBuBiEiDsG_DiG_CyEuAyCwC_Fo@aA}@yAyBuEiDyHs@eBMg@oAmHe@qC}@qFa@iC[yAYaAg@uA_AsBeAcBa@i@{EmGaBuBwA_BkAgAkAaAgA{@mAs@gDkB}BuAu@a@k@_@IOUWOQ_@m@Se@Sq@Mq@GeA@w@ZcDp@sGA[XeDPgAp@yCXu@dAoDl@{Cz@yEz@wEnAcHjAuHX_BZeAZoAr@eB`@eAr@}@bBgClAuBjDyGz@mBf@{At@aDl@qDVqBJ_Bb@mKEi@NaDFmB\\eIv@yQHqDA}BMwBUeCa@qCMy@YeAi@gBO]i@wAaAsBoC_Fo@{A]iAcAmEa@}BIm@OqBIkB_@uLACGoBOsBQ_B]uBi@{BeCqImAeEsAwGIc@aEiSoCuM_AgE_@{AKe@aDqNA[w@wD_E_SQmA{AaHa@oBuBuK_AmFe@gEa@oE_@aDYcBG_@k@qCuC{KgBkFc@iAsDuJ}DgKoDoJ{C}IiAoDWeA_@kBIw@CKCWGi@McBGaAG}B?u@D}B\\kHTaFf@_LDg@RsEr@_NPgBZyBTmAl@wCpBwI|@uDV}@jDeOvBkJbA}EZmBTwBXkDRqEHwEN_LV_PJ{NNiOP{KJkI?kDMaDWgC]cCyBeMKg@_AcFkA_HkA_HsA_HOw@[aBqB_L?S_B_J{BcMSqAa@iDSsCo@wI]uDe@gG?IYsDQkBQgAc@oB_@}AQm@w@aCuAgD{@_Cg@eBc@oBY}AoHua@o@iDi@yBc@}AuAoD}AqEq@_Co@cDsDuUuAoNMoAu@_GMgBi@cEIy@Ci@Y_Cw@c@Yx@c@v@OTq@l@|A`Dp@bB`AlDj@nDyH`C"];
     
     NSMutableString *encoded = [[NSMutableString alloc] initWithCapacity:[encString length]];
 
@@ -212,11 +215,23 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
         callback(error);
 }
 
+-(void) presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion
+{
+    
+    CLLocation *myLocation = [[CLLocation alloc] initWithLatitude: self.mapView.userLocation.location.coordinate.latitude
+                                                       longitude: self.mapView.userLocation.location.coordinate.longitude];
+    
+    if ([viewControllerToPresent isKindOfClass: [UserSearchContainerViewController class]] ) {
+        [(UserSearchContainerViewController *)viewControllerToPresent setDestinationLocation: myLocation];
+    }
+    [super presentViewController:viewControllerToPresent animated:flag completion:completion];
+}
+
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
 {
         MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:(MKPolyline *)overlay];
         polylineView.lineWidth = 0;
-        polylineView.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
+        polylineView.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
         return polylineView;
 }
 
@@ -225,7 +240,10 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 	[[NSUserDefaults standardUserDefaults] synchronize];
     
     if ([objects count] > 0) {
+        Direction *direction = [objects objectAtIndex: 0];
         // Draw map annotations that we get from routes
+        
+        NSLog(@"Object coordinates are %@ %@", direction.endCoordinateLatitude, direction.endCoordinateLongitude);
         self.navigationItem.rightBarButtonItem = nil;
     }
 }
