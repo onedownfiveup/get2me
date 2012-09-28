@@ -15,18 +15,12 @@
 
 @implementation SignInViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.usernameField.delegate = self;
+    self.passwordField.delegate = self;
 	// Do any additional setup after loading the view.
 }
 
@@ -70,6 +64,14 @@
     
     [CurrentUser sharedInstance].user = [objects objectAtIndex: 0];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"CurrentUserStateChange" object:self];
+}
+
+# pragma mark UITextFieldDelegate selectors
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    
+    return YES;
 }
 
 @end

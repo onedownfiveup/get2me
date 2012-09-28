@@ -8,6 +8,7 @@
 
 #import "DirectionInvitesViewController.h"
 #import "CurrentUser.h"
+#import "Route.h"
 
 @interface DirectionInvitesViewController ()
 
@@ -58,24 +59,12 @@
     static NSString *CellIdentifier = @"routeInviteCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    cell.tag = indexPath.row;
     // Configure the cell...
     
     return cell;
 }
 
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 #pragma mark - Restkit delegate
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
@@ -88,4 +77,38 @@
     [self.tableView reloadData];
 }
 
+- (IBAction)acceptInvite:(UIButton *)sender {
+    RKParams *params= [RKParams params];
+    [params setValue: @"true" forParam: @"route[accept]"];
+
+    [self sendUpdateForRouteWithParams: params andButtonPressed: sender];
+}
+
+- (IBAction)rejectInvite:(UIButton *)sender {
+    RKParams *params= [RKParams params];
+    [params setValue: @"true" forParam: @"route[reject]"];
+    
+}
+
+-(void) sendUpdateForRouteWithParams: (RKParams *) params andButtonPressed: (UIButton *) button
+{
+    UITableViewCell *cell = (UITableViewCell *)button.superview.superview;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    Route *route = [self.routes objectAtIndex: indexPath.row];
+    
+    User *currentUser =  [CurrentUser sharedInstance].user;
+    RKObjectManager *sharedManager = [RKObjectManager sharedManager];
+    NSString *directionsPath = [NSString stringWithFormat: @"/api/v1/users/%@/routes/%@.json",
+                                currentUser.userId,
+                                route.routeId];
+    
+    [sharedManager loadObjectsAtResourcePath: directionsPath
+                                  usingBlock: ^(RKObjectLoader *loader) {
+                                      [params setValue: currentUser.token forParam: @"auth_token"];
+                                      loader.params = params;
+                                      loader.method = RKRequestMethodPUT;
+                                      loader.delegate = self;
+                                  }];
+    
+}
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
 
-@interface SignInViewController : UIViewController <RKObjectLoaderDelegate>
+@interface SignInViewController : UIViewController <RKObjectLoaderDelegate, UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *usernameField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 
