@@ -103,7 +103,6 @@
     }
 }
 
-
 #pragma mark - Restkit delegate
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
@@ -116,6 +115,7 @@
     [self.tableView reloadData];
 }
 
+# pragma mark - SearchBar delegate
 - (void)searchBar:(UISearchBar *)theSearchBar textDidChange:(NSString *)searchText {
     if ([searchText length] > 0) {
         self.searchTerm = searchText;
@@ -132,6 +132,7 @@
     [self.tableView reloadData];
 }
 
+# pragma mark - Actions
 -(void) filterObjectsForSearchText: (NSString *)searchText
 {
     [self.filteredFriends removeAllObjects];

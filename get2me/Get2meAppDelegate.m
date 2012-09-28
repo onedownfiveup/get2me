@@ -11,7 +11,6 @@
 #import "User.h"
 #import "Direction.h"
 #import "SignInViewController.h"
-#import "Get2meTabBarViewController.h"
 #import "UAirship.h"
 #import "UAPush.h"
 
@@ -71,7 +70,7 @@
  
     NSString *viewIdentifier = @"tabBarController";
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName: @"MainStoryboard_iPhone" bundle: nil];
-    Get2meTabBarViewController *get2meTabBarViewController = [storyBoard instantiateViewControllerWithIdentifier:viewIdentifier];
+    UITabBarController *get2meTabBarViewController = [storyBoard instantiateViewControllerWithIdentifier:viewIdentifier];
     
     if ([[CurrentUser sharedInstance] isLoggedIn]) {
         self.window.rootViewController = get2meTabBarViewController;

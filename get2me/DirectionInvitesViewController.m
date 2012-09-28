@@ -15,15 +15,6 @@
 
 @implementation DirectionInvitesViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -37,7 +28,7 @@
     // send push notification to users along with storing it on server.
     User *currentUser =  [CurrentUser sharedInstance].user;
     RKObjectManager *sharedManager = [RKObjectManager sharedManager];
-    NSString *directionsPath = [NSString stringWithFormat: @"/api/v1/users/%@/directions.json?auth_token=%@",
+    NSString *directionsPath = [NSString stringWithFormat: @"/api/v1/users/%@/routes.json?state=pending&auth_token=%@",
                                 currentUser.userId,
                                 currentUser.token];
     
@@ -59,12 +50,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return [self.routes count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"routeInviteCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
@@ -84,6 +75,17 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+#pragma mark - Restkit delegate
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
+}
+
+- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
+	[[NSUserDefaults standardUserDefaults] synchronize];
+        
+    self.routes = objects;
+    [self.tableView reloadData];
 }
 
 @end

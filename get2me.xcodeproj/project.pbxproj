@@ -245,12 +245,6 @@
 		ADD147821606285C00C4A1AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD147811606285C00C4A1AB /* CoreLocation.framework */; };
 		ADD1478516062C7400C4A1AB /* MapViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478416062C7400C4A1AB /* MapViewViewController.m */; };
 		ADD1478616062C7400C4A1AB /* MapViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478416062C7400C4A1AB /* MapViewViewController.m */; };
-		ADD1478D16063D1900C4A1AB /* DirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */; };
-		ADD1478E16063D1900C4A1AB /* DirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */; };
-		ADD1479F160BBD2D00C4A1AB /* UserInviteContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1479E160BBD2D00C4A1AB /* UserInviteContainerViewController.m */; };
-		ADD147A0160BBD2D00C4A1AB /* UserInviteContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1479E160BBD2D00C4A1AB /* UserInviteContainerViewController.m */; };
-		ADD147A3160BBDF200C4A1AB /* UserInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD147A2160BBDF200C4A1AB /* UserInviteViewController.m */; };
-		ADD147A4160BBDF200C4A1AB /* UserInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD147A2160BBDF200C4A1AB /* UserInviteViewController.m */; };
 		CA632BF1160567B3007D71C3 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF0160567B3007D71C3 /* SignInViewController.m */; };
 		CA632BF2160567B3007D71C3 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF0160567B3007D71C3 /* SignInViewController.m */; };
 		CA632BF5160569FE007D71C3 /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF4160569FE007D71C3 /* CreateAccountViewController.m */; };
@@ -281,8 +275,6 @@
 		CACC22651605511B009BC042 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CACC224C16054AFD009BC042 /* libRestKit.a */; };
 		CACC226B160559A6009BC042 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC226A160559A6009BC042 /* User.m */; };
 		CACC226C160559A6009BC042 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC226A160559A6009BC042 /* User.m */; };
-		CACC227416055FC0009BC042 /* Get2meTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC227316055FC0009BC042 /* Get2meTabBarViewController.m */; };
-		CACC227516055FC0009BC042 /* Get2meTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC227316055FC0009BC042 /* Get2meTabBarViewController.m */; };
 		CAFF79E61613A8E90085FF92 /* DirectionInvitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFF79E51613A8E90085FF92 /* DirectionInvitesViewController.m */; };
 		CAFF79E71613A8E90085FF92 /* DirectionInvitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CAFF79E51613A8E90085FF92 /* DirectionInvitesViewController.m */; };
 /* End PBXBuildFile section */
@@ -605,12 +597,6 @@
 		ADD147811606285C00C4A1AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		ADD1478316062C7400C4A1AB /* MapViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewViewController.h; sourceTree = "<group>"; };
 		ADD1478416062C7400C4A1AB /* MapViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewViewController.m; sourceTree = "<group>"; };
-		ADD1478B16063D1900C4A1AB /* DirectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionsViewController.h; sourceTree = "<group>"; };
-		ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionsViewController.m; sourceTree = "<group>"; };
-		ADD1479D160BBD2D00C4A1AB /* UserInviteContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInviteContainerViewController.h; sourceTree = "<group>"; };
-		ADD1479E160BBD2D00C4A1AB /* UserInviteContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInviteContainerViewController.m; sourceTree = "<group>"; };
-		ADD147A1160BBDF200C4A1AB /* UserInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInviteViewController.h; sourceTree = "<group>"; };
-		ADD147A2160BBDF200C4A1AB /* UserInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInviteViewController.m; sourceTree = "<group>"; };
 		CA632BEF160567B3007D71C3 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		CA632BF0160567B3007D71C3 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		CA632BF3160569FE007D71C3 /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
@@ -640,8 +626,6 @@
 		CACC226116054C3A009BC042 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CACC2269160559A6009BC042 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		CACC226A160559A6009BC042 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		CACC227216055FC0009BC042 /* Get2meTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Get2meTabBarViewController.h; sourceTree = "<group>"; };
-		CACC227316055FC0009BC042 /* Get2meTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Get2meTabBarViewController.m; sourceTree = "<group>"; };
 		CAFF79E41613A8E90085FF92 /* DirectionInvitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionInvitesViewController.h; sourceTree = "<group>"; };
 		CAFF79E51613A8E90085FF92 /* DirectionInvitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionInvitesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1375,10 +1359,6 @@
 		CACC226D16055C4C009BC042 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				ADD1478B16063D1900C4A1AB /* DirectionsViewController.h */,
-				ADD1478C16063D1900C4A1AB /* DirectionsViewController.m */,
-				CACC227216055FC0009BC042 /* Get2meTabBarViewController.h */,
-				CACC227316055FC0009BC042 /* Get2meTabBarViewController.m */,
 				CA632BEF160567B3007D71C3 /* SignInViewController.h */,
 				CA632BF0160567B3007D71C3 /* SignInViewController.m */,
 				CA632BF3160569FE007D71C3 /* CreateAccountViewController.h */,
@@ -1389,10 +1369,6 @@
 				CA632C2116078482007D71C3 /* FriendsViewController.m */,
 				CA79DDB61607EA8E00BAD33F /* UserSearchContainerViewController.h */,
 				CA79DDB71607EA8E00BAD33F /* UserSearchContainerViewController.m */,
-				ADD1479D160BBD2D00C4A1AB /* UserInviteContainerViewController.h */,
-				ADD1479E160BBD2D00C4A1AB /* UserInviteContainerViewController.m */,
-				ADD147A1160BBDF200C4A1AB /* UserInviteViewController.h */,
-				ADD147A2160BBDF200C4A1AB /* UserInviteViewController.m */,
 				CAFF79E41613A8E90085FF92 /* DirectionInvitesViewController.h */,
 				CAFF79E51613A8E90085FF92 /* DirectionInvitesViewController.m */,
 			);
@@ -1690,17 +1666,13 @@
 				CACC220C160547F8009BC042 /* CurentUser.m in Sources */,
 				CACC22101605487A009BC042 /* KeychainItemWrapper.m in Sources */,
 				CACC226B160559A6009BC042 /* User.m in Sources */,
-				CACC227416055FC0009BC042 /* Get2meTabBarViewController.m in Sources */,
 				CA632BF1160567B3007D71C3 /* SignInViewController.m in Sources */,
 				CA632BF5160569FE007D71C3 /* CreateAccountViewController.m in Sources */,
 				ADD1478516062C7400C4A1AB /* MapViewViewController.m in Sources */,
-				ADD1478D16063D1900C4A1AB /* DirectionsViewController.m in Sources */,
 				CA632C2216078482007D71C3 /* FriendsViewController.m in Sources */,
 				CA79DDB81607EA8E00BAD33F /* UserSearchContainerViewController.m in Sources */,
 				CA79DDCC160A8EC500BAD33F /* Direction.m in Sources */,
 				CA79DDD0160A8ED600BAD33F /* Route.m in Sources */,
-				ADD1479F160BBD2D00C4A1AB /* UserInviteContainerViewController.m in Sources */,
-				ADD147A3160BBDF200C4A1AB /* UserInviteViewController.m in Sources */,
 				AD8C82C4160F9251000B1EFE /* UABeveledLoadingIndicator.m in Sources */,
 				AD8C82C6160F9251000B1EFE /* UAInboxAlertHandler.m in Sources */,
 				AD8C82C8160F9251000B1EFE /* UAInboxMessageListCell.m in Sources */,
@@ -1755,17 +1727,13 @@
 				CACC220D160547F8009BC042 /* CurentUser.m in Sources */,
 				CACC22111605487A009BC042 /* KeychainItemWrapper.m in Sources */,
 				CACC226C160559A6009BC042 /* User.m in Sources */,
-				CACC227516055FC0009BC042 /* Get2meTabBarViewController.m in Sources */,
 				CA632BF2160567B3007D71C3 /* SignInViewController.m in Sources */,
 				CA632BF6160569FE007D71C3 /* CreateAccountViewController.m in Sources */,
 				ADD1478616062C7400C4A1AB /* MapViewViewController.m in Sources */,
-				ADD1478E16063D1900C4A1AB /* DirectionsViewController.m in Sources */,
 				CA632C2316078482007D71C3 /* FriendsViewController.m in Sources */,
 				CA79DDB91607EA8E00BAD33F /* UserSearchContainerViewController.m in Sources */,
 				CA79DDCD160A8EC500BAD33F /* Direction.m in Sources */,
 				CA79DDD1160A8ED600BAD33F /* Route.m in Sources */,
-				ADD147A0160BBD2D00C4A1AB /* UserInviteContainerViewController.m in Sources */,
-				ADD147A4160BBDF200C4A1AB /* UserInviteViewController.m in Sources */,
 				AD8C82C5160F9251000B1EFE /* UABeveledLoadingIndicator.m in Sources */,
 				AD8C82C7160F9251000B1EFE /* UAInboxAlertHandler.m in Sources */,
 				AD8C82C9160F9251000B1EFE /* UAInboxMessageListCell.m in Sources */,

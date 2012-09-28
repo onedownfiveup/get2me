@@ -10,5 +10,6 @@
 #import <RestKit/RestKit.h>
 
 @interface DirectionInvitesViewController : UITableViewController <RKObjectLoaderDelegate>
+@property (nonatomic, retain) NSArray *routes;
 
 @end

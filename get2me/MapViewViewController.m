@@ -29,8 +29,8 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 {
     [super viewDidLoad];
     self.mapView.delegate = self;
-    self.mapView.showsUserLocation = YES;
-    [self.mapView setUserTrackingMode: MKUserTrackingModeFollow animated: YES];
+//    self.mapView.showsUserLocation = YES;
+//    [self.mapView setUserTrackingMode: MKUserTrackingModeFollow animated: YES];
     
     [self loadDirections];
     CLLocationCoordinate2D startCoordinate = CLLocationCoordinate2DMake(40.746040, -73.982190);
