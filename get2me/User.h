@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
 @interface User : NSObject
 
@@ -15,6 +16,7 @@
 @property (nonatomic, retain) NSString *firstName;
 @property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, retain) NSString *token;
+@property (nonatomic, retain) CLLocation *currentLocation;
 
 +(void) loadRestkitMappings;
 @end

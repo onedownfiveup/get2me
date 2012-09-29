@@ -23,6 +23,9 @@ static dispatch_queue_t serialQueue;
         if (obj) {
             self.keychain  = [[KeychainItemWrapper alloc] initWithIdentifier: @"GET2ME"
                                                                  accessGroup: nil];
+            self.locationManager =  [[CLLocationManager alloc] init];
+            self.locationManager.delegate = self;
+            [self.locationManager startUpdatingLocation];
         }
     });
     
@@ -87,6 +90,13 @@ static dispatch_queue_t serialQueue;
 -(NSString *)password
 {
     return  [self.keychain objectForKey:(__bridge id)kSecValueData];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    if (self.user) {
+        self.user.currentLocation = [locations objectAtIndex: 0];
+    }
 }
 
 @end

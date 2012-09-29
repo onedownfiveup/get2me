@@ -240,7 +240,6 @@
 		ADC33CBA16013F6900BF4935 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC33C9216013F6800BF4935 /* Foundation.framework */; };
 		ADC33CC216013F6900BF4935 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ADC33CC016013F6900BF4935 /* InfoPlist.strings */; };
 		ADC33CC516013F6900BF4935 /* get2meTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ADC33CC416013F6900BF4935 /* get2meTests.m */; };
-		ADD147501602C36600C4A1AB /* connect-facebook-button.png in Resources */ = {isa = PBXBuildFile; fileRef = ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */; };
 		ADD1477C1606234800C4A1AB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD1477B1606234800C4A1AB /* MapKit.framework */; };
 		ADD147821606285C00C4A1AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD147811606285C00C4A1AB /* CoreLocation.framework */; };
 		ADD1478516062C7400C4A1AB /* MapViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478416062C7400C4A1AB /* MapViewViewController.m */; };
@@ -592,7 +591,6 @@
 		ADC33CC116013F6900BF4935 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		ADC33CC316013F6900BF4935 /* get2meTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = get2meTests.h; sourceTree = "<group>"; };
 		ADC33CC416013F6900BF4935 /* get2meTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = get2meTests.m; sourceTree = "<group>"; };
-		ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "connect-facebook-button.png"; path = "../Resources/Images/connect-facebook-button.png"; sourceTree = "<group>"; };
 		ADD1477B1606234800C4A1AB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		ADD147811606285C00C4A1AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		ADD1478316062C7400C4A1AB /* MapViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewViewController.h; sourceTree = "<group>"; };
@@ -1310,7 +1308,6 @@
 			isa = PBXGroup;
 			children = (
 				CA79DDBE1608F36700BAD33F /* user-icon.png */,
-				ADD1474F1602C36600C4A1AB /* connect-facebook-button.png */,
 				ADC33CA216013F6800BF4935 /* Default.png */,
 				ADC33CA416013F6800BF4935 /* Default@2x.png */,
 				ADC33CA616013F6800BF4935 /* Default-568h@2x.png */,
@@ -1498,7 +1495,6 @@
 				ADC33CA716013F6800BF4935 /* Default-568h@2x.png in Resources */,
 				ADC33CAA16013F6800BF4935 /* MainStoryboard_iPhone.storyboard in Resources */,
 				ADC33CAD16013F6800BF4935 /* MainStoryboard_iPad.storyboard in Resources */,
-				ADD147501602C36600C4A1AB /* connect-facebook-button.png in Resources */,
 				CA79DDBF1608F36700BAD33F /* user-icon.png in Resources */,
 				AD8C81A6160F8655000B1EFE /* AirshipConfig.plist in Resources */,
 				AD8C82BA160F9251000B1EFE /* CHANGELOG in Resources */,

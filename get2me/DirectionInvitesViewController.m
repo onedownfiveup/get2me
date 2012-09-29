@@ -19,7 +19,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     [self loadInvites];
     
 }
@@ -78,8 +77,14 @@
 }
 
 - (IBAction)acceptInvite:(UIButton *)sender {
-    RKParams *params= [RKParams params];
+    CLLocation *currentLocation = [CurrentUser sharedInstance].user.currentLocation;
+    NSString *latitude = [[NSString alloc] initWithFormat:@"%f", currentLocation.coordinate.latitude];
+    NSString *longitude = [[NSString alloc] initWithFormat:@"%f", currentLocation.coordinate.longitude];
+
+    RKParams *params = [RKParams params];
     [params setValue: @"true" forParam: @"route[accept]"];
+    [params setValue: latitude forParam: @"route[start_coordinates][latitude]"];
+    [params setValue: longitude forParam: @"route[start_coordinates][longitude]"];
 
     [self sendUpdateForRouteWithParams: params andButtonPressed: sender];
 }
@@ -111,4 +116,10 @@
                                   }];
     
 }
+
+- (IBAction)backButtonPressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion: nil];
+}
+
+
 @end

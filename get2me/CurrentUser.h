@@ -10,11 +10,13 @@
 #import "KeychainItemWrapper.h"
 #import "User.h"
 #import <RestKit/RestKit.h>
+#import <CoreLocation/CLLocationManagerDelegate.h>
+
 
 extern NSString *const CRUserAuthUrl;
 extern NSString *const CRUserAuthAPIKey;
 
-@interface CurrentUser : NSObject
+@interface CurrentUser : NSObject <CLLocationManagerDelegate>
 {
     KeychainItemWrapper *keychain;
     NSString *resultsJSON;
@@ -22,6 +24,7 @@ extern NSString *const CRUserAuthAPIKey;
 
 @property (nonatomic, retain) KeychainItemWrapper *keychain; 
 @property (nonatomic, retain) User *user;
+@property (nonatomic, retain) CLLocationManager *locationManager;
 
 -(void) storeUsernameInKeyChain: (NSString *) username
                    withPassword: (NSString *) password;

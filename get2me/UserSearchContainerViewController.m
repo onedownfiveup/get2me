@@ -16,15 +16,6 @@
 
 @implementation UserSearchContainerViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -54,13 +45,14 @@
     }
     // send push notification to users along with storing it on server.
     User *currentUser =  [CurrentUser sharedInstance].user;
+    CLLocation *currentLocation = currentUser.currentLocation;
     RKObjectManager *sharedManager = [RKObjectManager sharedManager];
     NSString *directionsPath = [NSString stringWithFormat: @"/api/v1/users/%@/directions.json", currentUser.userId];
 
     NSArray *selectedFriends = self.friendsController.selectedFriends;
     NSArray *selectedFriendIds = [selectedFriends valueForKeyPath:@"userId"];
-    NSString *latitude = [[NSString alloc] initWithFormat:@"%f", self.destinationLocation.coordinate.latitude];
-    NSString *longitude = [[NSString alloc] initWithFormat:@"%f", self.destinationLocation.coordinate.longitude];
+    NSString *latitude = [[NSString alloc] initWithFormat:@"%f", currentLocation.coordinate.latitude];
+    NSString *longitude = [[NSString alloc] initWithFormat:@"%f", currentLocation.coordinate.longitude];
     
     [sharedManager loadObjectsAtResourcePath: directionsPath
                                   usingBlock: ^(RKObjectLoader *loader) {

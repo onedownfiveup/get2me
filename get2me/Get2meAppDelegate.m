@@ -11,6 +11,7 @@
 #import "User.h"
 #import "Direction.h"
 #import "SignInViewController.h"
+#import "MapViewViewController.h"
 #import "UAirship.h"
 #import "UAPush.h"
 
@@ -68,12 +69,12 @@
 -(void)handleUserStateChange
 {
  
-    NSString *viewIdentifier = @"tabBarController";
+    NSString *viewIdentifier = @"mapViewController";
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName: @"MainStoryboard_iPhone" bundle: nil];
-    UITabBarController *get2meTabBarViewController = [storyBoard instantiateViewControllerWithIdentifier:viewIdentifier];
+    MapViewViewController *mapViewController = [storyBoard instantiateViewControllerWithIdentifier:viewIdentifier];
     
     if ([[CurrentUser sharedInstance] isLoggedIn]) {
-        self.window.rootViewController = get2meTabBarViewController;
+        self.window.rootViewController = mapViewController;
         [self.window makeKeyAndVisible];
     }
 }
