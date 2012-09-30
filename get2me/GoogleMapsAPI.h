@@ -11,6 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "GMRoute.h"
 #import "GMStep.h"
+#import "GMLeg.h"
 
 @class GMPolyline, GoogleMapsAPI;
 
@@ -23,5 +24,9 @@
 @interface GoogleMapsAPI : NSObject <RKObjectLoaderDelegate>
 @property(nonatomic, assign) id <GoogleMapsAPIDelegate> delegate;
 @property (retain, nonatomic) RKObjectManager *objectManager;
+
+- (void)routeFrom: (CLLocation *) fromLocation
+       toLocation: (CLLocation *) toLocation
+  withTransitMode: (NSString *)   transitMode;
 
 @end

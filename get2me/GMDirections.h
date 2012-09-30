@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GMDirectionsOptions.h"
 #import "GMRoute.h"
 #import "GoogleMapsAPI.h"
 
@@ -42,11 +41,6 @@
 
 + (GMDirections *)sharedDirections;
 - (id)init;
-- (void)makeAvailable;
-- (void)loadWithQuery:(NSString *)query options:(GMDirectionsOptions *)options;
-- (void)loadWithStartPoint:(NSString *)startPoint endPoint:(NSString *)endPoint options:(GMDirectionsOptions *)options;
-- (void)loadFromWaypoints:(NSArray *)waypoints options:(GMDirectionsOptions *)options;
-- (void)clear;
 - (NSInteger)numberOfRoutes;
 - (GMRoute *)routeAtIndex:(NSInteger)index;
 - (NSInteger)numberOfGeocodes;

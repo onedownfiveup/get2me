@@ -9,18 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface GMStep : NSObject {
-	NSDictionary *dictionaryRepresentation;
-	NSString     *polyline;
-	NSString     *descriptionHtml;
-	NSDictionary *distance;
-	NSDictionary *duration;
-}
+@interface GMStep : NSObject
 
-@property (nonatomic, retain, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, retain, readonly) NSString     *polyline;
 @property (nonatomic, retain, readonly) NSString     *descriptionHtml;
-@property (nonatomic, retain, readonly) NSDictionary *distance;
-@property (nonatomic, retain, readonly) NSDictionary *duration;
+@property (nonatomic, retain, readonly) NSString     *distanceText;
+@property (nonatomic, retain, readonly) NSString     *durationText;
+@property (nonatomic, retain, readonly) NSString     *travelMode;
+@property (nonatomic, retain, readonly) CLLocation   *startPointLatitude;
+@property (nonatomic, retain, readonly) CLLocation   *startPointLongitude;
+@property (nonatomic, retain, readonly) CLLocation   *endPointLatitude;
+@property (nonatomic, retain, readonly) CLLocation   *endPointLongitude;
 
 @end

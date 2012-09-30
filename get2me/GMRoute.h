@@ -8,32 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#import "GMStep.h"
+#import "GMLeg.h"
 
-@interface GMRoute : NSObject {
-	NSDictionary *dictionaryRepresentation;
-	NSInteger numerOfSteps;
-	NSArray *steps;
-	NSDictionary *distance;
-	NSDictionary *duration;
-	NSString *summaryHtml;
-	NSDictionary *startGeocode;
-	NSDictionary *endGeocode;
-	CLLocation *endLocation;
-	NSInteger polylineEndIndex;
-}
+@interface GMRoute : NSObject
 
-@property (nonatomic, retain, readonly) NSDictionary *dictionaryRepresentation;
-@property (nonatomic, readonly) NSInteger numerOfSteps;
-@property (nonatomic, retain, readonly) NSArray *steps;
-@property (nonatomic, retain, readonly) NSDictionary *distance;
-@property (nonatomic, retain, readonly) NSDictionary *duration;
-@property (nonatomic, retain, readonly) NSString *summaryHtml;
-@property (nonatomic, retain, readonly) NSDictionary *startGeocode;
-@property (nonatomic, retain, readonly) NSDictionary *endGeocode;
-@property (nonatomic, retain, readonly) CLLocation *endLocation;
-@property (nonatomic, assign, readonly) NSInteger polylineEndIndex;
+@property (nonatomic, retain, readonly) NSArray *legs;
 
-- (GMStep *)stepAtIndex:(NSInteger)index;
+- (GMLeg *)legAtIndex:(NSInteger)index;
 
 @end

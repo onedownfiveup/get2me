@@ -31,6 +31,8 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 //    [self.mapView setUserTrackingMode: MKUserTrackingModeFollow animated: YES];
     
     [self loadDirections];
+    diretions = [GMDirections sharedDirections];
+	diretions.delegate = self;
 }
 
 -(void)viewDidAppear:(BOOL)animated

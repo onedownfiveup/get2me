@@ -22,18 +22,18 @@
 
 -(void) loadGoogleMapObjectMappings
 {
-    RKObjectMapping *stepMapping  = [self stepMapping];
-    RKObjectMapping *routeMapping  = [self routeMappingWithChildMapping: stepMapping];
+    RKObjectMapping *legMapping  = [self legMapping];
+    RKObjectMapping *routeMapping  = [self routeMappingWithChildMapping: legMapping];
 
     [self.objectManager.mappingProvider setObjectMapping:routeMapping forKeyPath: @"routes"];
 }
 
--(RKObjectMapping *) routeMappingWithChildMapping: (RKObjectMapping *)stepMapping
+-(RKObjectMapping *) routeMappingWithChildMapping: (RKObjectMapping *)legMapping
 {
     RKObjectMapping *routeMapping = [RKObjectMapping mappingForClass: [GMRoute class]];
-    [routeMapping mapKeyPath:@"steps" toRelationship:@"steps" withMapping: stepMapping];
+    [routeMapping mapKeyPath:@"legs" toRelationship:@"legs" withMapping: legMapping];
     
-    [self.objectManager.mappingProvider setObjectMapping:stepMapping forKeyPath: @"steps"];
+    [self.objectManager.mappingProvider setObjectMapping: legMapping forKeyPath: @"steps"];
 
 
     return routeMapping;
@@ -43,9 +43,30 @@
 {
     RKObjectMapping *stepMapping = [RKObjectMapping mappingForClass: [GMStep class]];
     
+    [stepMapping mapKeyPath:@"start_location.latitude" toAttribute:@"startCoordinateLatitude"];
+    [stepMapping mapKeyPath:@"start_location.longitude" toAttribute:@"startCoordinateLongitude"];
+    [stepMapping mapKeyPath:@"end_location.lat" toAttribute:@"endPointLatitude"];
+    [stepMapping mapKeyPath:@"end_location.lng" toAttribute:@"endpointLongitude"];
+    [stepMapping mapKeyPath:@"polyline" toAttribute:@"polyline"];
+    [stepMapping mapKeyPath:@"duration.text" toAttribute:@"durationText"];
+    [stepMapping mapKeyPath:@"distance.text" toAttribute:@"distanceText"];
+    [stepMapping mapKeyPath:@"travel_mode" toAttribute:@"travelMode"];
+    
     [self.objectManager.mappingProvider setObjectMapping:stepMapping forKeyPath: @"steps"];
     return stepMapping;
 }
+
+-(RKObjectMapping *) legMapping
+{
+    RKObjectMapping *stepMapping = [self stepMapping];
+    RKObjectMapping *legMapping = [RKObjectMapping mappingForClass: [GMLeg class]];
+    
+    [legMapping mapKeyPath:@"steps" toRelationship:@"steps" withMapping: stepMapping];
+
+    [self.objectManager.mappingProvider setObjectMapping:legMapping forKeyPath: @"leg"];
+    return legMapping;
+}
+
 
 - (void)routeFrom: (CLLocation *) fromLocation
        toLocation: (CLLocation *) toLocation
@@ -76,7 +97,7 @@
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
     if ([self.delegate respondsToSelector:@selector(goolgeMapsAPI:didGetObject:)]) {
-		[(id<GoogleMapsAPIDelegate>)self.delegate goolgeMapsAPI:self didGetObject:[objects objectAtIndex: 0]];
+		[(id<GoogleMapsAPIDelegate>)self.delegate goolgeMapsAPI:self didGetObject:[objects objectAtIndex:0]];
 	}
 }
 

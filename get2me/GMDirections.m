@@ -37,15 +37,7 @@ static GMDirections *sharedDirections;
 }
 
 - (void)goolgeMapsAPI:(GoogleMapsAPI *)goolgeMapsAPI didGetObject:(NSObject *)object {
-	NSDictionary *dictionary = (NSDictionary *)object;
-	NSArray *routeDics = [dictionary objectForKey:@"routes"];
-	routes = [[NSMutableArray alloc] initWithCapacity:[routeDics count]];
     
-	self.geocodes = [dictionary objectForKey:@"geocodes"];
-	self.distance = [dictionary objectForKey:@"distance"];
-	self.duration = [dictionary objectForKey:@"duration"];
-	self.status = [dictionary objectForKey:@"status"];
-	
 	if ([self.delegate respondsToSelector:@selector(directionsDidUpdateDirections:)]) {
 		[self.delegate directionsDidUpdateDirections:self];
 	}
@@ -57,17 +49,11 @@ static GMDirections *sharedDirections;
 	}
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-	isInitialized = YES;
-	if ([self.delegate respondsToSelector:@selector(directionsDidFinishInitialize:)]) {
-		[self.delegate directionsDidFinishInitialize:self];
-	}
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-	if ([self.delegate respondsToSelector:@selector(directions:didFailInitializeWithError:)]) {
-		[self.delegate directions:self didFailInitializeWithError:error];
-	}
+-(void) routeFrom: (CLLocation *) fromPoint
+               toPoint: (CLLocation *) toPoint
+        withTransitMode: (NSString *) transitMode
+{
+    [googleMapsAPI routeFrom: fromPoint toLocation:toPoint withTransitMode:transitMode];
 }
 
 - (NSInteger)numberOfRoutes {

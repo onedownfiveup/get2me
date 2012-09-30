@@ -10,19 +10,9 @@
 
 @implementation GMRoute
 
-@synthesize dictionaryRepresentation;
-@synthesize numerOfSteps;
-@synthesize steps;
-@synthesize distance;
-@synthesize duration;
-@synthesize summaryHtml;
-@synthesize startGeocode;
-@synthesize endGeocode;
-@synthesize endLocation;
-@synthesize polylineEndIndex;
-
-- (GMStep *)stepAtIndex:(NSInteger)index {
-	return [steps objectAtIndex:index];;
+- (GMLeg *)legAtIndex:(NSInteger)index
+{
+	return [self.legs objectAtIndex:index];;
 }
 
 @end
