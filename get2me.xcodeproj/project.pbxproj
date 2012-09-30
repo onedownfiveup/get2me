@@ -244,6 +244,20 @@
 		ADD147821606285C00C4A1AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD147811606285C00C4A1AB /* CoreLocation.framework */; };
 		ADD1478516062C7400C4A1AB /* MapViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478416062C7400C4A1AB /* MapViewViewController.m */; };
 		ADD1478616062C7400C4A1AB /* MapViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADD1478416062C7400C4A1AB /* MapViewViewController.m */; };
+		CA280C731617C1E1002D61BB /* GMDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C621617C1E1002D61BB /* GMDirections.m */; };
+		CA280C741617C1E1002D61BB /* GMDirections.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C621617C1E1002D61BB /* GMDirections.m */; };
+		CA280C751617C1E1002D61BB /* GMDirectionsOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C641617C1E1002D61BB /* GMDirectionsOptions.m */; };
+		CA280C761617C1E1002D61BB /* GMDirectionsOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C641617C1E1002D61BB /* GMDirectionsOptions.m */; };
+		CA280C771617C1E1002D61BB /* GoogleMapsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C661617C1E1002D61BB /* GoogleMapsAPI.m */; };
+		CA280C781617C1E1002D61BB /* GoogleMapsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C661617C1E1002D61BB /* GoogleMapsAPI.m */; };
+		CA280C7B1617C1E1002D61BB /* GMRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C6A1617C1E1002D61BB /* GMRoute.m */; };
+		CA280C7C1617C1E1002D61BB /* GMRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C6A1617C1E1002D61BB /* GMRoute.m */; };
+		CA280C7D1617C1E1002D61BB /* GMStep.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C6C1617C1E1002D61BB /* GMStep.m */; };
+		CA280C7E1617C1E1002D61BB /* GMStep.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C6C1617C1E1002D61BB /* GMStep.m */; };
+		CA280C7F1617C1E1002D61BB /* GMRouteAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C6E1617C1E1002D61BB /* GMRouteAnnotation.m */; };
+		CA280C801617C1E1002D61BB /* GMRouteAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C6E1617C1E1002D61BB /* GMRouteAnnotation.m */; };
+		CA280C811617C1E1002D61BB /* GMRouteOverlayMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C701617C1E1002D61BB /* GMRouteOverlayMapView.m */; };
+		CA280C821617C1E1002D61BB /* GMRouteOverlayMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C701617C1E1002D61BB /* GMRouteOverlayMapView.m */; };
 		CA632BF1160567B3007D71C3 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF0160567B3007D71C3 /* SignInViewController.m */; };
 		CA632BF2160567B3007D71C3 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF0160567B3007D71C3 /* SignInViewController.m */; };
 		CA632BF5160569FE007D71C3 /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF4160569FE007D71C3 /* CreateAccountViewController.m */; };
@@ -595,6 +609,20 @@
 		ADD147811606285C00C4A1AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		ADD1478316062C7400C4A1AB /* MapViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewViewController.h; sourceTree = "<group>"; };
 		ADD1478416062C7400C4A1AB /* MapViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewViewController.m; sourceTree = "<group>"; };
+		CA280C611617C1E1002D61BB /* GMDirections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDirections.h; sourceTree = "<group>"; };
+		CA280C621617C1E1002D61BB /* GMDirections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDirections.m; sourceTree = "<group>"; };
+		CA280C631617C1E1002D61BB /* GMDirectionsOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDirectionsOptions.h; sourceTree = "<group>"; };
+		CA280C641617C1E1002D61BB /* GMDirectionsOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDirectionsOptions.m; sourceTree = "<group>"; };
+		CA280C651617C1E1002D61BB /* GoogleMapsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapsAPI.h; sourceTree = "<group>"; };
+		CA280C661617C1E1002D61BB /* GoogleMapsAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMapsAPI.m; sourceTree = "<group>"; };
+		CA280C691617C1E1002D61BB /* GMRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMRoute.h; sourceTree = "<group>"; };
+		CA280C6A1617C1E1002D61BB /* GMRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMRoute.m; sourceTree = "<group>"; };
+		CA280C6B1617C1E1002D61BB /* GMStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMStep.h; sourceTree = "<group>"; };
+		CA280C6C1617C1E1002D61BB /* GMStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMStep.m; sourceTree = "<group>"; };
+		CA280C6D1617C1E1002D61BB /* GMRouteAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMRouteAnnotation.h; sourceTree = "<group>"; };
+		CA280C6E1617C1E1002D61BB /* GMRouteAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMRouteAnnotation.m; sourceTree = "<group>"; };
+		CA280C6F1617C1E1002D61BB /* GMRouteOverlayMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMRouteOverlayMapView.h; sourceTree = "<group>"; };
+		CA280C701617C1E1002D61BB /* GMRouteOverlayMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMRouteOverlayMapView.m; sourceTree = "<group>"; };
 		CA632BEF160567B3007D71C3 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		CA632BF0160567B3007D71C3 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		CA632BF3160569FE007D71C3 /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
@@ -1304,6 +1332,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CA280C831617C1EC002D61BB /* GoogleMapsApi */ = {
+			isa = PBXGroup;
+			children = (
+				CA280C611617C1E1002D61BB /* GMDirections.h */,
+				CA280C621617C1E1002D61BB /* GMDirections.m */,
+				CA280C631617C1E1002D61BB /* GMDirectionsOptions.h */,
+				CA280C641617C1E1002D61BB /* GMDirectionsOptions.m */,
+				CA280C651617C1E1002D61BB /* GoogleMapsAPI.h */,
+				CA280C661617C1E1002D61BB /* GoogleMapsAPI.m */,
+				CA280C691617C1E1002D61BB /* GMRoute.h */,
+				CA280C6A1617C1E1002D61BB /* GMRoute.m */,
+				CA280C6B1617C1E1002D61BB /* GMStep.h */,
+				CA280C6C1617C1E1002D61BB /* GMStep.m */,
+				CA280C6D1617C1E1002D61BB /* GMRouteAnnotation.h */,
+				CA280C6E1617C1E1002D61BB /* GMRouteAnnotation.m */,
+				CA280C6F1617C1E1002D61BB /* GMRouteOverlayMapView.h */,
+				CA280C701617C1E1002D61BB /* GMRouteOverlayMapView.m */,
+			);
+			name = GoogleMapsApi;
+			sourceTree = "<group>";
+		};
 		CA632C02160640B3007D71C3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1330,6 +1379,7 @@
 		CACC226716055567009BC042 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				CA280C831617C1EC002D61BB /* GoogleMapsApi */,
 				CACC220E1605487A009BC042 /* KeychainItemWrapper.h */,
 				CACC220F1605487A009BC042 /* KeychainItemWrapper.m */,
 			);
@@ -1712,6 +1762,13 @@
 				AD8C836A160F9251000B1EFE /* UASubscriptionUIUtil.m in Sources */,
 				CA7762891611F0320092C884 /* TransitShape.m in Sources */,
 				CAFF79E61613A8E90085FF92 /* DirectionInvitesViewController.m in Sources */,
+				CA280C731617C1E1002D61BB /* GMDirections.m in Sources */,
+				CA280C751617C1E1002D61BB /* GMDirectionsOptions.m in Sources */,
+				CA280C771617C1E1002D61BB /* GoogleMapsAPI.m in Sources */,
+				CA280C7B1617C1E1002D61BB /* GMRoute.m in Sources */,
+				CA280C7D1617C1E1002D61BB /* GMStep.m in Sources */,
+				CA280C7F1617C1E1002D61BB /* GMRouteAnnotation.m in Sources */,
+				CA280C811617C1E1002D61BB /* GMRouteOverlayMapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1773,6 +1830,13 @@
 				AD8C836B160F9251000B1EFE /* UASubscriptionUIUtil.m in Sources */,
 				CA77628A1611F0320092C884 /* TransitShape.m in Sources */,
 				CAFF79E71613A8E90085FF92 /* DirectionInvitesViewController.m in Sources */,
+				CA280C741617C1E1002D61BB /* GMDirections.m in Sources */,
+				CA280C761617C1E1002D61BB /* GMDirectionsOptions.m in Sources */,
+				CA280C781617C1E1002D61BB /* GoogleMapsAPI.m in Sources */,
+				CA280C7C1617C1E1002D61BB /* GMRoute.m in Sources */,
+				CA280C7E1617C1E1002D61BB /* GMStep.m in Sources */,
+				CA280C801617C1E1002D61BB /* GMRouteAnnotation.m in Sources */,
+				CA280C821617C1E1002D61BB /* GMRouteOverlayMapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
