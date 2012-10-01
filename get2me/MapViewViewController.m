@@ -28,11 +28,12 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
     self.mapView.delegate = self;
     
     self.mapView.showsUserLocation = YES;
-//    [self.mapView setUserTrackingMode: MKUserTrackingModeFollow animated: YES];
+    [self.mapView setUserTrackingMode: MKUserTrackingModeFollow animated: YES];
     
     [self loadDirections];
-    diretions = [GMDirections sharedDirections];
-	diretions.delegate = self;
+    self.directions = [GMDirections sharedDirections];
+	self.directions.delegate = self;
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -55,6 +56,11 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
                                       loader.method = RKRequestMethodGET;
                                       loader.delegate = self;
                                   }];    
+}
+
+- (void)directionsDidUpdateDirections:(GMDirections *)directions
+{
+    
 }
 
 -(NSMutableArray *)decodePolyLine: (NSString *)encString
@@ -100,13 +106,6 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
     return array;
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
 {
         MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:(MKPolyline *)overlay];
@@ -120,6 +119,7 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 	[[NSUserDefaults standardUserDefaults] synchronize];
     
     if ([objects count] > 0) {
+        NSLog(@"Routes Json is %@", objectLoader.response.bodyAsString );
         Direction *direction = [objects objectAtIndex: 0];
         NSArray *routes = direction.routes;
     }

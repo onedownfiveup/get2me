@@ -8,7 +8,7 @@
 
 #import "GoogleMapsAPI.h"
 
-#define GOOGLE_DIRECTION_API @"https://maps.googleapis.com/maps/api/directions/json"
+#define GOOGLE_DIRECTION_API @"https://maps.googleapis.com"
 
 @implementation GoogleMapsAPI
 - (id)init {
@@ -46,7 +46,7 @@
     [stepMapping mapKeyPath:@"start_location.latitude" toAttribute:@"startCoordinateLatitude"];
     [stepMapping mapKeyPath:@"start_location.longitude" toAttribute:@"startCoordinateLongitude"];
     [stepMapping mapKeyPath:@"end_location.lat" toAttribute:@"endPointLatitude"];
-    [stepMapping mapKeyPath:@"end_location.lng" toAttribute:@"endpointLongitude"];
+    [stepMapping mapKeyPath:@"end_location.lng" toAttribute:@"endPointLongitude"];
     [stepMapping mapKeyPath:@"polyline" toAttribute:@"polyline"];
     [stepMapping mapKeyPath:@"duration.text" toAttribute:@"durationText"];
     [stepMapping mapKeyPath:@"distance.text" toAttribute:@"distanceText"];
@@ -72,11 +72,11 @@
        toLocation: (CLLocation *) toLocation
   withTransitMode: (NSString *)   transitMode
 {
-    NSString *fromLatitude   = [[NSString alloc] initWithFormat:@"%f", fromLocation.coordinate.latitude];
-    NSString *fromLongitude  = [[NSString alloc] initWithFormat:@"%f", fromLocation.coordinate.longitude];
-    NSString *toLatitude     = [[NSString alloc] initWithFormat:@"%f", toLocation.coordinate.latitude];
-    NSString *toLongitude    = [[NSString alloc] initWithFormat:@"%f", toLocation.coordinate.longitude];
-    NSString *directionsPath = [[NSString alloc] initWithFormat:@"?origin=%@,%@&destination=%@,%@&mode=%@&sensor=true",
+    NSString *fromLatitude   = [[NSString alloc] initWithFormat:@"%.18g", fromLocation.coordinate.latitude];
+    NSString *fromLongitude  = [[NSString alloc] initWithFormat:@"%.18g", fromLocation.coordinate.longitude];
+    NSString *toLatitude     = [[NSString alloc] initWithFormat:@"%.18g", toLocation.coordinate.latitude];
+    NSString *toLongitude    = [[NSString alloc] initWithFormat:@"%.18g", toLocation.coordinate.longitude];
+    NSString *directionsPath = [[NSString alloc] initWithFormat:@"/maps/api/directions/json?origin=%@,%@&destination=%@,%@&mode=%@&sensor=true",
                                 fromLatitude, fromLongitude,
                                 toLatitude, toLongitude,
                                 transitMode];
@@ -96,6 +96,8 @@
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
+    NSLog(@"Result is %@", objectLoader.response.bodyAsString);
+    
     if ([self.delegate respondsToSelector:@selector(goolgeMapsAPI:didGetObject:)]) {
 		[(id<GoogleMapsAPIDelegate>)self.delegate goolgeMapsAPI:self didGetObject:[objects objectAtIndex:0]];
 	}

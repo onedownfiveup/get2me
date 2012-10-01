@@ -45,5 +45,8 @@
 - (GMRoute *)routeAtIndex:(NSInteger)index;
 - (NSInteger)numberOfGeocodes;
 - (NSDictionary *)geocodeAtIndex:(NSInteger)index;
+-(void) routeFrom: (CLLocation *) fromPoint
+          toPoint: (CLLocation *) toPoint
+  withTransitMode: (NSString *) transitMode;
 
 @end
