@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GMRoute.h"
+#import "Route.h"
 #import "GoogleMapsAPI.h"
 
 @class GMDirections;
@@ -20,33 +21,17 @@
 - (void)directions:(GMDirections *)directions didFailWithMessage:(NSString *)message;
 @end
 
-@interface GMDirections : NSObject<GoogleMapsAPIDelegate> {
-	id<GMDirectionsDelegate> delegate;
-	GoogleMapsAPI *googleMapsAPI;
-	NSArray *routes;
-	NSArray *geocodes;
-	NSDictionary *distance;
-	NSDictionary *duration;
-	NSDictionary *status;
-	BOOL isInitialized;
-}
-
+@interface GMDirections : NSObject<GoogleMapsAPIDelegate>
 @property (nonatomic, assign) id<GMDirectionsDelegate> delegate;
-@property (nonatomic, retain) NSArray *routes;
-@property (nonatomic, retain) NSArray *geocodes;
-@property (nonatomic, retain) NSDictionary *distance;
-@property (nonatomic, retain) NSDictionary *duration;
-@property (nonatomic, retain) NSDictionary *status;
-@property (nonatomic, readonly) BOOL isInitialized;
+@property (nonatomic, retain) Route *route;
+@property (nonatomic, retain) GMRoute *googleRoute;
+@property (nonatomic, retain) NSArray *googleLegs;
+@property (nonatomic, retain) NSMutableArray *googleSteps;
+@property (nonatomic, retain) GoogleMapsAPI *googleMapsAPI;
 
-+ (GMDirections *)sharedDirections;
-- (id)init;
+
 - (NSInteger)numberOfRoutes;
 - (GMRoute *)routeAtIndex:(NSInteger)index;
-- (NSInteger)numberOfGeocodes;
-- (NSDictionary *)geocodeAtIndex:(NSInteger)index;
--(void) routeFrom: (CLLocation *) fromPoint
-          toPoint: (CLLocation *) toPoint
-  withTransitMode: (NSString *) transitMode;
+- (void)googleRouteForRoute: (Route *) route;
 
 @end

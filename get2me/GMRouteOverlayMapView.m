@@ -11,7 +11,7 @@
 @implementation GMRouteOverlayMapView
 
 @synthesize inMapView;
-@synthesize routes;
+@synthesize steps;
 @synthesize lineColor; 
 
 - (id)initWithMapView:(MKMapView *)mapView {
@@ -27,7 +27,7 @@
 }
 
 - (void)drawRect:(CGRect)rect { 
-	if(!self.hidden && self.routes != nil && self.routes.count > 0) {
+	if(!self.hidden && self.steps != nil && self.steps.count > 0) {
 		CGContextRef context = UIGraphicsGetCurrentContext(); 
 		
 		if(!self.lineColor) {
@@ -39,8 +39,9 @@
 		
 		CGContextSetLineWidth(context, 4.0f);
 		
-		for(int i = 0; i < self.routes.count; i++) {
-			CLLocation* location = [self.routes objectAtIndex:i];
+		for(int i = 0; i < self.steps.count; i++) {
+            GMStep *step =  [self.steps objectAtIndex:i];
+			CLLocation* startLocation = step.startPointLatitude;
 			CGPoint point = [inMapView convertCoordinate:location.coordinate toPointToView:self];
 			
 			if(i == 0) {

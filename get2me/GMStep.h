@@ -11,14 +11,14 @@
 
 @interface GMStep : NSObject
 
-@property (nonatomic, retain, readonly) NSString     *polyline;
-@property (nonatomic, retain, readonly) NSString     *descriptionHtml;
-@property (nonatomic, retain, readonly) NSString     *distanceText;
-@property (nonatomic, retain, readonly) NSString     *durationText;
-@property (nonatomic, retain, readonly) NSString     *travelMode;
-@property (nonatomic, retain, readonly) CLLocation   *startPointLatitude;
-@property (nonatomic, retain, readonly) CLLocation   *startPointLongitude;
-@property (nonatomic, retain, readonly) CLLocation   *endPointLatitude;
-@property (nonatomic, retain, readonly) CLLocation   *endPointLongitude;
+@property (nonatomic, retain, readonly) NSString  *polyline;
+@property (nonatomic, retain, readonly) NSString  *descriptionHtml;
+@property (nonatomic, retain, readonly) NSString  *distanceText;
+@property (nonatomic, retain, readonly) NSString  *durationText;
+@property (nonatomic, retain, readonly) NSString  *travelMode;
+@property (nonatomic, retain, readonly) NSString  *startPointLatitude;
+@property (nonatomic, retain, readonly) NSString  *startPointLongitude;
+@property (nonatomic, retain, readonly) NSString  *endPointLatitude;
+@property (nonatomic, retain, readonly) NSString  *endPointLongitude;
 
 @end

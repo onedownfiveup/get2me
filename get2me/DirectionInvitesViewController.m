@@ -92,7 +92,7 @@
 - (IBAction)rejectInvite:(UIButton *)sender {
     RKParams *params= [RKParams params];
     [params setValue: @"true" forParam: @"route[reject]"];
-    
+    [self sendUpdateForRouteWithParams: params andButtonPressed: sender];    
 }
 
 -(void) sendUpdateForRouteWithParams: (RKParams *) params andButtonPressed: (UIButton *) button

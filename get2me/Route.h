@@ -23,5 +23,7 @@
 
 +(void) loadRestkitMappingsWithDirectionMapping: (RKObjectMapping *) directionMapping
                                  andUserMapping: (RKObjectMapping *) userMapping;
-
+-(BOOL) isAccepted;
+-(CLLocation *) startLocation;
+-(CLLocation *) endLocation;
 @end

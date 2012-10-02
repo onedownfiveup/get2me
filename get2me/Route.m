@@ -29,5 +29,23 @@
     [directionMapping mapKeyPath:@"routes" toRelationship:@"routes" withMapping: routeMapping];
     [sharedManager.mappingProvider setObjectMapping:routeMapping forKeyPath: @"routes"];
 }
+
+-(CLLocation *) startLocation
+{
+    return [[CLLocation alloc] initWithLatitude: [self.startCoordinateLatitude doubleValue]
+                                      longitude: [self.startCoordinateLongitude doubleValue]];
+}
+
+-(CLLocation *) endLocation
+{
+    return [[CLLocation alloc] initWithLatitude: [self.endCoordinateLatitude doubleValue]
+                                      longitude: [self.endCoordinateLongitude doubleValue]];
+    
+}
+
+-(BOOL) isAccepted
+{
+    return [self.state isEqualToString: @"accepted"];
+}
 @end
 

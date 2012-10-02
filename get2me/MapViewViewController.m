@@ -25,21 +25,21 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (!self.directions) {
+        self.directions = [[NSMutableArray alloc] init];
+    }
     self.mapView.delegate = self;
     
     self.mapView.showsUserLocation = YES;
     [self.mapView setUserTrackingMode: MKUserTrackingModeFollow animated: YES];
     
     [self loadDirections];
-    self.directions = [GMDirections sharedDirections];
-	self.directions.delegate = self;
     
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self loadDirections];
 }
 
 -(void)loadDirections
@@ -58,52 +58,9 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
                                   }];    
 }
 
-- (void)directionsDidUpdateDirections:(GMDirections *)directions
+- (void)directionsDidUpdateDirections:(GMDirections *)googleDirections
 {
     
-}
-
--(NSMutableArray *)decodePolyLine: (NSString *)encString
-{
-    NSMutableString *encoded = [[NSMutableString alloc] initWithCapacity:[encString length]];
-    
-    [encoded appendString:encString];
-    [encoded replaceOccurrencesOfString:@"\\\\" withString:@"\\"
-                                options:NSLiteralSearch
-                                  range:NSMakeRange(0, [encoded length])];
-    NSInteger len = [encoded length];
-    NSInteger index = 0;
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    NSInteger lat=0;
-    NSInteger lng=0;
-    while (index < len) {
-        NSInteger b;
-        NSInteger shift = 0;
-        NSInteger result = 0;
-        do {
-            b = [encoded characterAtIndex:index++] - 63;
-            result |= (b & 0x1f) << shift;
-            shift += 5;
-        } while (b >= 0x20);
-        NSInteger dlat = ((result & 1) ? ~(result >> 1) : (result >> 1));
-        lat += dlat;
-        shift = 0;
-        result = 0;
-        do {
-            b = [encoded characterAtIndex:index++] - 63;
-            result |= (b & 0x1f) << shift;
-            shift += 5;
-        } while (b >= 0x20);
-        NSInteger dlng = ((result & 1) ? ~(result >> 1) : (result >> 1));
-        lng += dlng;
-        NSNumber *latitude = [[NSNumber alloc] initWithFloat:lat * 1e-5];
-        NSNumber *longitude = [[NSNumber alloc] initWithFloat:lng * 1e-5];
-        
-        CLLocation *location = [[CLLocation alloc] initWithLatitude:[latitude floatValue] longitude:[longitude floatValue]];
-        [array addObject:location];
-    }
-    
-    return array;
 }
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
@@ -117,11 +74,24 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
 	[[NSUserDefaults standardUserDefaults] synchronize];
+    NSArray *routes;
     
     if ([objects count] > 0) {
         NSLog(@"Routes Json is %@", objectLoader.response.bodyAsString );
         Direction *direction = [objects objectAtIndex: 0];
-        NSArray *routes = direction.routes;
+        routes = direction.routes;
+    }
+    
+    for (Route *route in routes) {
+        if ([route isAccepted]) {
+            self.currentRoute = route;
+            GMDirections *direction = [[GMDirections alloc] init];
+            
+            direction.delegate = self;
+            [self.directions addObject: direction];
+
+            [direction googleRouteForRoute: route];
+        }
     }
 }
 
@@ -183,7 +153,7 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
             closestEndPointOffset = i;
         }
     }
-    
+    /*
     NSMutableArray *path = [self decodePolyLine: @"blah"];
     NSInteger numberOfSteps = path.count;
     
@@ -199,6 +169,6 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
     MKPolyline *polyLine = [MKPolyline polylineWithPoints:coordinates count:[path count]];
     polyLine.title = @"Poop on a broom";
     [self.mapView addOverlay:polyLine];
-
+*/
 }
 @end

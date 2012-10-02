@@ -9,35 +9,26 @@
 #import "GMDirections.h"
 #import "GMRoute.h"
 
-static GMDirections *sharedDirections;
-
 @implementation GMDirections
-
-@synthesize routes;
-@synthesize geocodes;
-@synthesize distance;
-@synthesize duration;
-@synthesize status;
-@synthesize isInitialized;
-
-+ (GMDirections *)sharedDirections {
-	if (!sharedDirections) {
-		sharedDirections = [[GMDirections alloc] init];
-	}
-	return sharedDirections;
-}
 
 - (id)init {
 	self = [super init];
 	if (self != nil) {
-		googleMapsAPI = [[GoogleMapsAPI alloc] init];
-		googleMapsAPI.delegate = self;
+		self.googleMapsAPI = [[GoogleMapsAPI alloc] init];
+        self.googleSteps = [[NSMutableArray alloc] init];
+		self.googleMapsAPI.delegate = self;
 	}
 	return self;
 }
 
 - (void)goolgeMapsAPI:(GoogleMapsAPI *)goolgeMapsAPI didGetObject:(NSObject *)object {
     
+    self.googleRoute = (GMRoute *)object;
+    self.googleLegs = self.googleRoute.legs;
+
+    for (GMLeg *leg in self.googleLegs) {
+        [self.googleSteps addObjectsFromArray: leg.steps];
+    }
 	if ([self.delegate respondsToSelector:@selector(directionsDidUpdateDirections:)]) {
 		[self.delegate directionsDidUpdateDirections:self];
 	}
@@ -49,27 +40,12 @@ static GMDirections *sharedDirections;
 	}
 }
 
--(void) routeFrom: (CLLocation *) fromPoint
-               toPoint: (CLLocation *) toPoint
-        withTransitMode: (NSString *) transitMode
+-(void)googleRouteForRoute: (Route *) route
 {
-    [googleMapsAPI routeFrom: fromPoint toLocation:toPoint withTransitMode:transitMode];
-}
-
-- (NSInteger)numberOfRoutes {
-	return [routes count];
-}
-
-- (GMRoute *)routeAtIndex:(NSInteger)index {
-	return [routes objectAtIndex:index];
-}
-
-- (NSInteger)numberOfGeocodes {
-	return [geocodes count];
-}
-
-- (NSDictionary *)geocodeAtIndex:(NSInteger)index {
-	return [geocodes objectAtIndex:index];;
+    self.route = route;
+    [self.googleMapsAPI routeFrom: route.startLocation
+                       toLocation:route.endLocation
+                  withTransitMode: @"walking"];
 }
 
 @end

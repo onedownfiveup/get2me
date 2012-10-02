@@ -515,25 +515,47 @@
                                             </segments>
                                         </segmentedControl>
                                         <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="59g-Nd-Z0x"/>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qWD-9H-f3N">
-                                            <segments>
-                                                <segment title="Accept"/>
-                                                <segment title="Reject"/>
-                                            </segments>
-                                        </segmentedControl>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgF-dL-bWH">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal" title="Accept">
+                                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="acceptInvite:" destination="Ere-Cv-qn0" eventType="touchUpInside" id="wCg-Ho-jep"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDQ-1H-pfF">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal" title="Reject">
+                                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="rejectInvite:" destination="Ere-Cv-qn0" eventType="touchUpInside" id="r52-ed-T4d"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="QOM-4W-eGL" firstAttribute="top" secondItem="0ec-1S-NEA" secondAttribute="top" type="default" id="5Rb-Og-6qG"/>
-                                    <constraint firstItem="HZd-Si-x7I" firstAttribute="top" secondItem="qWD-9H-f3N" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Dzl-fE-JLe"/>
+                                    <constraint firstItem="WDQ-1H-pfF" firstAttribute="baseline" secondItem="hgF-dL-bWH" secondAttribute="baseline" type="default" id="Aqy-JG-G4v"/>
                                     <constraint firstItem="fxL-Vj-hge" firstAttribute="top" secondItem="0ec-1S-NEA" secondAttribute="top" constant="39" id="G5j-0L-0t2"/>
-                                    <constraint firstItem="qWD-9H-f3N" firstAttribute="top" secondItem="0ec-1S-NEA" secondAttribute="top" constant="14" id="Qu2-Pm-sYp"/>
+                                    <constraint firstItem="hgF-dL-bWH" firstAttribute="centerX" secondItem="HZd-Si-x7I" secondAttribute="centerX" type="default" id="WNA-ZO-jhy"/>
+                                    <constraint firstItem="hgF-dL-bWH" firstAttribute="top" secondItem="0ec-1S-NEA" secondAttribute="top" constant="14" id="bAE-vb-e9x"/>
                                     <constraint firstItem="fxL-Vj-hge" firstAttribute="leading" secondItem="0ec-1S-NEA" secondAttribute="leading" constant="20" type="default" id="d00-NS-k0B"/>
+                                    <constraint firstItem="WDQ-1H-pfF" firstAttribute="centerX" secondItem="59g-Nd-Z0x" secondAttribute="centerX" type="default" id="gIX-Ez-3tX"/>
                                     <constraint firstItem="CcQ-3i-NwY" firstAttribute="trailing" secondItem="59g-Nd-Z0x" secondAttribute="trailing" type="default" id="hiM-ad-fhQ"/>
                                     <constraint firstItem="59g-Nd-Z0x" firstAttribute="leading" secondItem="HZd-Si-x7I" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="j7C-Ov-33Z"/>
                                     <constraint firstItem="QOM-4W-eGL" firstAttribute="leading" secondItem="0ec-1S-NEA" secondAttribute="leading" constant="9" id="jY7-Bb-lgu"/>
-                                    <constraint firstItem="59g-Nd-Z0x" firstAttribute="trailing" secondItem="qWD-9H-f3N" secondAttribute="trailing" type="default" id="nzB-S6-fqe"/>
+                                    <constraint firstItem="HZd-Si-x7I" firstAttribute="top" secondItem="hgF-dL-bWH" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nf9-mC-y25"/>
                                     <constraint firstItem="CcQ-3i-NwY" firstAttribute="top" secondItem="59g-Nd-Z0x" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="u2V-ug-F4A"/>
                                     <constraint firstItem="HZd-Si-x7I" firstAttribute="centerY" secondItem="59g-Nd-Z0x" secondAttribute="centerY" type="default" id="u4w-De-Ndv"/>
                                     <constraint firstItem="CcQ-3i-NwY" firstAttribute="leading" secondItem="0ec-1S-NEA" secondAttribute="leading" constant="28" id="vQS-CS-EXf"/>
@@ -594,10 +616,6 @@
         </class>
         <class className="DirectionInvitesViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DirectionInvitesViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="acceptInvite:" candidateClass="UIButton"/>
-                <relationship kind="action" name="backButtonPressed:"/>
-            </relationships>
         </class>
         <class className="FriendsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsViewController.h"/>
