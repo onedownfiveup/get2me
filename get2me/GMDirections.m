@@ -47,5 +47,12 @@
                        toLocation:route.endLocation
                   withTransitMode: @"walking"];
 }
+- (NSInteger)numberOfSteps {
+	return [self.googleSteps count];
+}
+
+- (GMStep *)stepAtIndex:(NSInteger)index {
+	return [self.googleSteps objectAtIndex:index];
+}
 
 @end

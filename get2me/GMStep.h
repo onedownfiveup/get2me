@@ -21,4 +21,6 @@
 @property (nonatomic, retain, readonly) NSString  *endPointLatitude;
 @property (nonatomic, retain, readonly) NSString  *endPointLongitude;
 
+-(CLLocation *) startLocation;
+-(CLLocation *) endLocation;
 @end

@@ -26,46 +26,31 @@
 	return self;
 }
 
-- (void)drawRect:(CGRect)rect { 
-	if(!self.hidden && self.steps != nil && self.steps.count > 0) {
-		CGContextRef context = UIGraphicsGetCurrentContext(); 
-		
-		if(!self.lineColor) {
-			self.lineColor = [UIColor colorWithRed:0.0f green:0.0f blue:1.0f alpha:0.5f];
-		}
-		
-		CGContextSetStrokeColorWithColor(context, self.lineColor.CGColor);
-		CGContextSetRGBFillColor(context, 0.0f, 0.0f, 1.0f, 1.0f);
-		
-		CGContextSetLineWidth(context, 4.0f);
-		
-		for(int i = 0; i < self.steps.count; i++) {
-            GMStep *step =  [self.steps objectAtIndex:i];
-			CLLocation* startLocation = step.startPointLatitude;
-			CGPoint point = [inMapView convertCoordinate:location.coordinate toPointToView:self];
-			
-			if(i == 0) {
-				CGContextMoveToPoint(context, point.x, point.y);
-			} else {
-				CGContextAddLineToPoint(context, point.x, point.y);
-			}
-		}
-		
-		CGContextStrokePath(context);
-	}
+- (void)drawLine {
+    NSInteger stepCount = [self.steps count];
+    CLLocationCoordinate2D coords[stepCount];
+    CLLocationCoordinate2D *p = coords;
+    
+    for (CLLocation *loc in self.steps) {
+        p->latitude = loc.coordinate.latitude, p->longitude = loc.coordinate.longitude;
+        p++;
+    }
+    
+    MKPolyline *line = [MKPolyline polylineWithCoordinates:coords count:stepCount];
+    [self.inMapView addOverlay:line];
 }
 
-- (void)setRoutes:(NSArray *)routePoints {
-	if (routes != routePoints) {
-		routes = routePoints;
+- (void)setSteps:(NSArray *)stepPoints {
+	if (steps != stepPoints) {
+		steps = stepPoints;
 		
 		CLLocationDegrees maxLat = -90.0f;
 		CLLocationDegrees maxLon = -180.0f;
 		CLLocationDegrees minLat = 90.0f;
 		CLLocationDegrees minLon = 180.0f;
 		
-		for (int i = 0; i < self.routes.count; i++) {
-			CLLocation *currentLocation = [self.routes objectAtIndex:i];
+		for (int i = 0; i < self.steps.count; i++) {
+			CLLocation *currentLocation = [self.steps objectAtIndex:i];
 			if(currentLocation.coordinate.latitude > maxLat) {
 				maxLat = currentLocation.coordinate.latitude;
 			}
@@ -87,8 +72,6 @@
 		region.span.longitudeDelta = maxLon - minLon;
 		
 		[self.inMapView setRegion:region animated:YES];
-		
-		[self setNeedsDisplay];
 	}
 }
 

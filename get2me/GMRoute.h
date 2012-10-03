@@ -13,7 +13,9 @@
 @interface GMRoute : NSObject
 
 @property (nonatomic, retain, readonly) NSArray *legs;
+@property (nonatomic, retain, readonly) NSString *overviewPolyline;
 
 - (GMLeg *)legAtIndex:(NSInteger)index;
+-(NSMutableArray *)decodedPolyLine;
 
 @end

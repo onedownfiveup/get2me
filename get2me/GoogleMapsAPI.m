@@ -32,7 +32,8 @@
 {
     RKObjectMapping *routeMapping = [RKObjectMapping mappingForClass: [GMRoute class]];
     [routeMapping mapKeyPath:@"legs" toRelationship:@"legs" withMapping: legMapping];
-    
+    [routeMapping mapKeyPath:@"overview_polyline.points" toAttribute:@"overviewPolyline"];
+
     [self.objectManager.mappingProvider setObjectMapping: legMapping forKeyPath: @"steps"];
 
 

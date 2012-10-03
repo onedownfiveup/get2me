@@ -53,4 +53,17 @@
     
     return array;
 }
+
+-(CLLocation *) startLocation
+{
+    return [[CLLocation alloc] initWithLatitude: [self.startPointLatitude doubleValue]
+                                      longitude: [self.startPointLongitude doubleValue]];
+}
+
+-(CLLocation *) endLocation
+{
+    return [[CLLocation alloc] initWithLatitude: [self.endPointLatitude doubleValue]
+                                      longitude: [self.endPointLongitude doubleValue]];
+    
+}
 @end

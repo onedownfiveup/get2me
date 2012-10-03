@@ -30,8 +30,8 @@
 @property (nonatomic, retain) GoogleMapsAPI *googleMapsAPI;
 
 
-- (NSInteger)numberOfRoutes;
-- (GMRoute *)routeAtIndex:(NSInteger)index;
+- (NSInteger)numberOfSteps;
+- (GMStep *)stepAtIndex:(NSInteger)index;
 - (void)googleRouteForRoute: (Route *) route;
 
 @end

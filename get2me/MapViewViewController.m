@@ -12,6 +12,8 @@
 #import "Direction.h"
 #import "UserSearchContainerViewController.h"
 #import "DirectionInvitesViewController.h"
+#import "GMRouteOverlayMapView.h"
+#import "GMRouteAnnotation.h"
 
 typedef void (^PerformAfterAcquiringLocationSuccess)(CLLocationCoordinate2D);
 typedef void (^PerformAfterAcquiringLocationError)(NSError *);
@@ -28,6 +30,7 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
     if (!self.directions) {
         self.directions = [[NSMutableArray alloc] init];
     }
+    self.routeOverlayView = [[GMRouteOverlayMapView alloc] initWithMapView: self.mapView];
     self.mapView.delegate = self;
     
     self.mapView.showsUserLocation = YES;
@@ -61,6 +64,27 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 - (void)directionsDidUpdateDirections:(GMDirections *)googleDirections
 {
     
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+	
+	// Overlay polylines
+	NSArray *steps = [googleDirections.googleRoute decodedPolyLine];
+	[self.routeOverlayView setSteps:steps];
+	
+	// Add annotations
+	GMRouteAnnotation *startAnnotation = [[GMRouteAnnotation alloc] initWithCoordinate:[[steps objectAtIndex:0] coordinate]
+                                                                                  title: @"Start point"
+                                                                         annotationType:GMRouteAnnotationTypeStart];
+	GMRouteAnnotation *endAnnotation = [[GMRouteAnnotation alloc] initWithCoordinate:[[steps lastObject] coordinate]
+                                                                                  title: @"End Point"
+                                                                         annotationType:GMRouteAnnotationTypeEnd];
+    
+	[self.mapView addAnnotations: [NSArray arrayWithObjects: startAnnotation, endAnnotation, nil]];
+    [self.routeOverlayView drawLine];
+}
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+	self.routeOverlayView.hidden = NO;
+	[self.routeOverlayView setNeedsDisplay];
 }
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay

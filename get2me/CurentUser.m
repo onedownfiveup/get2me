@@ -23,9 +23,6 @@ static dispatch_queue_t serialQueue;
         if (obj) {
             self.keychain  = [[KeychainItemWrapper alloc] initWithIdentifier: @"GET2ME"
                                                                  accessGroup: nil];
-            self.locationManager =  [[CLLocationManager alloc] init];
-            self.locationManager.delegate = self;
-            [self.locationManager startUpdatingLocation];
         }
     });
     

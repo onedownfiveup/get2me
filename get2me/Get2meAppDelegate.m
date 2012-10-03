@@ -14,11 +14,16 @@
 #import "MapViewViewController.h"
 #import "UAirship.h"
 #import "UAPush.h"
-
+#import <CoreLocation/CoreLocation.h>
 @implementation Get2meAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    CurrentUser *currentUser = [CurrentUser sharedInstance];
+    currentUser.locationManager =  [[CLLocationManager alloc] init];
+    currentUser.locationManager.delegate = currentUser;
+    [currentUser.locationManager startUpdatingLocation];
+
     [self loadRestkitDefaults];
     NSString *viewIdentifier = @"signInController";
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName: @"MainStoryboard_iPhone" bundle: nil];
@@ -52,8 +57,8 @@
 
 -(void) loadRestkitDefaults
 {
-//    self.objectManager = [RKObjectManager managerWithBaseURLString:@"http://gettome.herokuapp.com/"];
-    self.objectManager = [RKObjectManager managerWithBaseURLString:@"http://get2me.local/"];
+    self.objectManager = [RKObjectManager managerWithBaseURLString:@"http://gettome.herokuapp.com/"];
+//    self.objectManager = [RKObjectManager managerWithBaseURLString:@"http://get2me.local/"];
     [RKObjectManager setSharedManager: self.objectManager];
     [User loadRestkitMappings];
 }

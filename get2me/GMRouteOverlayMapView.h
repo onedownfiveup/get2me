@@ -10,13 +10,14 @@
 #import <MapKit/MapKit.h>
 #import "GMStep.h"
 
-@interface GMRouteOverlayMapView : UIView {
+@interface GMRouteOverlayMapView : MKOverlayView {
 	MKMapView *inMapView;
 	NSArray *steps;
 	UIColor *lineColor;
 }
 
 - (id)initWithMapView:(MKMapView *)mapView;
+- (void)drawLine;
 
 @property (nonatomic, retain) MKMapView *inMapView;
 @property (nonatomic, retain) NSArray *steps;
