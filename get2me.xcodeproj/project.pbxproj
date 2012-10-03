@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD0EA675161C7DAC006BC642 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0EA674161C7DAC006BC642 /* UIColor+Extensions.m */; };
+		AD0EA676161C7DAC006BC642 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0EA674161C7DAC006BC642 /* UIColor+Extensions.m */; };
 		AD1A449E1618B68700309849 /* GMLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1A449D1618B68700309849 /* GMLeg.m */; };
 		AD1A449F1618B68700309849 /* GMLeg.m in Sources */ = {isa = PBXBuildFile; fileRef = AD1A449D1618B68700309849 /* GMLeg.m */; };
 		AD8C819C160F795E000B1EFE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AD8C819B160F795E000B1EFE /* libz.dylib */; };
@@ -350,6 +352,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AD0EA673161C7DAC006BC642 /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
+		AD0EA674161C7DAC006BC642 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
 		AD1A449C1618B68600309849 /* GMLeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLeg.h; sourceTree = "<group>"; };
 		AD1A449D1618B68700309849 /* GMLeg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLeg.m; sourceTree = "<group>"; };
 		AD8C8199160F7928000B1EFE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -699,6 +703,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD0EA672161C7D89006BC642 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				AD0EA673161C7DAC006BC642 /* UIColor+Extensions.h */,
+				AD0EA674161C7DAC006BC642 /* UIColor+Extensions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		AD8C81B0160F9251000B1EFE /* UrbanAirship */ = {
 			isa = PBXGroup;
 			children = (
@@ -1288,6 +1301,7 @@
 		ADC33C9616013F6800BF4935 /* get2me */ = {
 			isa = PBXGroup;
 			children = (
+				AD0EA672161C7D89006BC642 /* Categories */,
 				CACC226D16055C4C009BC042 /* ViewControllers */,
 				CACC2268160555C1009BC042 /* Models */,
 				CACC226716055567009BC042 /* Lib */,
@@ -1769,6 +1783,7 @@
 				CA280C7F1617C1E1002D61BB /* GMRouteAnnotation.m in Sources */,
 				CA280C811617C1E1002D61BB /* GMRouteOverlayMapView.m in Sources */,
 				AD1A449E1618B68700309849 /* GMLeg.m in Sources */,
+				AD0EA675161C7DAC006BC642 /* UIColor+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1837,6 +1852,7 @@
 				CA280C801617C1E1002D61BB /* GMRouteAnnotation.m in Sources */,
 				CA280C821617C1E1002D61BB /* GMRouteOverlayMapView.m in Sources */,
 				AD1A449F1618B68700309849 /* GMLeg.m in Sources */,
+				AD0EA676161C7DAC006BC642 /* UIColor+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

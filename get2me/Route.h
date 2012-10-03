@@ -26,4 +26,6 @@
 -(BOOL) isAccepted;
 -(CLLocation *) startLocation;
 -(CLLocation *) endLocation;
+-(NSString *) titleForAnnotation;
+
 @end

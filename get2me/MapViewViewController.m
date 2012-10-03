@@ -14,6 +14,7 @@
 #import "DirectionInvitesViewController.h"
 #import "GMRouteOverlayMapView.h"
 #import "GMRouteAnnotation.h"
+#import "UIColor+Extensions.h"
 
 typedef void (^PerformAfterAcquiringLocationSuccess)(CLLocationCoordinate2D);
 typedef void (^PerformAfterAcquiringLocationError)(NSError *);
@@ -68,14 +69,15 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 	
 	// Overlay polylines
 	NSArray *steps = [googleDirections.googleRoute decodedPolyLine];
+    Route *route = googleDirections.route;
 	[self.routeOverlayView setSteps:steps];
 	
 	// Add annotations
 	GMRouteAnnotation *startAnnotation = [[GMRouteAnnotation alloc] initWithCoordinate:[[steps objectAtIndex:0] coordinate]
-                                                                                  title: @"Start point"
+                                                                                 title: [route titleForAnnotation]
                                                                          annotationType:GMRouteAnnotationTypeStart];
 	GMRouteAnnotation *endAnnotation = [[GMRouteAnnotation alloc] initWithCoordinate:[[steps lastObject] coordinate]
-                                                                                  title: @"End Point"
+                                                                                  title: [route titleForAnnotation]
                                                                          annotationType:GMRouteAnnotationTypeEnd];
     
 	[self.mapView addAnnotations: [NSArray arrayWithObjects: startAnnotation, endAnnotation, nil]];
@@ -89,10 +91,12 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 
 - (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id<MKOverlay>)overlay
 {
-        MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:(MKPolyline *)overlay];
-        polylineView.lineWidth = 0;
-        polylineView.strokeColor = [[UIColor blueColor] colorWithAlphaComponent:0.5];
-        return polylineView;
+    MKPolylineView *polylineView = [[MKPolylineView alloc] initWithPolyline:(MKPolyline *)overlay];
+    polylineView.lineWidth = 0;
+    
+    UIColor *randomColor = [UIColor randomColorWithAlphaComponent: 0.5];
+    polylineView.strokeColor = randomColor;
+    return polylineView;
 }
 
 

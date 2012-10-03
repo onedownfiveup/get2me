@@ -43,6 +43,11 @@
     
 }
 
+-(NSString *) titleForAnnotation
+{
+    return [NSString stringWithFormat: @"%@ %@", self.user.firstName, self.user.lastName];
+}
+
 -(BOOL) isAccepted
 {
     return [self.state isEqualToString: @"accepted"];
