@@ -18,6 +18,7 @@
 
 - (id)initWithMapView:(MKMapView *)mapView;
 - (void)drawLine;
+- (void)drawAnnotationsForSteps: (NSArray *)routeSteps;
 
 @property (nonatomic, retain) MKMapView *inMapView;
 @property (nonatomic, retain) NSArray *steps;

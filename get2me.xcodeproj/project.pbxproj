@@ -276,6 +276,12 @@
 		CA79DDCD160A8EC500BAD33F /* Direction.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DDCB160A8EC500BAD33F /* Direction.m */; };
 		CA79DDD0160A8ED600BAD33F /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DDCF160A8ED600BAD33F /* Route.m */; };
 		CA79DDD1160A8ED600BAD33F /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DDCF160A8ED600BAD33F /* Route.m */; };
+		CA9E94AF161DF7E4001B6494 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9E94AE161DF7E4001B6494 /* NSString+Extensions.m */; };
+		CA9E94B0161DF7E4001B6494 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9E94AE161DF7E4001B6494 /* NSString+Extensions.m */; };
+		CA9E94B7161DFD8F001B6494 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9E94B6161DFD8F001B6494 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA9E94B8161DFD8F001B6494 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9E94B6161DFD8F001B6494 /* GTMNSString+HTML.m */; };
+		CA9E94C1161E28E2001B6494 /* directions_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA9E94C0161E28E2001B6494 /* directions_icon.png */; };
+		CA9E94C2161E28E2001B6494 /* directions_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA9E94C0161E28E2001B6494 /* directions_icon.png */; };
 		CACC220C160547F8009BC042 /* CurentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC220B160547F8009BC042 /* CurentUser.m */; };
 		CACC220D160547F8009BC042 /* CurentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC220B160547F8009BC042 /* CurentUser.m */; };
 		CACC22101605487A009BC042 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CACC220F1605487A009BC042 /* KeychainItemWrapper.m */; };
@@ -642,6 +648,11 @@
 		CA79DDCB160A8EC500BAD33F /* Direction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Direction.m; sourceTree = "<group>"; };
 		CA79DDCE160A8ED600BAD33F /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
 		CA79DDCF160A8ED600BAD33F /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
+		CA9E94AD161DF7E4001B6494 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
+		CA9E94AE161DF7E4001B6494 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
+		CA9E94B1161DFBE3001B6494 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		CA9E94B6161DFD8F001B6494 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		CA9E94C0161E28E2001B6494 /* directions_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = directions_icon.png; path = Resources/Images/directions_icon.png; sourceTree = SOURCE_ROOT; };
 		CACC220A160547F8009BC042 /* CurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentUser.h; sourceTree = "<group>"; };
 		CACC220B160547F8009BC042 /* CurentUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurentUser.m; sourceTree = "<group>"; };
 		CACC220E1605487A009BC042 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
@@ -708,6 +719,10 @@
 			children = (
 				AD0EA673161C7DAC006BC642 /* UIColor+Extensions.h */,
 				AD0EA674161C7DAC006BC642 /* UIColor+Extensions.m */,
+				CA9E94AD161DF7E4001B6494 /* NSString+Extensions.h */,
+				CA9E94AE161DF7E4001B6494 /* NSString+Extensions.m */,
+				CA9E94B1161DFBE3001B6494 /* GTMNSString+HTML.h */,
+				CA9E94B6161DFD8F001B6494 /* GTMNSString+HTML.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1359,9 +1374,9 @@
 				CA280C6E1617C1E1002D61BB /* GMRouteAnnotation.m */,
 				CA280C6F1617C1E1002D61BB /* GMRouteOverlayMapView.h */,
 				CA280C701617C1E1002D61BB /* GMRouteOverlayMapView.m */,
+				CA280C651617C1E1002D61BB /* GoogleMapsAPI.h */,
 				CA280C6B1617C1E1002D61BB /* GMStep.h */,
 				CA280C6C1617C1E1002D61BB /* GMStep.m */,
-				CA280C651617C1E1002D61BB /* GoogleMapsAPI.h */,
 				CA280C661617C1E1002D61BB /* GoogleMapsAPI.m */,
 			);
 			name = GoogleMapsApi;
@@ -1370,6 +1385,7 @@
 		CA632C02160640B3007D71C3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CA9E94C0161E28E2001B6494 /* directions_icon.png */,
 				CA79DDBE1608F36700BAD33F /* user-icon.png */,
 				ADC33CA216013F6800BF4935 /* Default.png */,
 				ADC33CA416013F6800BF4935 /* Default@2x.png */,
@@ -1623,6 +1639,7 @@
 				AD8C8386160F9251000B1EFE /* UASubscriptionRootViewController.xib in Resources */,
 				AD8C8388160F9251000B1EFE /* UASubscriptionSettingsViewController.xib in Resources */,
 				AD8C838A160F9251000B1EFE /* UASubscriptionUserProductsViewController.xib in Resources */,
+				CA9E94C1161E28E2001B6494 /* directions_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1695,6 +1712,7 @@
 				AD8C8387160F9251000B1EFE /* UASubscriptionRootViewController.xib in Resources */,
 				AD8C8389160F9251000B1EFE /* UASubscriptionSettingsViewController.xib in Resources */,
 				AD8C838B160F9251000B1EFE /* UASubscriptionUserProductsViewController.xib in Resources */,
+				CA9E94C2161E28E2001B6494 /* directions_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1784,6 +1802,8 @@
 				CA280C811617C1E1002D61BB /* GMRouteOverlayMapView.m in Sources */,
 				AD1A449E1618B68700309849 /* GMLeg.m in Sources */,
 				AD0EA675161C7DAC006BC642 /* UIColor+Extensions.m in Sources */,
+				CA9E94AF161DF7E4001B6494 /* NSString+Extensions.m in Sources */,
+				CA9E94B7161DFD8F001B6494 /* GTMNSString+HTML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1853,6 +1873,8 @@
 				CA280C821617C1E1002D61BB /* GMRouteOverlayMapView.m in Sources */,
 				AD1A449F1618B68700309849 /* GMLeg.m in Sources */,
 				AD0EA676161C7DAC006BC642 /* UIColor+Extensions.m in Sources */,
+				CA9E94B0161DF7E4001B6494 /* NSString+Extensions.m in Sources */,
+				CA9E94B8161DFD8F001B6494 /* GTMNSString+HTML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

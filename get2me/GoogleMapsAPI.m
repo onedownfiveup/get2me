@@ -44,14 +44,16 @@
 {
     RKObjectMapping *stepMapping = [RKObjectMapping mappingForClass: [GMStep class]];
     
-    [stepMapping mapKeyPath:@"start_location.latitude" toAttribute:@"startCoordinateLatitude"];
-    [stepMapping mapKeyPath:@"start_location.longitude" toAttribute:@"startCoordinateLongitude"];
+    [stepMapping mapKeyPath:@"start_location.lat" toAttribute:@"startPointLatitude"];
+    [stepMapping mapKeyPath:@"start_location.lng" toAttribute:@"startPointLongitude"];
     [stepMapping mapKeyPath:@"end_location.lat" toAttribute:@"endPointLatitude"];
     [stepMapping mapKeyPath:@"end_location.lng" toAttribute:@"endPointLongitude"];
     [stepMapping mapKeyPath:@"polyline" toAttribute:@"polyline"];
     [stepMapping mapKeyPath:@"duration.text" toAttribute:@"durationText"];
     [stepMapping mapKeyPath:@"distance.text" toAttribute:@"distanceText"];
     [stepMapping mapKeyPath:@"travel_mode" toAttribute:@"travelMode"];
+    [stepMapping mapKeyPath:@"html_instructions" toAttribute:@"descriptionHtml"];
+    
     
     [self.objectManager.mappingProvider setObjectMapping:stepMapping forKeyPath: @"steps"];
     return stepMapping;

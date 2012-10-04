@@ -64,24 +64,69 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 
 - (void)directionsDidUpdateDirections:(GMDirections *)googleDirections
 {
-    
+    User *currentUser = [CurrentUser sharedInstance].user;
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 	
 	// Overlay polylines
-	NSArray *steps = [googleDirections.googleRoute decodedPolyLine];
+	NSArray *stepCoordinates = [googleDirections.googleRoute decodedPolyLine];
+    NSArray *routeSteps = googleDirections.googleSteps;
     Route *route = googleDirections.route;
-	[self.routeOverlayView setSteps:steps];
-	
-	// Add annotations
-	GMRouteAnnotation *startAnnotation = [[GMRouteAnnotation alloc] initWithCoordinate:[[steps objectAtIndex:0] coordinate]
-                                                                                 title: [route titleForAnnotation]
-                                                                         annotationType:GMRouteAnnotationTypeStart];
-	GMRouteAnnotation *endAnnotation = [[GMRouteAnnotation alloc] initWithCoordinate:[[steps lastObject] coordinate]
-                                                                                  title: [route titleForAnnotation]
-                                                                         annotationType:GMRouteAnnotationTypeEnd];
     
+	[self.routeOverlayView setSteps:stepCoordinates];
+	
+    if([route.user.userId isEqualToString: currentUser.userId]) {
+        [self.routeOverlayView drawAnnotationsForSteps: routeSteps];
+        
+    }
+	// Add annotations
+	GMRouteAnnotation *startAnnotation = [[GMRouteAnnotation alloc] initWithCoordinate:[[stepCoordinates objectAtIndex:0] coordinate]
+                                                                                 title: @"Start"
+                                                                              subtitle: @"Yeah bitches"
+                                                                         annotationType:GMRouteAnnotationTypeStart];
+    
+	GMRouteAnnotation *endAnnotation = [[GMRouteAnnotation alloc] initWithCoordinate:[[stepCoordinates lastObject] coordinate]
+                                                                                  title: [route titleForAnnotation]
+                                                                            subtitle: @"Yeah bitches"
+                                                                         annotationType:GMRouteAnnotationTypeEnd];
+    MKUserLocation *userLocation = [[MKUserLocation alloc] init];
+    userLocation.coordinate = route.startLocation.coordinate;
+
 	[self.mapView addAnnotations: [NSArray arrayWithObjects: startAnnotation, endAnnotation, nil]];
     [self.routeOverlayView drawLine];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    if ([annotation isKindOfClass:[GMRouteAnnotation class]])
+    {
+        // try to dequeue an existing pin view first
+        static NSString* routeAnnotationIdentifier = @"routeAnnotation";
+        MKPinAnnotationView* pinView = (MKPinAnnotationView *)
+        [self.mapView dequeueReusableAnnotationViewWithIdentifier:routeAnnotationIdentifier];
+        if (!pinView)
+        {
+            // if an existing pin view was not available, create one
+            MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc]
+                                                   initWithAnnotation:annotation reuseIdentifier:routeAnnotationIdentifier];
+            
+            UIImage *directionImage = [UIImage imageNamed: @"directions_icon"];
+            customPinView.image = directionImage;
+            customPinView.animatesDrop = YES;
+            customPinView.canShowCallout = YES;
+                        
+            return customPinView;
+        }
+        else
+        {
+            pinView.annotation = annotation;
+        }
+        return pinView;
+    }
+    
+    return nil;
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
@@ -103,13 +148,13 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
 	[[NSUserDefaults standardUserDefaults] synchronize];
     NSArray *routes;
-    
+
     if ([objects count] > 0) {
         NSLog(@"Routes Json is %@", objectLoader.response.bodyAsString );
         Direction *direction = [objects objectAtIndex: 0];
         routes = direction.routes;
     }
-    
+
     for (Route *route in routes) {
         if ([route isAccepted]) {
             self.currentRoute = route;
@@ -127,76 +172,4 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
     NSLog(@"Value of error is %@", objectLoader.response.bodyAsString);
 }
 
--(void) testSelector
-{
-    CLLocationCoordinate2D startCoordinate = CLLocationCoordinate2DMake(40.746040, -73.982190);
-    CLLocationCoordinate2D endCoordinate = CLLocationCoordinate2DMake(40.68922000000001, -73.98467000000001);
-    
-    MKMapPoint startMapPoint = MKMapPointForCoordinate(startCoordinate);
-    MKMapPoint endMapPoint = MKMapPointForCoordinate(endCoordinate);
-    
-    NSUInteger closestStartPointOffset = 0;
-    CLLocationDistance closestStartDistance = INFINITY;
-    
-    NSUInteger closestEndPointOffset = 0;
-    CLLocationDistance closestEndDistance = INFINITY;
-    
-    TransitShape *transitShape = [[TransitShape alloc] init];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.746040, -73.982190)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.736560, -73.98907000000001)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.736560, -73.98907000000001)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.73652000000001, -73.98896000000002)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.73652000000001, -73.98896000000002)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.734420, -73.98990000000001)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.734420, -73.98990000000001)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.72985000000001, -73.990690)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.72985000000001, -73.990690)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.72712000000001, -73.99162000000001 )];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.72712000000001, -73.99162000000001)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.716050, -73.99626000000001)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.716050, -73.99626000000001)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.715890, -73.99610000000001)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.715890, -73.99610000000001)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.699640, -73.986580)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.699640, -73.986580)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.699870, -73.98683000000001)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.699870, -73.98683000000001)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.69146000000001, -73.98736000000001)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.690480, -73.987870)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.690480, -73.987870)];
-    [transitShape addCoordinate: CLLocationCoordinate2DMake(40.68922000000001, -73.98467000000001)];
-    
-    for (NSUInteger i = 0; i < transitShape.coordinatesCount; i++) {
-        CLLocationCoordinate2D coordinate = transitShape.coordinates[i];
-        MKMapPoint mapPoint = MKMapPointForCoordinate(coordinate);
-        CLLocationDistance distanceToStart = MKMetersBetweenMapPoints(mapPoint, startMapPoint);
-        if (distanceToStart < closestStartDistance) {
-            closestStartDistance = distanceToStart;
-            closestStartPointOffset = i;
-        }
-        
-        CLLocationDistance distanceToEnd = MKMetersBetweenMapPoints(mapPoint, endMapPoint);
-        if (distanceToEnd < closestEndDistance) {
-            closestEndDistance = distanceToEnd;
-            closestEndPointOffset = i;
-        }
-    }
-    /*
-    NSMutableArray *path = [self decodePolyLine: @"blah"];
-    NSInteger numberOfSteps = path.count;
-    
-    MKMapPoint coordinates[numberOfSteps];
-    
-    for (NSInteger index = 0; index < numberOfSteps; index++) {
-        CLLocation *location = [path objectAtIndex:index];
-        MKMapPoint coordinate = MKMapPointForCoordinate(location.coordinate);
-        
-        coordinates[index] = coordinate;
-    }
-    
-    MKPolyline *polyLine = [MKPolyline polylineWithPoints:coordinates count:[path count]];
-    polyLine.title = @"Poop on a broom";
-    [self.mapView addOverlay:polyLine];
-*/
-}
 @end

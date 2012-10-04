@@ -7,6 +7,8 @@
 //
 
 #import "GMRouteOverlayMapView.h"
+#import "GMRouteAnnotation.h"
+#import "NSString+Extensions.h"
 
 @implementation GMRouteOverlayMapView
 
@@ -73,6 +75,23 @@
 		
 		[self.inMapView setRegion:region animated:YES];
 	}
+}
+
+-(void) drawAnnotationsForSteps: (NSArray *)routeSteps
+{
+    NSMutableArray *annotations = [[NSMutableArray alloc] initWithCapacity: [routeSteps count]];
+
+    for (GMStep *step in routeSteps) {
+        NSString *annotationTitle = [step.descriptionHtml stringByConvertingHTMLToPlainText];
+
+        GMRouteAnnotation *annotation = [[GMRouteAnnotation alloc] initWithCoordinate:step.startLocation.coordinate
+                                                                        title: @"Direction"
+                                                                        subtitle: annotationTitle
+                                                               annotationType:GMRouteAnnotationTypeWayPoint];
+        [annotations addObject: annotation];
+
+    }
+    [self.inMapView addAnnotations: annotations];
 }
 
 @end
