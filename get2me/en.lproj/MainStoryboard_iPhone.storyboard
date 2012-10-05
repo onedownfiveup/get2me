@@ -187,8 +187,11 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem id="IMb-ng-h3p">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="K19-zs-LCS">
+                                        <barButtonItem key="leftBarButtonItem" title="invites" id="NRG-Rq-DLK">
                                             <color key="tintColor" red="0.56871826690000005" green="0.77494541240000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <segue destination="yyd-oE-WPj" kind="modal" id="tKg-VF-akn"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="Xvt-Qu-Wvo">
                                             <color key="tintColor" red="0.56871826690000005" green="0.77494541240000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -199,30 +202,64 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWj-og-AZM">
-                                <items>
-                                    <barButtonItem title="invites" id="NRG-Rq-DLK">
-                                        <color key="tintColor" red="0.56871826690000005" green="0.77494541240000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nB1-Oo-bbW">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Head on to Schermehorn street for 2 miles then make a right when you encounter the totem pole for .02 miles or 10 minutes" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="221" translatesAutoresizingMaskIntoConstraints="NO" id="Dxr-4r-ohc">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xl0-JI-JaO">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="forward.png" backgroundImage="forward.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
-                                            <segue destination="yyd-oE-WPj" kind="modal" id="tKg-VF-akn"/>
+                                            <action selector="nextStep" destination="JtR-Tl-tTN" eventType="touchUpInside" id="fog-1o-7Cp"/>
                                         </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </toolbar>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4f4-lF-XFp">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="back.png" backgroundImage="back.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="previousStep" destination="JtR-Tl-tTN" eventType="touchUpInside" id="Xej-WQ-Oti"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.57999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="xl0-JI-JaO" firstAttribute="centerY" secondItem="Dxr-4r-ohc" secondAttribute="centerY" type="default" id="0xb-uI-kv2"/>
+                                    <constraint firstItem="Dxr-4r-ohc" firstAttribute="centerX" secondItem="nB1-Oo-bbW" secondAttribute="centerX" type="default" id="9fd-cl-mS6"/>
+                                    <constraint firstAttribute="trailing" secondItem="xl0-JI-JaO" secondAttribute="trailing" constant="10" id="EZ6-VM-3Kl"/>
+                                    <constraint firstItem="4f4-lF-XFp" firstAttribute="top" secondItem="nB1-Oo-bbW" secondAttribute="top" constant="33" id="LtK-pe-5Up"/>
+                                    <constraint firstItem="xl0-JI-JaO" firstAttribute="centerY" secondItem="nB1-Oo-bbW" secondAttribute="centerY" type="default" id="NO0-6z-rFa"/>
+                                    <constraint firstItem="4f4-lF-XFp" firstAttribute="leading" secondItem="nB1-Oo-bbW" secondAttribute="leading" constant="11" id="Pyd-Ya-4bE"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NnW-yc-L7J" firstAttribute="leading" secondItem="u42-PW-CXO" secondAttribute="leading" type="default" id="0kg-3R-2aA"/>
-                            <constraint firstItem="wWj-og-AZM" firstAttribute="bottom" secondItem="u42-PW-CXO" secondAttribute="bottom" type="default" id="56x-VX-lYs"/>
+                            <constraint firstItem="nB1-Oo-bbW" firstAttribute="top" secondItem="u42-PW-CXO" secondAttribute="top" constant="450" id="0xH-ht-kQr"/>
                             <constraint firstItem="NnW-yc-L7J" firstAttribute="top" secondItem="5bF-Nh-oig" secondAttribute="bottom" type="default" id="8PJ-cZ-IcN"/>
                             <constraint firstItem="5bF-Nh-oig" firstAttribute="leading" secondItem="u42-PW-CXO" secondAttribute="leading" type="default" id="DGl-cH-78K"/>
                             <constraint firstItem="5bF-Nh-oig" firstAttribute="trailing" secondItem="u42-PW-CXO" secondAttribute="trailing" type="default" id="ERb-tU-ZaG"/>
                             <constraint firstItem="NnW-yc-L7J" firstAttribute="bottom" secondItem="u42-PW-CXO" secondAttribute="bottom" type="default" id="ETf-Fk-7Co"/>
                             <constraint firstItem="5bF-Nh-oig" firstAttribute="top" secondItem="u42-PW-CXO" secondAttribute="top" type="default" id="Hk8-eD-CmT"/>
-                            <constraint firstItem="wWj-og-AZM" firstAttribute="leading" secondItem="u42-PW-CXO" secondAttribute="leading" type="default" id="U4S-62-gpZ"/>
+                            <constraint firstItem="nB1-Oo-bbW" firstAttribute="trailing" secondItem="u42-PW-CXO" secondAttribute="trailing" type="default" id="R0S-Xw-1aE"/>
+                            <constraint firstItem="nB1-Oo-bbW" firstAttribute="leading" secondItem="u42-PW-CXO" secondAttribute="leading" type="default" id="bbY-8s-THt"/>
+                            <constraint firstItem="nB1-Oo-bbW" firstAttribute="bottom" secondItem="u42-PW-CXO" secondAttribute="bottom" type="default" id="hDe-Q5-e3f"/>
                             <constraint firstItem="NnW-yc-L7J" firstAttribute="trailing" secondItem="u42-PW-CXO" secondAttribute="trailing" type="default" id="lVD-qH-faa"/>
-                            <constraint firstItem="wWj-og-AZM" firstAttribute="trailing" secondItem="u42-PW-CXO" secondAttribute="trailing" type="default" id="y9S-ix-Qvr"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -233,6 +270,8 @@
                     <navigationItem key="navigationItem" id="Jan-L6-9Vz"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="directionInstructionView" destination="nB1-Oo-bbW" id="gTT-tu-FrI"/>
+                        <outlet property="directionInstructionsLabel" destination="Dxr-4r-ohc" id="3dZ-JV-XCQ"/>
                         <outlet property="mapView" destination="NnW-yc-L7J" id="yqv-Ar-DnH"/>
                     </connections>
                 </viewController>
@@ -601,6 +640,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back.png" width="30" height="30"/>
+        <image name="forward.png" width="30" height="30"/>
         <image name="user-icon.png" width="230" height="230"/>
     </resources>
     <classes>
@@ -616,6 +657,11 @@
         </class>
         <class className="DirectionInvitesViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DirectionInvitesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="acceptInvite:" candidateClass="UIButton"/>
+                <relationship kind="action" name="backButtonPressed:"/>
+                <relationship kind="action" name="rejectInvite:" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="FriendsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FriendsViewController.h"/>
@@ -623,6 +669,8 @@
         <class className="MapViewViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="directionInstructionView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="directionInstructionsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>

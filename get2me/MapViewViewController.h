@@ -11,8 +11,9 @@
 #import <CoreLocation/CLLocationManagerDelegate.h>
 #import <RestKit/RestKit.h>
 #import "GMDirections.h"
-#import "GMRouteOverlayMapView.h"
+#import "RouteOverlayMapView.h"
 #import "Route.h"
+#import "StepAnnotation.h"
 
 @interface MapViewViewController : UIViewController  <MKMapViewDelegate, CLLocationManagerDelegate, RKObjectLoaderDelegate, GMDirectionsDelegate>
 
@@ -20,6 +21,10 @@
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, retain)    Route *currentRoute;
 @property (strong, retain)    NSMutableArray *directions;
-@property (nonatomic, retain) GMRouteOverlayMapView *routeOverlayView;
+@property (nonatomic, retain) RouteOverlayMapView *routeOverlayView;
+@property (strong, nonatomic) IBOutlet UIView *directionInstructionView;
+@property (strong, nonatomic) IBOutlet UILabel *directionInstructionsLabel;
+@property (nonatomic, retain) StepAnnotation *currentSelectedStepAnnotation;
+@property (nonatomic, retain) NSArray *stepAnnotations;
 
 @end

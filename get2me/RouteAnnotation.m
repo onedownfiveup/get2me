@@ -6,9 +6,9 @@
 //  Copyright 2009 KISHIKAWA Katsumi. All rights reserved.
 //
 
-#import "GMRouteAnnotation.h"
+#import "RouteAnnotation.h"
 
-@implementation GMRouteAnnotation
+@implementation RouteAnnotation
 
 @synthesize coordinate;
 @synthesize title;
@@ -18,7 +18,7 @@
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coord 
 				   title:(NSString *)aTitle
 				   subtitle:(NSString *)aSubtitle
-		  annotationType:(GMRouteAnnotationType)type {
+		  annotationType:(RouteAnnotationType)type {
 	self = [super init];
 	if (self != nil) {
 		coordinate = coord;

@@ -48,7 +48,7 @@
     [stepMapping mapKeyPath:@"start_location.lng" toAttribute:@"startPointLongitude"];
     [stepMapping mapKeyPath:@"end_location.lat" toAttribute:@"endPointLatitude"];
     [stepMapping mapKeyPath:@"end_location.lng" toAttribute:@"endPointLongitude"];
-    [stepMapping mapKeyPath:@"polyline" toAttribute:@"polyline"];
+    [stepMapping mapKeyPath:@"polyline.points" toAttribute:@"polyline"];
     [stepMapping mapKeyPath:@"duration.text" toAttribute:@"durationText"];
     [stepMapping mapKeyPath:@"distance.text" toAttribute:@"distanceText"];
     [stepMapping mapKeyPath:@"travel_mode" toAttribute:@"travelMode"];

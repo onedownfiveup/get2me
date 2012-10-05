@@ -6,11 +6,13 @@
 //  Copyright 2009 KISHIKAWA Katsumi. All rights reserved.
 //
 
-#import "GMRouteOverlayMapView.h"
-#import "GMRouteAnnotation.h"
+#import "RouteOverlayMapView.h"
+#import "RouteAnnotation.h"
+#import "StepAnnotation.h"
 #import "NSString+Extensions.h"
+#import "MapViewViewController.h"
 
-@implementation GMRouteOverlayMapView
+@implementation RouteOverlayMapView
 
 @synthesize inMapView;
 @synthesize steps;
@@ -84,13 +86,14 @@
     for (GMStep *step in routeSteps) {
         NSString *annotationTitle = [step.descriptionHtml stringByConvertingHTMLToPlainText];
 
-        GMRouteAnnotation *annotation = [[GMRouteAnnotation alloc] initWithCoordinate:step.startLocation.coordinate
-                                                                        title: @"Direction"
-                                                                        subtitle: annotationTitle
-                                                               annotationType:GMRouteAnnotationTypeWayPoint];
+        StepAnnotation *annotation = [[StepAnnotation alloc] initWithCoordinate:step.startLocation.coordinate
+                                                                          title: @"Direction"
+                                                                       subtitle: annotationTitle];
+        annotation.step = step;
         [annotations addObject: annotation];
 
     }
+    [(MapViewViewController *)self.inMapView.delegate setStepAnnotations: annotations];
     [self.inMapView addAnnotations: annotations];
 }
 

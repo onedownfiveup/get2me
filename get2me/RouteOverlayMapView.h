@@ -1,5 +1,5 @@
 //
-//  GMRouteOverlayMapView.h
+//  RouteOverlayMapView.h
 //  MapDirections
 //
 //  Created by KISHIKAWA Katsumi on 09/08/10.
@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "GMStep.h"
 
-@interface GMRouteOverlayMapView : MKOverlayView {
+@interface RouteOverlayMapView : MKOverlayView {
 	MKMapView *inMapView;
 	NSArray *steps;
 	UIColor *lineColor;

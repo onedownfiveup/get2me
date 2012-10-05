@@ -8,28 +8,30 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "GMStep.h"
 
-typedef enum GMRouteAnnotationType {
-	GMRouteAnnotationTypeStart,
-	GMRouteAnnotationTypeEnd,
-	GMRouteAnnotationTypeWayPoint,
-} GMRouteAnnotationType;
+typedef enum RouteAnnotationType {
+	RouteAnnotationTypeStart,
+	RouteAnnotationTypeEnd,
+	RouteAnnotationTypeWayPoint,
+} RouteAnnotationType;
 
-@interface GMRouteAnnotation : NSObject<MKAnnotation> {
+@interface RouteAnnotation : NSObject<MKAnnotation> {
 	CLLocationCoordinate2D coordinate;
 	NSString *title;
 	NSString *subtitle;
-	GMRouteAnnotationType annotationType;
+	RouteAnnotationType annotationType;
 }
 
 @property (nonatomic) CLLocationCoordinate2D coordinate;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *subtitle;
-@property (nonatomic) GMRouteAnnotationType annotationType;
+@property (nonatomic) RouteAnnotationType annotationType;
+@property (nonatomic) GMStep *step;
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coord 
 				   title:(NSString *)aTitle
                 subtitle: (NSString *)aSubtitle
-		  annotationType:(GMRouteAnnotationType)type;
+		  annotationType:(RouteAnnotationType)type;
 
 @end
