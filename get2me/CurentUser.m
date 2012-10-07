@@ -93,7 +93,30 @@ static dispatch_queue_t serialQueue;
 {
     if (self.user) {
         self.user.currentLocation = [locations objectAtIndex: 0];
+        
     }
+}
+
+-(void)updateLocationOnServer: (CLLocation *) currentLocation
+{
+    RKObjectManager *sharedManager = [RKObjectManager sharedManager];
+    NSString *userLocationPath = [NSString stringWithFormat: @"/api/v1/user/location.json"];
+    
+    [sharedManager loadObjectsAtResourcePath: userLocationPath
+                                  usingBlock: ^(RKObjectLoader *loader) {
+                                      RKParams *params= [RKParams params];
+                                      [params setValue: @"" forParam: @"latitude"];
+                                      [params setValue: @"" forParam: @"longitude"];
+                                      loader.params = params;
+                                      loader.method= RKRequestMethodPOST;
+                                      loader.delegate = self;
+                                  }];
+}
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
+}
+
+- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
 }
 
 @end

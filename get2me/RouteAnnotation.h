@@ -28,6 +28,7 @@ typedef enum RouteAnnotationType {
 @property (nonatomic, retain) NSString *subtitle;
 @property (nonatomic) RouteAnnotationType annotationType;
 @property (nonatomic) GMStep *step;
+@property (nonatomic) BOOL myStep;
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coord 
 				   title:(NSString *)aTitle

@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "GMLeg.h"
+
+@class GMLeg;
 
 @interface GMStep : NSObject
 
@@ -20,7 +23,9 @@
 @property (nonatomic, retain, readonly) NSString  *startPointLongitude;
 @property (nonatomic, retain, readonly) NSString  *endPointLatitude;
 @property (nonatomic, retain, readonly) NSString  *endPointLongitude;
+@property (nonatomic, retain, readonly) GMLeg *leg;
 
+-(NSString *) stepDirections;
 -(CLLocation *) startLocation;
 -(CLLocation *) endLocation;
 @end

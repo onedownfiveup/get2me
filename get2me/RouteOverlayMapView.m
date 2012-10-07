@@ -84,15 +84,34 @@
     NSMutableArray *annotations = [[NSMutableArray alloc] initWithCapacity: [routeSteps count]];
 
     for (GMStep *step in routeSteps) {
-        NSString *annotationTitle = [step.descriptionHtml stringByConvertingHTMLToPlainText];
-
+        NSString *annotationTitle = [step stepDirections];
+        GMLeg *leg = step.leg;
+        
+        if ([routeSteps indexOfObject: step] == 0) {
+            RouteAnnotation *annotation = [[RouteAnnotation alloc]
+                                           initWithCoordinate: step.startLocation.coordinate
+                                           title: @"Start"
+                                           subtitle: annotationTitle
+                                           annotationType: RouteAnnotationTypeStart];
+            annotation.myStep = YES;
+            [annotations addObject: annotation];
+        } else if ([[routeSteps lastObject] isEqual: step]) {
+            RouteAnnotation *annotation = [[RouteAnnotation alloc]
+                                           initWithCoordinate: step.startLocation.coordinate
+                                           title: @"Start"
+                                           subtitle: annotationTitle
+                                           annotationType: RouteAnnotationTypeEnd];
+            annotation.myStep = YES;
+            [annotations addObject: annotation];
+            
+        }
         StepAnnotation *annotation = [[StepAnnotation alloc] initWithCoordinate:step.startLocation.coordinate
-                                                                          title: @"Direction"
-                                                                       subtitle: annotationTitle];
-        annotation.step = step;
+                                                                              title: @"Direction"
+                                                                           subtitle: annotationTitle];
+        annotation.myStep = YES;
         [annotations addObject: annotation];
-
     }
+
     [(MapViewViewController *)self.inMapView.delegate setStepAnnotations: annotations];
     [self.inMapView addAnnotations: annotations];
 }

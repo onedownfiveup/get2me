@@ -16,7 +16,7 @@
 extern NSString *const CRUserAuthUrl;
 extern NSString *const CRUserAuthAPIKey;
 
-@interface CurrentUser : NSObject <CLLocationManagerDelegate>
+@interface CurrentUser : NSObject <CLLocationManagerDelegate, RKObjectLoaderDelegate>
 {
     KeychainItemWrapper *keychain;
     NSString *resultsJSON;

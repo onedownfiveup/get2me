@@ -63,7 +63,9 @@
 {
     RKObjectMapping *stepMapping = [self stepMapping];
     RKObjectMapping *legMapping = [RKObjectMapping mappingForClass: [GMLeg class]];
-    
+
+    [legMapping mapKeyPath:@"start_address" toAttribute:@"startAddress"];
+    [legMapping mapKeyPath:@"end_address" toAttribute:@"endAddress"];
     [legMapping mapKeyPath:@"steps" toRelationship:@"steps" withMapping: stepMapping];
 
     [self.objectManager.mappingProvider setObjectMapping:legMapping forKeyPath: @"leg"];

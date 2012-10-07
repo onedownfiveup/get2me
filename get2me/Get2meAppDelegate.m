@@ -23,6 +23,8 @@
     currentUser.locationManager =  [[CLLocationManager alloc] init];
     currentUser.locationManager.delegate = currentUser;
     [currentUser.locationManager startUpdatingLocation];
+    currentUser.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    currentUser.locationManager.distanceFilter = 100.0f;
 
     [self loadRestkitDefaults];
     NSString *viewIdentifier = @"signInController";

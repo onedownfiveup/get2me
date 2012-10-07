@@ -7,6 +7,7 @@
 //
 
 #import "GMStep.h"
+#import "NSString+Extensions.h"
 
 @implementation GMStep
 
@@ -65,5 +66,14 @@
     return [[CLLocation alloc] initWithLatitude: [self.endPointLatitude doubleValue]
                                       longitude: [self.endPointLongitude doubleValue]];
     
+}
+
+-(NSString *)stepDirections
+{
+    return [NSString stringWithFormat: @"%@ for %@ - %@",
+     [self.descriptionHtml stringByConvertingHTMLToPlainText],
+     self.distanceText,
+     self.durationText];
+     
 }
 @end

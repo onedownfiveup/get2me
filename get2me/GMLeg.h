@@ -16,9 +16,9 @@
 @property (nonatomic, retain, readonly) NSArray *steps;
 @property (nonatomic, retain, readonly) NSDictionary *distance;
 @property (nonatomic, retain, readonly) NSDictionary *duration;
+@property (nonatomic, retain, readonly) NSString *startAddress;
+@property (nonatomic, retain, readonly) NSString *endAddress;
 @property (nonatomic, retain, readonly) CLLocation *endLocation;
 @property (nonatomic, retain, readonly) CLLocation *startLocation;
-
-- (GMStep *)stepAtIndex:(NSInteger)index;
 
 @end

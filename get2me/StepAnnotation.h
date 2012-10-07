@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *subtitle;
 @property (nonatomic) GMStep *step;
+@property (nonatomic) BOOL myStep;
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coord
 				   title:(NSString *)aTitle
