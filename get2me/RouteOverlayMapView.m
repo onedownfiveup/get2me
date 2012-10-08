@@ -98,8 +98,8 @@
         } else if ([[routeSteps lastObject] isEqual: step]) {
             RouteAnnotation *annotation = [[RouteAnnotation alloc]
                                            initWithCoordinate: step.startLocation.coordinate
-                                           title: @"Start"
-                                           subtitle: annotationTitle
+                                           title: @"End"
+                                           subtitle: @"The End"
                                            annotationType: RouteAnnotationTypeEnd];
             annotation.myStep = YES;
             [annotations addObject: annotation];

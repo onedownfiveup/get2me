@@ -44,10 +44,10 @@
         return;
     }
     // send push notification to users along with storing it on server.
-    User *currentUser =  [CurrentUser sharedInstance].user;
+    CurrentUser *currentUser =  [CurrentUser sharedInstance];
     CLLocation *currentLocation = currentUser.currentLocation;
     RKObjectManager *sharedManager = [RKObjectManager sharedManager];
-    NSString *directionsPath = [NSString stringWithFormat: @"/api/v1/users/%@/directions.json", currentUser.userId];
+    NSString *directionsPath = [NSString stringWithFormat: @"/api/v1/users/%@/directions.json", currentUser.user.userId];
 
     NSArray *selectedFriends = self.friendsController.selectedFriends;
     NSArray *selectedFriendIds = [selectedFriends valueForKeyPath:@"userId"];
@@ -58,7 +58,7 @@
                                   usingBlock: ^(RKObjectLoader *loader) {
                                       RKParams *params= [RKParams params];
                                       loader.params = params;
-                                      [params setValue: currentUser.token
+                                      [params setValue: currentUser.user.token
                                               forParam: @"auth_token"];
                                       [params setValue: [[selectedFriendIds valueForKey:@"description"] componentsJoinedByString:@","]
                                               forParam: @"direction[friend_ids]"];

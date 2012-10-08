@@ -12,7 +12,6 @@
 
 @implementation User
 
-
 +(void) loadRestkitMappings
 {
     RKObjectManager *sharedManager = [RKObjectManager sharedManager];

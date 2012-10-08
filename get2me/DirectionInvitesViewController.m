@@ -77,7 +77,7 @@
 }
 
 - (IBAction)acceptInvite:(UIButton *)sender {
-    CLLocation *currentLocation = [CurrentUser sharedInstance].user.currentLocation;
+    CLLocation *currentLocation = [CurrentUser sharedInstance].currentLocation;
     NSString *latitude = [[NSString alloc] initWithFormat:@"%f", currentLocation.coordinate.latitude];
     NSString *longitude = [[NSString alloc] initWithFormat:@"%f", currentLocation.coordinate.longitude];
 

@@ -81,17 +81,12 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
         // Add annotations
         RouteAnnotation *startAnnotation = [[RouteAnnotation alloc] initWithCoordinate:[[stepCoordinates objectAtIndex:0] coordinate]
                                                                                  title: @"Start"
-                                                                              subtitle: @"This is a ridiculously long string that can not possibly fit on one line. Please do not cut it off."
-                                                                        annotationType:RouteAnnotationTypeStart];
+                                                                              subtitle: nil                                                                        annotationType:RouteAnnotationTypeStart];
         
-        RouteAnnotation *endAnnotation = [[RouteAnnotation alloc] initWithCoordinate:[[stepCoordinates lastObject] coordinate]
-                                                                               title: [route titleForAnnotation]
-                                                                            subtitle: @"Yeah bitches"
-                                                                      annotationType:RouteAnnotationTypeEnd];
         MKUserLocation *userLocation = [[MKUserLocation alloc] init];
         userLocation.coordinate = route.startLocation.coordinate;
         
-        [self.mapView addAnnotations: [NSArray arrayWithObjects: startAnnotation, endAnnotation, nil]];
+        [self.mapView addAnnotations: [NSArray arrayWithObjects: startAnnotation, nil]];
 
     }
 

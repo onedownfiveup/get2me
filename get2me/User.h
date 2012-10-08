@@ -16,7 +16,6 @@
 @property (nonatomic, retain) NSString *firstName;
 @property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, retain) NSString *token;
-@property (nonatomic, retain) CLLocation *currentLocation;
 
 +(void) loadRestkitMappings;
 @end

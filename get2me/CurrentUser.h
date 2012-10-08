@@ -21,7 +21,7 @@ extern NSString *const CRUserAuthAPIKey;
     KeychainItemWrapper *keychain;
     NSString *resultsJSON;
 }
-
+@property (nonatomic, retain) CLLocation *currentLocation;
 @property (nonatomic, retain) KeychainItemWrapper *keychain; 
 @property (nonatomic, retain) User *user;
 @property (nonatomic, retain) CLLocationManager *locationManager;
@@ -30,6 +30,7 @@ extern NSString *const CRUserAuthAPIKey;
                    withPassword: (NSString *) password;
 -(BOOL) isLoggedIn;
 -(void) signoutUser;
+-(void) updateLocationOnServer: (CLLocation *) currentLocation;
 
 -(NSString *)    userName;
 +(CurrentUser *) sharedInstance;

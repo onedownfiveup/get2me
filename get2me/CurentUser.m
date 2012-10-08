@@ -49,9 +49,28 @@ static dispatch_queue_t serialQueue;
     
     dispatch_once(&onceQueue, ^{
         sharedInstance = [[CurrentUser alloc] init];
+        
+        sharedInstance.locationManager =  [[CLLocationManager alloc] init];
+        sharedInstance.locationManager.delegate = sharedInstance;
+        [sharedInstance.locationManager startUpdatingLocation];
+        sharedInstance.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+        sharedInstance.locationManager.distanceFilter = 100.0f;
     });
     
+    
     return sharedInstance;
+}
+
+-(void) setCurrentLocation:(CLLocation *)currentLocation
+{
+    _currentLocation = currentLocation;
+    [self updateLocationOnServer: currentLocation];
+}
+
+-(void) setUser:(User *)user
+{
+    _user = user;
+    self.currentLocation = self.locationManager.location;
 }
 
 -(void) storeUsernameInKeyChain: (NSString *) username
@@ -64,7 +83,6 @@ static dispatch_queue_t serialQueue;
     // Store password to keychain
     if (password)
         [keychain setObject: password forKey:(__bridge id)kSecValueData];
-    
 }
 
 -(void)signoutUser
@@ -92,23 +110,28 @@ static dispatch_queue_t serialQueue;
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     if (self.user) {
-        self.user.currentLocation = [locations objectAtIndex: 0];
-        
+        self.currentLocation = [locations objectAtIndex: 0];
     }
 }
 
 -(void)updateLocationOnServer: (CLLocation *) currentLocation
 {
     RKObjectManager *sharedManager = [RKObjectManager sharedManager];
-    NSString *userLocationPath = [NSString stringWithFormat: @"/api/v1/user/location.json"];
-    
+    NSString *userLocationPath = [NSString stringWithFormat: @"/api/v1/users/%@/location.json", self.user.userId];
+    NSString *latitude = [[NSString alloc] initWithFormat:@"%f", currentLocation.coordinate.latitude];
+    NSString *longitude = [[NSString alloc] initWithFormat:@"%f", currentLocation.coordinate.longitude];
+
     [sharedManager loadObjectsAtResourcePath: userLocationPath
                                   usingBlock: ^(RKObjectLoader *loader) {
                                       RKParams *params= [RKParams params];
-                                      [params setValue: @"" forParam: @"latitude"];
-                                      [params setValue: @"" forParam: @"longitude"];
+                                      [params setValue: self.user.token
+                                              forParam: @"auth_token"];
+                                      [params setValue: latitude
+                                              forParam: @"user[current_location][latitude]"];
+                                      [params setValue: longitude
+                                              forParam: @"user[current_location][longitude]"];
                                       loader.params = params;
-                                      loader.method= RKRequestMethodPOST;
+                                      loader.method= RKRequestMethodPUT;
                                       loader.delegate = self;
                                   }];
 }
