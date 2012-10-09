@@ -284,6 +284,11 @@
 		CA79DDCD160A8EC500BAD33F /* Direction.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DDCB160A8EC500BAD33F /* Direction.m */; };
 		CA79DDD0160A8ED600BAD33F /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DDCF160A8ED600BAD33F /* Route.m */; };
 		CA79DDD1160A8ED600BAD33F /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DDCF160A8ED600BAD33F /* Route.m */; };
+		CA962A8F1623ADA200E50ED1 /* get2me_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA962A8E1623ADA200E50ED1 /* get2me_icon.png */; };
+		CA962A911623ADC800E50ED1 /* get2me_icon_small.png in Resources */ = {isa = PBXBuildFile; fileRef = CA962A901623ADC800E50ED1 /* get2me_icon_small.png */; };
+		CA962A931623AE0C00E50ED1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CA962A921623AE0C00E50ED1 /* Default.png */; };
+		CA962A951623AE6200E50ED1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA962A941623AE6200E50ED1 /* Default@2x.png */; };
+		CA962A971623AEC000E50ED1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA962A961623AEC000E50ED1 /* Default-568h@2x.png */; };
 		CA9E94AF161DF7E4001B6494 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9E94AE161DF7E4001B6494 /* NSString+Extensions.m */; };
 		CA9E94B0161DF7E4001B6494 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9E94AE161DF7E4001B6494 /* NSString+Extensions.m */; };
 		CA9E94B7161DFD8F001B6494 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9E94B6161DFD8F001B6494 /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -659,6 +664,11 @@
 		CA79DDCB160A8EC500BAD33F /* Direction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Direction.m; sourceTree = "<group>"; };
 		CA79DDCE160A8ED600BAD33F /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
 		CA79DDCF160A8ED600BAD33F /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
+		CA962A8E1623ADA200E50ED1 /* get2me_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = get2me_icon.png; sourceTree = "<group>"; };
+		CA962A901623ADC800E50ED1 /* get2me_icon_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = get2me_icon_small.png; sourceTree = "<group>"; };
+		CA962A921623AE0C00E50ED1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CA962A941623AE6200E50ED1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		CA962A961623AEC000E50ED1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CA9E94AD161DF7E4001B6494 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
 		CA9E94AE161DF7E4001B6494 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
 		CA9E94B1161DFBE3001B6494 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
@@ -1292,6 +1302,11 @@
 		ADC33C8116013F6800BF4935 = {
 			isa = PBXGroup;
 			children = (
+				CA962A961623AEC000E50ED1 /* Default-568h@2x.png */,
+				CA962A941623AE6200E50ED1 /* Default@2x.png */,
+				CA962A921623AE0C00E50ED1 /* Default.png */,
+				CA962A901623ADC800E50ED1 /* get2me_icon_small.png */,
+				CA962A8E1623ADA200E50ED1 /* get2me_icon.png */,
 				ADC33C9616013F6800BF4935 /* get2me */,
 				ADC33CBD16013F6900BF4935 /* get2meTests */,
 				ADC33C8F16013F6800BF4935 /* Frameworks */,
@@ -1664,6 +1679,11 @@
 				ADE1FCED161F3B4800701F8F /* back.png in Resources */,
 				ADE1FCEF161F3B4800701F8F /* forward.png in Resources */,
 				ADE1FCF2161F8F1800701F8F /* directions_icon.png in Resources */,
+				CA962A8F1623ADA200E50ED1 /* get2me_icon.png in Resources */,
+				CA962A911623ADC800E50ED1 /* get2me_icon_small.png in Resources */,
+				CA962A931623AE0C00E50ED1 /* Default.png in Resources */,
+				CA962A951623AE6200E50ED1 /* Default@2x.png in Resources */,
+				CA962A971623AEC000E50ED1 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

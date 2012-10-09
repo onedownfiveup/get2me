@@ -9,7 +9,7 @@
             <objects>
                 <viewController storyboardIdentifier="signInController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MQj-7j-ujW" customClass="SignInViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XcS-Ba-Umw">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="5nN-oP-TBn">
@@ -83,7 +83,7 @@
             <objects>
                 <viewController id="PIw-L6-lrZ" customClass="CreateAccountViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ma1-Aj-Nme">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fUU-oL-Shb">
@@ -181,7 +181,7 @@
             <objects>
                 <viewController storyboardIdentifier="mapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JtR-Tl-tTN" customClass="MapViewViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u42-PW-CXO">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bF-Nh-oig">
@@ -232,7 +232,10 @@
                                             <action selector="previousStep" destination="JtR-Tl-tTN" eventType="touchUpInside" id="Xej-WQ-Oti"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Head on to Schermehorn street for 2 miles then make a right when you encounter the totem pole for .02 miles or 10 minutes" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="221" translatesAutoresizingMaskIntoConstraints="NO" id="Dxr-4r-ohc">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Head on to Schermehorn street for 2 miles then make a right when you encounter the totem pole for .02 miles or 10 minutes" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="219" translatesAutoresizingMaskIntoConstraints="NO" id="Dxr-4r-ohc">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="219" id="ZyY-sz-sUf"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -240,13 +243,15 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.57999999999999996" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Dxr-4r-ohc" firstAttribute="leading" secondItem="4f4-lF-XFp" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="0mY-tW-UEI"/>
+                                    <constraint firstItem="Dxr-4r-ohc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4f4-lF-XFp" secondAttribute="trailing" constant="14" type="user" id="0mY-tW-UEI"/>
                                     <constraint firstAttribute="bottom" secondItem="Dxr-4r-ohc" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="DHW-gQ-XxB"/>
                                     <constraint firstItem="4f4-lF-XFp" firstAttribute="centerY" secondItem="Dxr-4r-ohc" secondAttribute="centerY" type="default" id="KRn-4W-zU7"/>
                                     <constraint firstItem="Dxr-4r-ohc" firstAttribute="top" secondItem="nB1-Oo-bbW" secondAttribute="top" constant="20" symbolic="YES" type="default" id="R7b-By-i6d"/>
                                     <constraint firstItem="Dxr-4r-ohc" firstAttribute="centerX" secondItem="nB1-Oo-bbW" secondAttribute="centerX" type="default" id="RiS-ba-G5j"/>
-                                    <constraint firstItem="xl0-JI-JaO" firstAttribute="leading" secondItem="Dxr-4r-ohc" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Xik-BT-fnM"/>
+                                    <constraint firstItem="xl0-JI-JaO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Dxr-4r-ohc" secondAttribute="trailing" constant="14" type="user" id="Xik-BT-fnM"/>
                                     <constraint firstItem="4f4-lF-XFp" firstAttribute="top" secondItem="xl0-JI-JaO" secondAttribute="top" type="default" id="svR-M1-u4t"/>
+                                    <constraint firstAttribute="trailing" secondItem="xl0-JI-JaO" secondAttribute="trailing" constant="10" id="tH3-1h-C72"/>
+                                    <constraint firstItem="4f4-lF-XFp" firstAttribute="leading" secondItem="nB1-Oo-bbW" secondAttribute="leading" constant="11" id="yoE-8O-gMw"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -287,7 +292,7 @@
             <objects>
                 <viewController id="15s-lg-fmX" customClass="UserSearchContainerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FiK-cx-Cyj">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CDP-ke-h2t">
@@ -358,7 +363,7 @@
             <objects>
                 <tableViewController id="XMo-wP-ML3" customClass="FriendsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="59" sectionHeaderHeight="22" sectionFooterHeight="22" id="qWx-4x-lXo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -511,7 +516,7 @@
             <objects>
                 <tableViewController id="Ere-Cv-qn0" customClass="DirectionInvitesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="174" sectionHeaderHeight="22" sectionFooterHeight="22" id="c85-vW-lSN">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -693,6 +698,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>

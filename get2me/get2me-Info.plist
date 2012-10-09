@@ -19,6 +19,17 @@
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>get2me_icon.png</string>
+				<string>get2me_icon_small.png</string>
+			</array>
+		</dict>
+	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>com.railzbiz.get2me</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -38,8 +49,6 @@
 	<key>MKDirectionsApplicationSupportedModes</key>
 	<array>
 		<string>MKDirectionsModeCar</string>
-		<string>MKDirectionsModeSubway</string>
-		<string>MKDirectionsModeTrain</string>
 		<string>MKDirectionsModePedestrian</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
