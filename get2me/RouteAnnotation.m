@@ -18,7 +18,7 @@
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coord 
 				   title:(NSString *)aTitle
 				   subtitle:(NSString *)aSubtitle
-		  annotationType:(RouteAnnotationType)type {
+		  annotationType:(AnnotationType)type {
 	self = [super init];
 	if (self != nil) {
 		coordinate = coord;
@@ -29,4 +29,23 @@
 	return self;
 }
 
+-(MKAnnotationView *)viewForAnnotationWithMapView: (MKMapView *)mapview
+{
+    
+    NSString* routeAnnotationIdentifier = @"routeAnnotation";
+    
+    MKAnnotationView* annotationView = (MKAnnotationView *)[mapview dequeueReusableAnnotationViewWithIdentifier:routeAnnotationIdentifier];
+    if (!annotationView)
+    {
+        // if an existing annotation view was not available, create one
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:self
+                                                      reuseIdentifier:routeAnnotationIdentifier];
+        annotationView.canShowCallout = YES;
+    }
+    if ([self annotationType] == AnnotationTypeEnd) {
+        annotationView.image = [UIImage imageNamed:@"target"];
+    }
+    
+    return annotationView;
+}
 @end

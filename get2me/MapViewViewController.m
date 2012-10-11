@@ -15,36 +15,30 @@
 #import "RouteAnnotation.h"
 #import "StepAnnotation.h"
 #import "UIColor+Extensions.h"
-
-typedef void (^PerformAfterAcquiringLocationSuccess)(CLLocationCoordinate2D);
-typedef void (^PerformAfterAcquiringLocationError)(NSError *);
-
-@interface MapViewViewController ()
-
-@end
+#import "Get2meAnnotation.h"
 
 @implementation MapViewViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (!self.directions) {
-        self.directions = [[NSMutableArray alloc] init];
+    if (!self.googleDirections) {
+        self.googleDirections = [[NSMutableArray alloc] init];
     }
+
     self.directionInstructionView.hidden = YES;
     self.routeOverlayView = [[RouteOverlayMapView alloc] initWithMapView: self.mapView];
     self.mapView.delegate = self;
-    
-    self.mapView.showsUserLocation = YES;
-    [self.mapView setUserTrackingMode: MKUserTrackingModeFollow animated: YES];
-    
-    [self loadDirections];
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.mapView.showsUserLocation = YES;
+    [self.mapView setUserTrackingMode: MKUserTrackingModeFollow animated: YES];
+    
+    [self loadDirections];
+
 }
 
 -(void)loadDirections
@@ -63,7 +57,7 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
                                   }];    
 }
 
-- (void)directionsDidUpdateDirections:(GMDirections *)googleDirections
+- (void)directionsDidUpdateDirections:(GMDirection *)googleDirections
 {
     User *currentUser = [CurrentUser sharedInstance].user;
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
@@ -81,7 +75,7 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
         // Add annotations
         RouteAnnotation *startAnnotation = [[RouteAnnotation alloc] initWithCoordinate:[[stepCoordinates objectAtIndex:0] coordinate]
                                                                                  title: @"Start"
-                                                                              subtitle: nil                                                                        annotationType:RouteAnnotationTypeStart];
+                                                                              subtitle: nil                                                                        annotationType:AnnotationTypeStart];
         
         MKUserLocation *userLocation = [[MKUserLocation alloc] init];
         userLocation.coordinate = route.startLocation.coordinate;
@@ -95,67 +89,13 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 
 - (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    if ([annotation isKindOfClass:[MKUserLocation class]])
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
         return nil;
-    
-    if ([annotation isKindOfClass:[StepAnnotation class]])
-    {
-        // try to dequeue an existing pin view first
-        static NSString* stepAnnotationIdentifier = @"stepAnnotation";
-        MKPinAnnotationView* pinView = (MKPinAnnotationView *)
-        [self.mapView dequeueReusableAnnotationViewWithIdentifier:stepAnnotationIdentifier];
-        if (!pinView)
-        {
-            // if an existing pin view was not available, create one
-            MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc]
-                                                   initWithAnnotation:annotation reuseIdentifier:stepAnnotationIdentifier];
-
-            UIImage *directionImage = [UIImage imageNamed: @"directions_icon"];
-            customPinView.image = directionImage;
-            customPinView.animatesDrop = YES;
-            customPinView.canShowCallout = YES;
-                        
-            return customPinView;
-        }
-        else
-        {
-            pinView.annotation = annotation;
-            pinView.image = [UIImage imageNamed: @"directions_icon"];
-        }
-        return pinView;
+    } else if ([annotation isKindOfClass:[StepAnnotation class]]) {
+        return [(StepAnnotation *)annotation viewForAnnotationWithMapView: self.mapView];
     }
-    if ([annotation isKindOfClass:[RouteAnnotation class]]) {
-        NSString* routeAnnotationIdentifier = @"routeAnnotation";
-        
-        MKPinAnnotationView* pinView = (MKPinAnnotationView *) [self.mapView dequeueReusableAnnotationViewWithIdentifier:routeAnnotationIdentifier];
-        if (!pinView)
-        {
-            // if an existing pin view was not available, create one
-            MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc]
-                                                  initWithAnnotation:annotation reuseIdentifier:routeAnnotationIdentifier];
-            
-            customPinView.animatesDrop = YES;
-            customPinView.canShowCallout = YES;
-            if ([(RouteAnnotation *)annotation annotationType] == RouteAnnotationTypeStart) {
-                customPinView.pinColor = MKPinAnnotationColorGreen;
-            } else if ([(RouteAnnotation *)annotation annotationType] == RouteAnnotationTypeEnd) {
-                customPinView.pinColor = MKPinAnnotationColorRed;
-            } else {
-                customPinView.pinColor = MKPinAnnotationColorPurple;
-            }
-
-            return customPinView;
-        }
-        if ([(RouteAnnotation *)annotation annotationType] == RouteAnnotationTypeStart) {
-            pinView.pinColor = MKPinAnnotationColorGreen;
-        } else if ([(RouteAnnotation *)annotation annotationType] == RouteAnnotationTypeEnd) {
-            pinView.pinColor = MKPinAnnotationColorRed;
-        } else {
-            pinView.pinColor = MKPinAnnotationColorPurple;
-        }
-
-
-        return pinView;
+    else if ([annotation isKindOfClass:[RouteAnnotation class]]) {
+        return [(RouteAnnotation *)annotation viewForAnnotationWithMapView: self.mapView];
     }
     return nil;
 }
@@ -165,14 +105,8 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
     NSInteger previsousStepAnnotationIndex = stepIndex - 1;
     
     if (previsousStepAnnotationIndex >= 0) {
-        id<MKAnnotation> annotation = (RouteAnnotation *)[self.stepAnnotations objectAtIndex: previsousStepAnnotationIndex];
-        
-        MKCoordinateRegion region;
-        
-        region.center.latitude     = annotation.coordinate.latitude;
-        region.center.longitude    = annotation.coordinate.longitude;
-        region.span.latitudeDelta  = .001;
-		region.span.longitudeDelta = .001;
+        Get2meAnnotation *annotation = (RouteAnnotation *)[self.stepAnnotations objectAtIndex: previsousStepAnnotationIndex];
+        MKCoordinateRegion region = [annotation focusRegion];
 
         [self.mapView setRegion:region animated:YES];
         [self.mapView selectAnnotation: annotation  animated: YES];
@@ -185,15 +119,9 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
     NSInteger nextStepAnnotationIndex = stepIndex + 1;
     
     if (nextStepAnnotationIndex < [self.stepAnnotations count]) {
-        id<MKAnnotation> annotation = (RouteAnnotation *)[self.stepAnnotations objectAtIndex: nextStepAnnotationIndex];
-
-        MKCoordinateRegion region;
+        Get2meAnnotation *annotation = (Get2meAnnotation *)[self.stepAnnotations objectAtIndex: nextStepAnnotationIndex];
         
-        region.center.latitude     = annotation.coordinate.latitude;
-        region.center.longitude    = annotation.coordinate.longitude;
-        region.span.latitudeDelta  = .001f;
-		region.span.longitudeDelta = .001f;
-        
+        MKCoordinateRegion region = [annotation focusRegion];
         [self.mapView setRegion:region animated:YES];
         [self.mapView selectAnnotation: annotation animated: YES];
     }
@@ -204,10 +132,9 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 {
     id<MKAnnotation> annotation = view.annotation;
     
-    self.directionInstructionView.hidden = NO;
-    self.directionInstructionsLabel.text = [annotation subtitle];
-
-    if([(StepAnnotation *)annotation myStep]) {
+    if([annotation isKindOfClass: [Get2meAnnotation class]] && [(Get2meAnnotation *)annotation myStep]) {
+        self.directionInstructionView.hidden = NO;
+        self.directionInstructionsLabel.text = [annotation subtitle];
         self.currentSelectedStepAnnotation = annotation;
     }
 }
@@ -235,23 +162,18 @@ typedef void (^PerformAfterAcquiringLocationError)(NSError *);
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
 	[[NSUserDefaults standardUserDefaults] synchronize];
-    NSArray *routes;
-
+    
     if ([objects count] > 0) {
-        NSLog(@"Routes Json is %@", objectLoader.response.bodyAsString );
-        Direction *direction = [objects objectAtIndex: 0];
-        routes = direction.routes;
-    }
-
-    for (Route *route in routes) {
-        if ([route isAccepted]) {
-            self.currentRoute = route;
-            GMDirections *direction = [[GMDirections alloc] init];
-            
-            direction.delegate = self;
-            [self.directions addObject: direction];
-
-            [direction googleRouteForRoute: route];
+        self.direction = [objects objectAtIndex: 0];
+        for (Route *route in self.direction.routes) {
+            if ([route isAccepted]) {
+                self.currentRoute = route;
+                GMDirection *googleDirection = [[GMDirection alloc] init];
+                
+                googleDirection.delegate = self;
+                [googleDirection googleRouteForRoute: route];
+                [self.googleDirections addObject: googleDirection];
+            }
         }
     }
 }

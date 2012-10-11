@@ -1,15 +1,15 @@
 //
-//  GMDirections.m
+//  GMDirection.m
 //  MapDirections
 //
 //  Created by KISHIKAWA Katsumi on 09/08/10.
 //  Copyright 2009 KISHIKAWA Katsumi. All rights reserved.
 //
 
-#import "GMDirections.h"
+#import "GMDirection.h"
 #import "GMRoute.h"
 
-@implementation GMDirections
+@implementation GMDirection
 
 - (id)init {
 	self = [super init];
@@ -44,7 +44,7 @@
 {
     self.route = route;
     [self.googleMapsAPI routeFrom: route.startLocation
-                       toLocation:route.endLocation
+                       toLocation: route.endLocation
                   withTransitMode: @"walking"];
 }
 - (NSInteger)numberOfSteps {

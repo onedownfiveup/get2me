@@ -6,33 +6,14 @@
 //  Copyright 2009 KISHIKAWA Katsumi. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <MapKit/MapKit.h>
-#import "GMStep.h"
+#import "Get2meAnnotation.h"
 
-typedef enum RouteAnnotationType {
-	RouteAnnotationTypeStart,
-	RouteAnnotationTypeEnd,
-	RouteAnnotationTypeWayPoint,
-} RouteAnnotationType;
-
-@interface RouteAnnotation : NSObject<MKAnnotation> {
-	CLLocationCoordinate2D coordinate;
-	NSString *title;
-	NSString *subtitle;
-	RouteAnnotationType annotationType;
-}
-
-@property (nonatomic) CLLocationCoordinate2D coordinate;
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *subtitle;
-@property (nonatomic) RouteAnnotationType annotationType;
-@property (nonatomic) GMStep *step;
-@property (nonatomic) BOOL myStep;
+@interface RouteAnnotation : Get2meAnnotation
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coord 
 				   title:(NSString *)aTitle
                 subtitle: (NSString *)aSubtitle
-		  annotationType:(RouteAnnotationType)type;
+		  annotationType:(AnnotationType)type;
 
+-(MKAnnotationView *)viewForAnnotationWithMapView: (MKMapView *)mapview;
 @end

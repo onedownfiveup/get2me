@@ -11,17 +11,17 @@
 #import "Route.h"
 #import "GoogleMapsAPI.h"
 
-@class GMDirections;
+@class GMDirection;
 
 @protocol GMDirectionsDelegate<NSObject>
 @optional
-- (void)directionsDidFinishInitialize:(GMDirections *)directions;
-- (void)directions:(GMDirections *)directions didFailInitializeWithError:(NSError *)error;
-- (void)directionsDidUpdateDirections:(GMDirections *)directions;
-- (void)directions:(GMDirections *)directions didFailWithMessage:(NSString *)message;
+- (void)directionsDidFinishInitialize:(GMDirection *)directions;
+- (void)directions:(GMDirection *)directions didFailInitializeWithError:(NSError *)error;
+- (void)directionsDidUpdateDirections:(GMDirection *)directions;
+- (void)directions:(GMDirection *)directions didFailWithMessage:(NSString *)message;
 @end
 
-@interface GMDirections : NSObject<GoogleMapsAPIDelegate>
+@interface GMDirection : NSObject<GoogleMapsAPIDelegate>
 @property (nonatomic, assign) id<GMDirectionsDelegate> delegate;
 @property (nonatomic, retain) Route *route;
 @property (nonatomic, retain) GMRoute *googleRoute;

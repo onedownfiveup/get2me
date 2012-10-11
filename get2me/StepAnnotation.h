@@ -6,20 +6,13 @@
 //  Copyright (c) 2012 Railzbiz. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <MapKit/MapKit.h>
-#import "GMStep.h"
+#import "Get2meAnnotation.h"
 
-@interface StepAnnotation : NSObject<MKAnnotation>
-
-@property (nonatomic) CLLocationCoordinate2D coordinate;
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *subtitle;
-@property (nonatomic) GMStep *step;
-@property (nonatomic) BOOL myStep;
+@interface StepAnnotation : Get2meAnnotation
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coord
 				   title:(NSString *)aTitle
                 subtitle: (NSString *)aSubtitle;
 
+-(MKAnnotationView *)viewForAnnotationWithMapView: (MKMapView *)mapview;
 @end

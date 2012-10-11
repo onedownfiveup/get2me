@@ -101,8 +101,6 @@
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
-    NSLog(@"Result is %@", objectLoader.response.bodyAsString);
-    
     if ([self.delegate respondsToSelector:@selector(goolgeMapsAPI:didGetObject:)]) {
 		[(id<GoogleMapsAPIDelegate>)self.delegate goolgeMapsAPI:self didGetObject:[objects objectAtIndex:0]];
 	}

@@ -91,7 +91,7 @@
                                            initWithCoordinate: step.startLocation.coordinate
                                            title: @"Start"
                                            subtitle: annotationTitle
-                                           annotationType: RouteAnnotationTypeStart];
+                                           annotationType: AnnotationTypeStart];
             annotation.myStep = YES;
             [annotations addObject: annotation];
         } else if ([[routeSteps lastObject] isEqual: step]) {
@@ -104,7 +104,7 @@
                                            initWithCoordinate: step.endLocation.coordinate
                                            title: @"End"
                                            subtitle: @"The End"
-                                           annotationType: RouteAnnotationTypeEnd];
+                                           annotationType: AnnotationTypeEnd];
             
             annotationStart.myStep = YES;
             [annotations addObject: annotationStart];

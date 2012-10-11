@@ -74,6 +74,8 @@
         
     self.routes = objects;
     [self.tableView reloadData];
+    [self dismissViewControllerAnimated:YES completion: nil];
+
 }
 
 - (IBAction)acceptInvite:(UIButton *)sender {
@@ -120,6 +122,4 @@
 - (IBAction)backButtonPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion: nil];
 }
-
-
 @end
