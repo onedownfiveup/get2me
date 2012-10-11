@@ -8,7 +8,6 @@
 
 #import "MapViewViewController.h"
 #import "CurrentUser.h"
-#import "TransitShape.h"
 #import "Direction.h"
 #import "UserSearchContainerViewController.h"
 #import "DirectionInvitesViewController.h"
@@ -57,6 +56,8 @@
                                   }];    
 }
 
+# pragma mark - GMDirectionsDelegate
+
 - (void)directionsDidUpdateDirections:(GMDirection *)googleDirections
 {
     User *currentUser = [CurrentUser sharedInstance].user;
@@ -70,15 +71,14 @@
 	[self.routeOverlayView setSteps:stepCoordinates];
 	
     if([route.user.userId isEqualToString: currentUser.userId]) {
-        [self.routeOverlayView drawAnnotationsForSteps: routeSteps];
+        [self.routeOverlayView drawAnnotationsForSteps: routeSteps withRoute: route];
     } else {
         // Add annotations
-        RouteAnnotation *startAnnotation = [[RouteAnnotation alloc] initWithCoordinate:[[stepCoordinates objectAtIndex:0] coordinate]
-                                                                                 title: @"Start"
-                                                                              subtitle: nil                                                                        annotationType:AnnotationTypeStart];
-        
-        MKUserLocation *userLocation = [[MKUserLocation alloc] init];
-        userLocation.coordinate = route.startLocation.coordinate;
+        User *user = route.user;
+        RouteAnnotation *startAnnotation = [[RouteAnnotation alloc] initWithCoordinate: [[stepCoordinates objectAtIndex:0] coordinate]
+                                                                                 title: [NSString stringWithFormat: @"Start for %@ %@", user.firstName, user.lastName]
+                                                                              subtitle: nil
+                                                                        annotationType: AnnotationTypeStart];
         
         [self.mapView addAnnotations: [NSArray arrayWithObjects: startAnnotation, nil]];
 
@@ -86,6 +86,8 @@
 
     [self.routeOverlayView drawLine];
 }
+
+# pragma mark - MKMapViewDelegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
@@ -98,34 +100,6 @@
         return [(RouteAnnotation *)annotation viewForAnnotationWithMapView: self.mapView];
     }
     return nil;
-}
-
-- (IBAction)previousStep {
-    NSInteger stepIndex = [self.stepAnnotations indexOfObject: self.currentSelectedStepAnnotation];
-    NSInteger previsousStepAnnotationIndex = stepIndex - 1;
-    
-    if (previsousStepAnnotationIndex >= 0) {
-        Get2meAnnotation *annotation = (RouteAnnotation *)[self.stepAnnotations objectAtIndex: previsousStepAnnotationIndex];
-        MKCoordinateRegion region = [annotation focusRegion];
-
-        [self.mapView setRegion:region animated:YES];
-        [self.mapView selectAnnotation: annotation  animated: YES];
-    }
-
-}
-
-- (IBAction)nextStep {
-    NSInteger stepIndex = [self.stepAnnotations indexOfObject: self.currentSelectedStepAnnotation];
-    NSInteger nextStepAnnotationIndex = stepIndex + 1;
-    
-    if (nextStepAnnotationIndex < [self.stepAnnotations count]) {
-        Get2meAnnotation *annotation = (Get2meAnnotation *)[self.stepAnnotations objectAtIndex: nextStepAnnotationIndex];
-        
-        MKCoordinateRegion region = [annotation focusRegion];
-        [self.mapView setRegion:region animated:YES];
-        [self.mapView selectAnnotation: annotation animated: YES];
-    }
-
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
@@ -159,6 +133,7 @@
     return polylineView;
 }
 
+#pragma mark - RKObjectLoaderDelegate
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
 	[[NSUserDefaults standardUserDefaults] synchronize];
@@ -182,4 +157,33 @@
     NSLog(@"Value of error is %@", objectLoader.response.bodyAsString);
 }
 
+# pragma mark - actions
+
+- (IBAction)previousStep {
+    NSInteger stepIndex = [self.stepAnnotations indexOfObject: self.currentSelectedStepAnnotation];
+    NSInteger previsousStepAnnotationIndex = stepIndex - 1;
+    
+    if (previsousStepAnnotationIndex >= 0) {
+        Get2meAnnotation *annotation = (RouteAnnotation *)[self.stepAnnotations objectAtIndex: previsousStepAnnotationIndex];
+        MKCoordinateRegion region = [annotation focusRegion];
+        
+        [self.mapView setRegion:region animated:YES];
+        [self.mapView selectAnnotation: annotation  animated: YES];
+    }
+    
+}
+
+- (IBAction)nextStep {
+    NSInteger stepIndex = [self.stepAnnotations indexOfObject: self.currentSelectedStepAnnotation];
+    NSInteger nextStepAnnotationIndex = stepIndex + 1;
+    
+    if (nextStepAnnotationIndex < [self.stepAnnotations count]) {
+        Get2meAnnotation *annotation = (Get2meAnnotation *)[self.stepAnnotations objectAtIndex: nextStepAnnotationIndex];
+        
+        MKCoordinateRegion region = [annotation focusRegion];
+        [self.mapView setRegion:region animated:YES];
+        [self.mapView selectAnnotation: annotation animated: YES];
+    }
+    
+}
 @end

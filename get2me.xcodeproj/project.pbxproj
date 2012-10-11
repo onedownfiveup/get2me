@@ -281,8 +281,6 @@
 		CA632BF6160569FE007D71C3 /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632BF4160569FE007D71C3 /* CreateAccountViewController.m */; };
 		CA632C2216078482007D71C3 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632C2116078482007D71C3 /* FriendsViewController.m */; };
 		CA632C2316078482007D71C3 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA632C2116078482007D71C3 /* FriendsViewController.m */; };
-		CA7762891611F0320092C884 /* TransitShape.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7762881611F0320092C884 /* TransitShape.m */; };
-		CA77628A1611F0320092C884 /* TransitShape.m in Sources */ = {isa = PBXBuildFile; fileRef = CA7762881611F0320092C884 /* TransitShape.m */; };
 		CA79DDB81607EA8E00BAD33F /* UserSearchContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DDB71607EA8E00BAD33F /* UserSearchContainerViewController.m */; };
 		CA79DDB91607EA8E00BAD33F /* UserSearchContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DDB71607EA8E00BAD33F /* UserSearchContainerViewController.m */; };
 		CA79DDBF1608F36700BAD33F /* user-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA79DDBE1608F36700BAD33F /* user-icon.png */; };
@@ -666,8 +664,6 @@
 		CA632BF4160569FE007D71C3 /* CreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
 		CA632C2016078482007D71C3 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		CA632C2116078482007D71C3 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
-		CA7762871611F0320092C884 /* TransitShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitShape.h; sourceTree = "<group>"; };
-		CA7762881611F0320092C884 /* TransitShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransitShape.m; sourceTree = "<group>"; };
 		CA79DDB61607EA8E00BAD33F /* UserSearchContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSearchContainerViewController.h; sourceTree = "<group>"; };
 		CA79DDB71607EA8E00BAD33F /* UserSearchContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSearchContainerViewController.m; sourceTree = "<group>"; };
 		CA79DDBE1608F36700BAD33F /* user-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-icon.png"; sourceTree = "<group>"; };
@@ -1470,8 +1466,6 @@
 		CACC2268160555C1009BC042 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CA7762871611F0320092C884 /* TransitShape.h */,
-				CA7762881611F0320092C884 /* TransitShape.m */,
 				CACC2269160559A6009BC042 /* User.h */,
 				CACC226A160559A6009BC042 /* User.m */,
 				CACC220A160547F8009BC042 /* CurrentUser.h */,
@@ -1856,7 +1850,6 @@
 				AD8C8366160F9251000B1EFE /* UASubscriptionTableViewDelegate.m in Sources */,
 				AD8C8368160F9251000B1EFE /* UASubscriptionUI.m in Sources */,
 				AD8C836A160F9251000B1EFE /* UASubscriptionUIUtil.m in Sources */,
-				CA7762891611F0320092C884 /* TransitShape.m in Sources */,
 				CAFF79E61613A8E90085FF92 /* DirectionInvitesViewController.m in Sources */,
 				CA280C731617C1E1002D61BB /* GMDirection.m in Sources */,
 				CA280C771617C1E1002D61BB /* GoogleMapsAPI.m in Sources */,
@@ -1929,7 +1922,6 @@
 				AD8C8367160F9251000B1EFE /* UASubscriptionTableViewDelegate.m in Sources */,
 				AD8C8369160F9251000B1EFE /* UASubscriptionUI.m in Sources */,
 				AD8C836B160F9251000B1EFE /* UASubscriptionUIUtil.m in Sources */,
-				CA77628A1611F0320092C884 /* TransitShape.m in Sources */,
 				CAFF79E71613A8E90085FF92 /* DirectionInvitesViewController.m in Sources */,
 				CA280C741617C1E1002D61BB /* GMDirection.m in Sources */,
 				CA280C781617C1E1002D61BB /* GoogleMapsAPI.m in Sources */,

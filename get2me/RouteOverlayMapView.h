@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "GMStep.h"
+#import "Route.h"
 
 @interface RouteOverlayMapView : MKOverlayView {
 	MKMapView *inMapView;
@@ -18,7 +19,7 @@
 
 - (id)initWithMapView:(MKMapView *)mapView;
 - (void)drawLine;
-- (void)drawAnnotationsForSteps: (NSArray *)routeSteps;
+- (void)drawAnnotationsForSteps: (NSArray *)routeSteps withRoute: (Route *) route;
 
 @property (nonatomic, retain) MKMapView *inMapView;
 @property (nonatomic, retain) NSArray *steps;

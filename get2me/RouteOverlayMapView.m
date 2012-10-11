@@ -79,7 +79,7 @@
 	}
 }
 
--(void) drawAnnotationsForSteps: (NSArray *)routeSteps
+-(void) drawAnnotationsForSteps: (NSArray *)routeSteps withRoute:(Route *)route
 {
     NSMutableArray *annotations = [[NSMutableArray alloc] initWithCapacity: [routeSteps count]];
 

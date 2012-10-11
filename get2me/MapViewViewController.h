@@ -16,7 +16,7 @@
 #import "Direction.h"
 #import "StepAnnotation.h"
 
-@interface MapViewViewController : UIViewController  <MKMapViewDelegate, CLLocationManagerDelegate, RKObjectLoaderDelegate, GMDirectionsDelegate>
+@interface MapViewViewController : UIViewController  <MKMapViewDelegate, RKObjectLoaderDelegate, GMDirectionsDelegate>
 
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;

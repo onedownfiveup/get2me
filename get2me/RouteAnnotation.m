@@ -44,7 +44,8 @@
     }
     if ([self annotationType] == AnnotationTypeEnd) {
         annotationView.image = [UIImage imageNamed:@"target"];
-    }
+    } else
+        annotationView.image = nil;
     
     return annotationView;
 }
