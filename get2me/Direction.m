@@ -26,4 +26,13 @@
     [Route loadRestkitMappingsWithDirectionMapping: directionMapping
                                     andUserMapping: userMapping];
 }
+
+-(void) setRoutes:(NSArray *)routes
+{
+    _routes = routes;
+    
+    for (Route *route in routes) {
+        route.direction = self;
+    }
+}
 @end

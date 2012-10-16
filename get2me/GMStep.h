@@ -23,7 +23,7 @@
 @property (nonatomic, retain, readonly) NSString  *startPointLongitude;
 @property (nonatomic, retain, readonly) NSString  *endPointLatitude;
 @property (nonatomic, retain, readonly) NSString  *endPointLongitude;
-@property (nonatomic, retain, readonly) GMLeg *leg;
+@property (nonatomic, weak) GMLeg *leg;
 
 -(NSString *) stepDirections;
 -(CLLocation *) startLocation;

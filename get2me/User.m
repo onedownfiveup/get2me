@@ -22,11 +22,19 @@
     [userMapping mapKeyPath:@"email" toAttribute:@"email"];
     [userMapping mapKeyPath:@"first_name" toAttribute:@"firstName"];
     [userMapping mapKeyPath:@"last_name" toAttribute:@"lastName"];
+    [userMapping mapKeyPath:@"current_location.latitude" toAttribute:@"currentPositionLat"];
+    [userMapping mapKeyPath:@"current_location.longitude" toAttribute:@"currentPositionLng"];
     
     [sharedManager.mappingProvider setObjectMapping:userMapping forKeyPath: @"user"];
     [sharedManager.mappingProvider setObjectMapping:userMapping forKeyPath: @"users"];
     [sharedManager.mappingProvider setObjectMapping:userMapping forKeyPath: @"friends"];
 
     [Direction loadRestkitMappingsWithUserMapping: userMapping];
+}
+
+-(CLLocation *) currentUserLocation
+{    
+    return [[CLLocation alloc] initWithLatitude: [self.currentPositionLat doubleValue]
+                                      longitude: [self.currentPositionLng doubleValue]];
 }
 @end

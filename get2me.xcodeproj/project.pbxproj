@@ -254,6 +254,9 @@
 		ADE1FCF0161F3B4800701F8F /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = ADE1FCEC161F3B4800701F8F /* forward.png */; };
 		ADE1FCF6161F94A100701F8F /* StepAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE1FCF5161F94A100701F8F /* StepAnnotation.m */; };
 		ADE1FCF7161F94A100701F8F /* StepAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = ADE1FCF5161F94A100701F8F /* StepAnnotation.m */; };
+		ADF6C12A162B12DF00692BE1 /* person_1.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF6C128162B12DF00692BE1 /* person_1.png */; };
+		ADF6C12B162B12DF00692BE1 /* person_2.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF6C129162B12DF00692BE1 /* person_2.png */; };
+		ADF6C12F162B1F3D00692BE1 /* start_route.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF6C12E162B1F3D00692BE1 /* start_route.png */; };
 		CA280C731617C1E1002D61BB /* GMDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C621617C1E1002D61BB /* GMDirection.m */; };
 		CA280C741617C1E1002D61BB /* GMDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C621617C1E1002D61BB /* GMDirection.m */; };
 		CA280C771617C1E1002D61BB /* GoogleMapsAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = CA280C661617C1E1002D61BB /* GoogleMapsAPI.m */; };
@@ -640,6 +643,9 @@
 		ADE1FCEC161F3B4800701F8F /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
 		ADE1FCF4161F94A100701F8F /* StepAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepAnnotation.h; sourceTree = "<group>"; };
 		ADE1FCF5161F94A100701F8F /* StepAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepAnnotation.m; sourceTree = "<group>"; };
+		ADF6C128162B12DF00692BE1 /* person_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = person_1.png; path = Resources/Images/person_1.png; sourceTree = SOURCE_ROOT; };
+		ADF6C129162B12DF00692BE1 /* person_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = person_2.png; path = Resources/Images/person_2.png; sourceTree = SOURCE_ROOT; };
+		ADF6C12E162B1F3D00692BE1 /* start_route.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = start_route.png; path = Resources/Images/start_route.png; sourceTree = SOURCE_ROOT; };
 		CA280C611617C1E1002D61BB /* GMDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDirection.h; sourceTree = "<group>"; };
 		CA280C621617C1E1002D61BB /* GMDirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDirection.m; sourceTree = "<group>"; };
 		CA280C651617C1E1002D61BB /* GoogleMapsAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapsAPI.h; sourceTree = "<group>"; };
@@ -1435,6 +1441,9 @@
 		CA632C02160640B3007D71C3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				ADF6C12E162B1F3D00692BE1 /* start_route.png */,
+				ADF6C128162B12DF00692BE1 /* person_1.png */,
+				ADF6C129162B12DF00692BE1 /* person_2.png */,
 				CA5EE139162652BC002E3117 /* my_location.png */,
 				CA5EE13A162652BC002E3117 /* target.png */,
 				CA5EE13B162652BC002E3117 /* walking.png */,
@@ -1694,6 +1703,9 @@
 				CA5EE13C162652BC002E3117 /* my_location.png in Resources */,
 				CA5EE13E162652BC002E3117 /* target.png in Resources */,
 				CA5EE140162652BC002E3117 /* walking.png in Resources */,
+				ADF6C12A162B12DF00692BE1 /* person_1.png in Resources */,
+				ADF6C12B162B12DF00692BE1 /* person_2.png in Resources */,
+				ADF6C12F162B1F3D00692BE1 /* start_route.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

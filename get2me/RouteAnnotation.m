@@ -44,6 +44,10 @@
     }
     if ([self annotationType] == AnnotationTypeEnd) {
         annotationView.image = [UIImage imageNamed:@"target"];
+    } else if ([self annotationType] == AnnotationTypeStart) {
+        annotationView.image = [UIImage imageNamed:@"start_route"];
+    } else if ([self annotationType] == AnnotationTypeWayPoint) {
+        annotationView.image = [UIImage imageNamed:@"person_1"];
     } else
         annotationView.image = nil;
     

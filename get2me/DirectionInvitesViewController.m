@@ -87,6 +87,11 @@
     [params setValue: @"true" forParam: @"route[accept]"];
     [params setValue: latitude forParam: @"route[start_coordinates][latitude]"];
     [params setValue: longitude forParam: @"route[start_coordinates][longitude]"];
+    
+    if (self.trackingSwitch.on) {
+        
+    } else {
+    }
 
     [self sendUpdateForRouteWithParams: params andButtonPressed: sender];
 }

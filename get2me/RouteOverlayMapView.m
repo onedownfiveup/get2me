@@ -82,10 +82,11 @@
 -(void) drawAnnotationsForSteps: (NSArray *)routeSteps withRoute:(Route *)route
 {
     NSMutableArray *annotations = [[NSMutableArray alloc] initWithCapacity: [routeSteps count]];
-
+    Direction *direction = route.direction;
+    
     for (GMStep *step in routeSteps) {
         NSString *annotationTitle = [step stepDirections];
-        
+                
         if ([routeSteps indexOfObject: step] == 0) {
             RouteAnnotation *annotation = [[RouteAnnotation alloc]
                                            initWithCoordinate: step.startLocation.coordinate
@@ -102,8 +103,8 @@
 
             RouteAnnotation *annotationEnd = [[RouteAnnotation alloc]
                                            initWithCoordinate: step.endLocation.coordinate
-                                           title: @"End"
-                                           subtitle: @"The End"
+                                           title: @"Destination"
+                                           subtitle: [NSString stringWithFormat: @"%@ %@", direction.user.firstName, direction.user.lastName]
                                            annotationType: AnnotationTypeEnd];
             
             annotationStart.myStep = YES;

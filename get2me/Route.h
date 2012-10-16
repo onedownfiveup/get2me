@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <RestKit/RestKit.h>
 #import "User.h"
+#import "Direction.h"
 
 @interface Route : NSObject
 
@@ -19,6 +20,7 @@
 @property (nonatomic, retain) NSString *startCoordinateLatitude;
 @property (nonatomic, retain) NSString *startCoordinateLongitude;
 @property (nonatomic, retain) NSString *state;
+@property (nonatomic, assign) Direction *direction;
 @property (nonatomic, assign) BOOL     allowTracking;
 
 +(void) loadRestkitMappingsWithDirectionMapping: (RKObjectMapping *) directionMapping

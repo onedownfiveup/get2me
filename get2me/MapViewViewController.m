@@ -33,11 +33,18 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self resetMapView];
     self.mapView.showsUserLocation = YES;
     [self.mapView setUserTrackingMode: MKUserTrackingModeFollow animated: YES];
     
     [self loadDirections];
 
+}
+
+-(void) resetMapView
+{
+    [self.mapView removeOverlays: self.mapView.overlays];
+    [self.mapView removeAnnotations: self.mapView.annotations];
 }
 
 -(void)loadDirections
@@ -75,15 +82,21 @@
     } else {
         // Add annotations
         User *user = route.user;
+        
+        
+        
         RouteAnnotation *startAnnotation = [[RouteAnnotation alloc] initWithCoordinate: [[stepCoordinates objectAtIndex:0] coordinate]
                                                                                  title: [NSString stringWithFormat: @"Start for %@ %@", user.firstName, user.lastName]
                                                                               subtitle: nil
                                                                         annotationType: AnnotationTypeStart];
         
-        [self.mapView addAnnotations: [NSArray arrayWithObjects: startAnnotation, nil]];
-
+        RouteAnnotation *currentAnnotation = [[RouteAnnotation alloc] initWithCoordinate: [user currentUserLocation].coordinate
+                                                                                 title: [NSString stringWithFormat: @"%@ %@", user.firstName, user.lastName]
+                                                                              subtitle: nil
+                                                                        annotationType: AnnotationTypeWayPoint];
+        
+        [self.mapView addAnnotations: [NSArray arrayWithObjects: startAnnotation, currentAnnotation, nil]];
     }
-
     [self.routeOverlayView drawLine];
 }
 

@@ -10,10 +10,12 @@
 #import <CoreLocation/CoreLocation.h>
 #import "GMStep.h"
 
+@class GMStep;
+
 @interface GMLeg : NSObject
 
 @property (nonatomic, readonly)         NSInteger numerOfSteps;
-@property (nonatomic, retain, readonly) NSArray *steps;
+@property (nonatomic, retain)           NSMutableArray *steps;
 @property (nonatomic, retain, readonly) NSDictionary *distance;
 @property (nonatomic, retain, readonly) NSDictionary *duration;
 @property (nonatomic, retain, readonly) NSString *startAddress;
