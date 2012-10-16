@@ -82,18 +82,27 @@
     CLLocation *currentLocation = [CurrentUser sharedInstance].currentLocation;
     NSString *latitude = [[NSString alloc] initWithFormat:@"%f", currentLocation.coordinate.latitude];
     NSString *longitude = [[NSString alloc] initWithFormat:@"%f", currentLocation.coordinate.longitude];
+    NSString *trackingSwitchState = [self trackingSwitchStateFor: (UITableViewCell *)sender.superview.superview];
+    
 
     RKParams *params = [RKParams params];
     [params setValue: @"true" forParam: @"route[accept]"];
     [params setValue: latitude forParam: @"route[start_coordinates][latitude]"];
     [params setValue: longitude forParam: @"route[start_coordinates][longitude]"];
+    [params setValue: trackingSwitchState forParam: @"route[allow_tracking]"];    
     
-    if (self.trackingSwitch.on) {
-        
-    } else {
-    }
-
     [self sendUpdateForRouteWithParams: params andButtonPressed: sender];
+}
+
+-(NSString *) trackingSwitchStateFor: (UITableViewCell *) currentClickCell
+{
+    UISwitch *trackSwitch = (UISwitch *)[currentClickCell viewWithTag: 10];
+    
+    if (trackSwitch.on) {
+        return @"true";
+    } else {
+        return @"false";
+    }
 }
 
 - (IBAction)rejectInvite:(UIButton *)sender {

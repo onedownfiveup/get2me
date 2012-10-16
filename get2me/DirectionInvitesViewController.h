@@ -11,6 +11,4 @@
 
 @interface DirectionInvitesViewController : UITableViewController <RKObjectLoaderDelegate>
 @property (nonatomic, retain) NSArray *routes;
-@property (strong, nonatomic) IBOutlet UISwitch *trackingSwitch;
-
 @end

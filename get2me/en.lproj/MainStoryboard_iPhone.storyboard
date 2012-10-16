@@ -561,7 +561,7 @@
                                                 <segment title="Transit" enabled="NO"/>
                                             </segments>
                                         </segmentedControl>
-                                        <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="59g-Nd-Z0x"/>
+                                        <switch opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="59g-Nd-Z0x"/>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgF-dL-bWH">
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <state key="normal" title="Accept">
@@ -624,9 +624,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
-                    <connections>
-                        <outlet property="trackingSwitch" destination="59g-Nd-Z0x" id="kSA-Ur-TkI"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5r3-ua-2yU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -670,7 +667,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DirectionInvitesViewController.h"/>
             <relationships>
                 <relationship kind="action" name="acceptInvite:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="trackingSwitch" candidateClass="UISwitch"/>
+                <relationship kind="action" name="backButtonPressed:"/>
+                <relationship kind="action" name="rejectInvite:" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="FriendsViewController" superclassName="UITableViewController">
